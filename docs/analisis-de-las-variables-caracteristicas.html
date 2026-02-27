@@ -4,24 +4,32 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Analisis de las variables caracteristicas: | _main.knit</title>
-  <meta name="description" content="" />
+  <title>Chapter 3 Analisis de las variables caracteristicas: | Bookdown R Visualizacion de datos</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Analisis de las variables caracteristicas: | _main.knit" />
+  <meta property="og:title" content="Chapter 3 Analisis de las variables caracteristicas: | Bookdown R Visualizacion de datos" />
   <meta property="og:type" content="book" />
   
-  
-  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Analisis de las variables caracteristicas: | _main.knit" />
+  <meta name="twitter:title" content="Chapter 3 Analisis de las variables caracteristicas: | Bookdown R Visualizacion de datos" />
   
-  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
   
 
+<meta name="author" content="Andrés Parejo" />
 
 
+<meta name="date" content="2026-02-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -161,7 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bookdown R Visualizacion de datos</a>
           </h1>
         </div>
 
@@ -239,13 +247,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb25-66"><a href="analisis-de-las-variables-caracteristicas.html#cb25-66" tabindex="-1"></a><span class="fu">bind_rows</span>(var_num_tgpa, var_num_tgpn, var_num_tsa, var_num_toa, var_num_ton ) <span class="sc">%&gt;%</span></span>
 <span id="cb25-67"><a href="analisis-de-las-variables-caracteristicas.html#cb25-67" tabindex="-1"></a>  <span class="fu">select</span>(variable, <span class="fu">everything</span>())</span></code></pre></div>
 <pre><code>## # A tibble: 5 × 10
-##   variable                 n media    ds mediana minimo maximo    Q1    Q3   IQR
-##   &lt;chr&gt;                &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-## 1 tasa_global_partici…   300  67.8  2.22    68.0  55.1    72.1  66.6  69.5  2.90
-## 2 tasa_global_partici…   300  65.7  2.35    66.1  53.4    70.6  64.1  67.5  3.40
-## 3 tasa_desempleo_area    300  12.6  3.15    11.7   7.27   25.8  10.4  14.0  3.57
-## 4 tasa_ocupacion_area    300  59.2  3.10    59.6  41.7    64.6  57.7  61.1  3.42
-## 5 tasa_ocupacion_naci…   300  58.1  2.85    58.3  42.5    64.0  56.8  60.0  3.12</code></pre>
+##   variable                               n media    ds mediana minimo maximo    Q1    Q3   IQR
+##   &lt;chr&gt;                              &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 tasa_global_participacion_area       300  67.8  2.22    68.0  55.1    72.1  66.6  69.5  2.90
+## 2 tasa_global_participacion_nacional   300  65.7  2.35    66.1  53.4    70.6  64.1  67.5  3.40
+## 3 tasa_desempleo_area                  300  12.6  3.15    11.7   7.27   25.8  10.4  14.0  3.57
+## 4 tasa_ocupacion_area                  300  59.2  3.10    59.6  41.7    64.6  57.7  61.1  3.42
+## 5 tasa_ocupacion_nacional              300  58.1  2.85    58.3  42.5    64.0  56.8  60.0  3.12</code></pre>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="analisis-de-las-variables-caracteristicas.html#cb27-1" tabindex="-1"></a>MLC_long <span class="ot">&lt;-</span> MLC <span class="sc">%&gt;%</span></span>
 <span id="cb27-2"><a href="analisis-de-las-variables-caracteristicas.html#cb27-2" tabindex="-1"></a>  <span class="fu">select</span>(</span>
 <span id="cb27-3"><a href="analisis-de-las-variables-caracteristicas.html#cb27-3" tabindex="-1"></a>    tasa_global_participacion_area,</span>

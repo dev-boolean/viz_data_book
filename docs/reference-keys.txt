@@ -1,10 +1,6 @@
 introduccion
 introducción
 eda
-analisis-bivariado.
 analisis-de-la-variable-tasa_desempleo_nacional.
 analisis-de-las-variables-caracteristicas
-about
-usage
-render-book
-preview-book
+analisis-bivariado.

@@ -4,24 +4,32 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 1 Introduccion | _main.knit</title>
-  <meta name="description" content="" />
+  <title>Bookdown R Visualizacion de datos</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 1 Introduccion | _main.knit" />
+  <meta property="og:title" content="Bookdown R Visualizacion de datos" />
   <meta property="og:type" content="book" />
   
-  
-  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 1 Introduccion | _main.knit" />
+  <meta name="twitter:title" content="Bookdown R Visualizacion de datos" />
   
-  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+set in the _output.yml file.</p>" />
   
 
+<meta name="author" content="Andrés Parejo" />
 
 
+<meta name="date" content="2026-02-27" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -161,7 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bookdown R Visualizacion de datos</a>
           </h1>
         </div>
 
@@ -169,8 +177,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<!--bookdown:title:end-->
-<!--bookdown:title:start-->
+<div id="header">
+<h1 class="title">Bookdown R Visualizacion de datos</h1>
+<p class="author"><em>Andrés Parejo</em></p>
+<p class="date"><em>2026-02-27</em></p>
+</div>
 <div id="introduccion" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Introduccion<a href="introduccion.html#introduccion" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="introducción" class="section level2 hasAnchor" number="1.1">
@@ -194,26 +205,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-5"><a href="introduccion.html#cb1-5" tabindex="-1"></a>        <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>))</span>
 <span id="cb1-6"><a href="introduccion.html#cb1-6" tabindex="-1"></a><span class="fu">head</span>(MLC)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 7
-##   fecha               tasa_global_participacion_area tasa_global_participacion…¹
-##   &lt;dttm&gt;                                       &lt;dbl&gt;                       &lt;dbl&gt;
-## 1 2001-01-31 00:00:00                           70.0                        69.1
-## 2 2001-02-28 00:00:00                           70.2                        68.9
-## 3 2001-03-31 00:00:00                           69.1                        68.4
-## 4 2001-04-30 00:00:00                           67.7                        65.2
-## 5 2001-05-31 00:00:00                           68.1                        65.4
-## 6 2001-06-30 00:00:00                           68.7                        66.3
-## # ℹ abbreviated name: ¹​tasa_global_participacion_nacional
-## # ℹ 4 more variables: tasa_desempleo_area &lt;dbl&gt;, tasa_desempleo_nacional &lt;dbl&gt;,
-## #   tasa_ocupacion_area &lt;dbl&gt;, tasa_ocupacion_nacional &lt;dbl&gt;</code></pre>
+##   fecha               tasa_global_participacion_area tasa_global_participaci…¹ tasa_desempleo_area tasa_desempleo_nacio…² tasa_ocupacion_area
+##   &lt;dttm&gt;                                       &lt;dbl&gt;                     &lt;dbl&gt;               &lt;dbl&gt;                  &lt;dbl&gt;               &lt;dbl&gt;
+## 1 2001-01-31 00:00:00                           70.0                      69.1                20.7                   16.6                55.5
+## 2 2001-02-28 00:00:00                           70.2                      68.9                19.6                   17.4                56.5
+## 3 2001-03-31 00:00:00                           69.1                      68.4                19.1                   15.8                55.9
+## 4 2001-04-30 00:00:00                           67.7                      65.2                17.6                   14.5                55.8
+## 5 2001-05-31 00:00:00                           68.1                      65.4                17.8                   14.0                56.0
+## 6 2001-06-30 00:00:00                           68.7                      66.3                18.7                   15.3                55.9
+## # ℹ abbreviated names: ¹​tasa_global_participacion_nacional, ²​tasa_desempleo_nacional
+## # ℹ 1 more variable: tasa_ocupacion_nacional &lt;dbl&gt;</code></pre>
 <p>Se realiza una inspección inicial de los datos del dataset:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="introduccion.html#cb3-1" tabindex="-1"></a><span class="fu">colnames</span>(MLC)</span></code></pre></div>
-<pre><code>## [1] &quot;fecha&quot;                              &quot;tasa_global_participacion_area&quot;    
-## [3] &quot;tasa_global_participacion_nacional&quot; &quot;tasa_desempleo_area&quot;               
-## [5] &quot;tasa_desempleo_nacional&quot;            &quot;tasa_ocupacion_area&quot;               
+<pre><code>## [1] &quot;fecha&quot;                              &quot;tasa_global_participacion_area&quot;     &quot;tasa_global_participacion_nacional&quot;
+## [4] &quot;tasa_desempleo_area&quot;                &quot;tasa_desempleo_nacional&quot;            &quot;tasa_ocupacion_area&quot;               
 ## [7] &quot;tasa_ocupacion_nacional&quot;</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="introduccion.html#cb5-1" tabindex="-1"></a><span class="fu">str</span>(MLC)</span></code></pre></div>
 <pre><code>## tibble [300 × 7] (S3: tbl_df/tbl/data.frame)
-##  $ fecha                             : POSIXct[1:300], format: &quot;2001-01-31&quot; &quot;2001-02-28&quot; ...
+##  $ fecha                             : POSIXct[1:300], format: &quot;2001-01-31&quot; &quot;2001-02-28&quot; &quot;2001-03-31&quot; &quot;2001-04-30&quot; ...
 ##  $ tasa_global_participacion_area    : num [1:300] 70 70.2 69.1 67.7 68.1 ...
 ##  $ tasa_global_participacion_nacional: num [1:300] 69.1 68.9 68.4 65.2 65.4 ...
 ##  $ tasa_desempleo_area               : num [1:300] 20.7 19.6 19.1 17.6 17.8 ...
@@ -223,20 +232,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="introduccion.html#cb7-1" tabindex="-1"></a><span class="fu">dim</span>(MLC)</span></code></pre></div>
 <pre><code>## [1] 300   7</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="introduccion.html#cb9-1" tabindex="-1"></a><span class="fu">summary</span>(MLC)</span></code></pre></div>
-<pre><code>##      fecha                     tasa_global_participacion_area
-##  Min.   :2001-01-31 00:00:00   Min.   :55.09                 
-##  1st Qu.:2007-04-22 12:00:00   1st Qu.:66.57                 
-##  Median :2013-07-15 12:00:00   Median :67.95                 
-##  Mean   :2013-07-15 18:38:24   Mean   :67.76                 
-##  3rd Qu.:2019-10-07 18:00:00   3rd Qu.:69.47                 
-##  Max.   :2025-12-31 00:00:00   Max.   :72.15                 
-##  tasa_global_participacion_nacional tasa_desempleo_area tasa_desempleo_nacional
-##  Min.   :53.45                      Min.   : 7.27       Min.   : 7.020         
-##  1st Qu.:64.09                      1st Qu.:10.45       1st Qu.: 9.735         
-##  Median :66.14                      Median :11.73       Median :11.193         
-##  Mean   :65.74                      Mean   :12.63       Mean   :11.612         
-##  3rd Qu.:67.48                      3rd Qu.:14.02       3rd Qu.:12.909         
-##  Max.   :70.62                      Max.   :25.79       Max.   :21.972         
+<pre><code>##      fecha                     tasa_global_participacion_area tasa_global_participacion_nacional tasa_desempleo_area tasa_desempleo_nacional
+##  Min.   :2001-01-31 00:00:00   Min.   :55.09                  Min.   :53.45                      Min.   : 7.27       Min.   : 7.020         
+##  1st Qu.:2007-04-22 12:00:00   1st Qu.:66.57                  1st Qu.:64.09                      1st Qu.:10.45       1st Qu.: 9.735         
+##  Median :2013-07-15 12:00:00   Median :67.95                  Median :66.14                      Median :11.73       Median :11.193         
+##  Mean   :2013-07-15 18:38:24   Mean   :67.76                  Mean   :65.74                      Mean   :12.63       Mean   :11.612         
+##  3rd Qu.:2019-10-07 18:00:00   3rd Qu.:69.47                  3rd Qu.:67.48                      3rd Qu.:14.02       3rd Qu.:12.909         
+##  Max.   :2025-12-31 00:00:00   Max.   :72.15                  Max.   :70.62                      Max.   :25.79       Max.   :21.972         
 ##  tasa_ocupacion_area tasa_ocupacion_nacional
 ##  Min.   :41.66       Min.   :42.50          
 ##  1st Qu.:57.71       1st Qu.:56.84          
@@ -246,14 +248,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  Max.   :64.61       Max.   :64.01</code></pre>
 <p>Verificamos que no hayan datos faltantes ni casillas vacias:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="introduccion.html#cb11-1" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(MLC))</span></code></pre></div>
-<pre><code>##                              fecha     tasa_global_participacion_area 
-##                                  0                                  0 
-## tasa_global_participacion_nacional                tasa_desempleo_area 
-##                                  0                                  0 
-##            tasa_desempleo_nacional                tasa_ocupacion_area 
-##                                  0                                  0 
-##            tasa_ocupacion_nacional 
-##                                  0</code></pre>
+<pre><code>##                              fecha     tasa_global_participacion_area tasa_global_participacion_nacional                tasa_desempleo_area 
+##                                  0                                  0                                  0                                  0 
+##            tasa_desempleo_nacional                tasa_ocupacion_area            tasa_ocupacion_nacional 
+##                                  0                                  0                                  0</code></pre>
 <p>En efecto, no encontramos ningún NA. Esto nos facilita el trabajar con los datos que la limpieza no debe ser tan rigurosa.
 Otra forma de verlo sería:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="introduccion.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(Amelia)</span></code></pre></div>
