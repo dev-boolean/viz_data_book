@@ -170,7 +170,7 @@ missmap(MLC)
 
 <img src="index_files/figure-html/unnamed-chunk-4-1.png" alt="" width="672" />
 
-# Analisis de la variable tasa_desempleo_nacional.
+## Analisis de la variable tasa_desempleo_nacional.
 
 Consideremos el resumen de tasa_desempleo_nacional (objetivo):
 
@@ -339,7 +339,7 @@ ggplot(MLC, aes(x = fecha, y = tasa_desempleo_nacional)) +
 
 La serie temporal evidencia la evolución del desempleo en Colombia a lo largo del tiempo. Los valores atípicos identificados corresponden a períodos de choque económico significativo, reflejando incrementos excepcionales en la tasa de desempleo. Estos valores no fueron eliminados debido a que representan dinámicas reales del mercado laboral.
 
-# Analisis de las variables caracteristicas:
+## Analisis de las variables caracteristicas:
 
 
 ``` r
