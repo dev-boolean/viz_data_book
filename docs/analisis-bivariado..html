@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Analisis bivariado. | Bookdown R Visualización de datos</title>
+  <meta name="description" content="5 Analisis bivariado. | Bookdown R Visualización de datos" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Analisis bivariado. | Bookdown R Visualización de datos" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Analisis bivariado. | Bookdown R Visualización de datos" />
+  
+  
+  
+
+<meta name="author" content="Andrés Parejo, Santiago Hurtado" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="analisis-de-las-variables-caracteristicas.html"/>
+<link rel="next" href="conclusiones..html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduccion</a></li>
+<li class="chapter" data-level="2" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>2</b> EDA</a></li>
+<li class="chapter" data-level="3" data-path="analisis-de-la-variable-tasa_desempleo_nacional..html"><a href="analisis-de-la-variable-tasa_desempleo_nacional..html"><i class="fa fa-check"></i><b>3</b> Analisis de la variable tasa_desempleo_nacional.</a></li>
+<li class="chapter" data-level="4" data-path="analisis-de-las-variables-caracteristicas.html"><a href="analisis-de-las-variables-caracteristicas.html"><i class="fa fa-check"></i><b>4</b> Analisis de las variables caracteristicas:</a></li>
+<li class="chapter" data-level="5" data-path="analisis-bivariado..html"><a href="analisis-bivariado..html"><i class="fa fa-check"></i><b>5</b> Analisis bivariado.</a></li>
+<li class="chapter" data-level="6" data-path="conclusiones..html"><a href="conclusiones..html"><i class="fa fa-check"></i><b>6</b> Conclusiones.</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bookdown R Visualización de datos</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="analisis-bivariado." class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Analisis bivariado.<a href="analisis-bivariado..html#analisis-bivariado." class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Después de analizar cada variable de forma individual y de explorar algunas relaciones mediante gráficos de dispersion, resulta util complementar con una matriz de correlación que ayudará a evaluar de manera conjunta la fuerza y la dirección de la relación lineal entre los indicadores del mercado laboral. Va a permitir detectar relaciones positivas o negativas entre los indicadores, lo cuan aporta una vision mas clara de la interacción entre las variables.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="analisis-bivariado..html#cb28-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb28-2"><a href="analisis-bivariado..html#cb28-2" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span></code></pre></div>
+<pre><code>## corrplot 0.95 loaded</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="analisis-bivariado..html#cb30-1" tabindex="-1"></a>MLC_corr <span class="ot">&lt;-</span> MLC <span class="sc">%&gt;%</span></span>
+<span id="cb30-2"><a href="analisis-bivariado..html#cb30-2" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb30-3"><a href="analisis-bivariado..html#cb30-3" tabindex="-1"></a>    tasa_global_participacion_area,</span>
+<span id="cb30-4"><a href="analisis-bivariado..html#cb30-4" tabindex="-1"></a>    tasa_global_participacion_nacional,</span>
+<span id="cb30-5"><a href="analisis-bivariado..html#cb30-5" tabindex="-1"></a>    tasa_desempleo_area,</span>
+<span id="cb30-6"><a href="analisis-bivariado..html#cb30-6" tabindex="-1"></a>    tasa_desempleo_nacional,</span>
+<span id="cb30-7"><a href="analisis-bivariado..html#cb30-7" tabindex="-1"></a>    tasa_ocupacion_area,</span>
+<span id="cb30-8"><a href="analisis-bivariado..html#cb30-8" tabindex="-1"></a>    tasa_ocupacion_nacional</span>
+<span id="cb30-9"><a href="analisis-bivariado..html#cb30-9" tabindex="-1"></a>  )</span>
+<span id="cb30-10"><a href="analisis-bivariado..html#cb30-10" tabindex="-1"></a></span>
+<span id="cb30-11"><a href="analisis-bivariado..html#cb30-11" tabindex="-1"></a>matriz_cor <span class="ot">&lt;-</span> <span class="fu">cor</span>(MLC_corr,</span>
+<span id="cb30-12"><a href="analisis-bivariado..html#cb30-12" tabindex="-1"></a>                  <span class="at">use =</span> <span class="st">&quot;complete.obs&quot;</span>,</span>
+<span id="cb30-13"><a href="analisis-bivariado..html#cb30-13" tabindex="-1"></a>                  <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span>
+<span id="cb30-14"><a href="analisis-bivariado..html#cb30-14" tabindex="-1"></a></span>
+<span id="cb30-15"><a href="analisis-bivariado..html#cb30-15" tabindex="-1"></a><span class="fu">corrplot</span>(</span>
+<span id="cb30-16"><a href="analisis-bivariado..html#cb30-16" tabindex="-1"></a>  matriz_cor,</span>
+<span id="cb30-17"><a href="analisis-bivariado..html#cb30-17" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">&quot;color&quot;</span>,</span>
+<span id="cb30-18"><a href="analisis-bivariado..html#cb30-18" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;upper&quot;</span>,</span>
+<span id="cb30-19"><a href="analisis-bivariado..html#cb30-19" tabindex="-1"></a>  <span class="at">addCoef.col =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb30-20"><a href="analisis-bivariado..html#cb30-20" tabindex="-1"></a>  <span class="at">tl.col =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb30-21"><a href="analisis-bivariado..html#cb30-21" tabindex="-1"></a>  <span class="at">tl.srt =</span> <span class="dv">45</span>,</span>
+<span id="cb30-22"><a href="analisis-bivariado..html#cb30-22" tabindex="-1"></a>  <span class="at">number.cex =</span> <span class="fl">0.7</span></span>
+<span id="cb30-23"><a href="analisis-bivariado..html#cb30-23" tabindex="-1"></a>)</span></code></pre></div>
+<p><img src="index_files/figure-html/unnamed-chunk-11-1.png" alt="" width="672" /></p>
+<p>Al examinar la matriz de correlaciones, se identifican relaciones clave en el mercado laboral. Destaca una alta correlación positiva entre las tasas de desempleo de área y nacional (0.96), así como entre las tasas de ocupación de ambos niveles (0.94), lo que indica que los comportamientos locales y nacionales tienden a moverse de manera sincronizada. Asimismo, la participación global muestra una fuerte consistencia entre el área y la nación (0.95). Por otro lado, se observa una correlación negativa significativa entre la tasa de desempleo y la tasa de ocupación (aproximadamente -0.80 en ambos niveles), lo que refleja la relación inversa esperada: a mayor desempleo, menor ocupación. Finalmente, la participación global presenta una correlación moderada a alta con la ocupación (alrededor de 0.80), sugiriendo que una mayor participación en el mercado laboral se asocia con mayores niveles de ocupación, aunque su relación con el desempleo es débil y negativa.</p>
+<p>Tomemos las variables en el grafico de dispersion como:</p>
+<ul>
+<li>Tasa de ocupacion nacional (TON)</li>
+<li>Tasa de desempleo nacional (TDN)</li>
+<li>Tasa global de participación nacional (TGPN)</li>
+<li>Tasa de desempleo area (TDA)</li>
+</ul>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="analisis-bivariado..html#cb31-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb31-2"><a href="analisis-bivariado..html#cb31-2" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb31-3"><a href="analisis-bivariado..html#cb31-3" tabindex="-1"></a></span>
+<span id="cb31-4"><a href="analisis-bivariado..html#cb31-4" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(MLC,</span>
+<span id="cb31-5"><a href="analisis-bivariado..html#cb31-5" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> tasa_ocupacion_nacional,</span>
+<span id="cb31-6"><a href="analisis-bivariado..html#cb31-6" tabindex="-1"></a>                 <span class="at">y =</span> tasa_desempleo_nacional)) <span class="sc">+</span></span>
+<span id="cb31-7"><a href="analisis-bivariado..html#cb31-7" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb31-8"><a href="analisis-bivariado..html#cb31-8" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb31-9"><a href="analisis-bivariado..html#cb31-9" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-10"><a href="analisis-bivariado..html#cb31-10" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Desempleo vs Ocupación Nacional&quot;</span>,</span>
+<span id="cb31-11"><a href="analisis-bivariado..html#cb31-11" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;TON&quot;</span>,</span>
+<span id="cb31-12"><a href="analisis-bivariado..html#cb31-12" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;TDN&quot;</span></span>
+<span id="cb31-13"><a href="analisis-bivariado..html#cb31-13" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb31-14"><a href="analisis-bivariado..html#cb31-14" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb31-15"><a href="analisis-bivariado..html#cb31-15" tabindex="-1"></a></span>
+<span id="cb31-16"><a href="analisis-bivariado..html#cb31-16" tabindex="-1"></a></span>
+<span id="cb31-17"><a href="analisis-bivariado..html#cb31-17" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(MLC,</span>
+<span id="cb31-18"><a href="analisis-bivariado..html#cb31-18" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> tasa_global_participacion_nacional,</span>
+<span id="cb31-19"><a href="analisis-bivariado..html#cb31-19" tabindex="-1"></a>                 <span class="at">y =</span> tasa_desempleo_nacional)) <span class="sc">+</span></span>
+<span id="cb31-20"><a href="analisis-bivariado..html#cb31-20" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb31-21"><a href="analisis-bivariado..html#cb31-21" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb31-22"><a href="analisis-bivariado..html#cb31-22" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-23"><a href="analisis-bivariado..html#cb31-23" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Desempleo vs Participación Nacional&quot;</span>,</span>
+<span id="cb31-24"><a href="analisis-bivariado..html#cb31-24" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;TGPN&quot;</span>,</span>
+<span id="cb31-25"><a href="analisis-bivariado..html#cb31-25" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;TDN&quot;</span></span>
+<span id="cb31-26"><a href="analisis-bivariado..html#cb31-26" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb31-27"><a href="analisis-bivariado..html#cb31-27" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb31-28"><a href="analisis-bivariado..html#cb31-28" tabindex="-1"></a></span>
+<span id="cb31-29"><a href="analisis-bivariado..html#cb31-29" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(MLC,</span>
+<span id="cb31-30"><a href="analisis-bivariado..html#cb31-30" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> tasa_desempleo_area,</span>
+<span id="cb31-31"><a href="analisis-bivariado..html#cb31-31" tabindex="-1"></a>                 <span class="at">y =</span> tasa_desempleo_nacional)) <span class="sc">+</span></span>
+<span id="cb31-32"><a href="analisis-bivariado..html#cb31-32" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;purple&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb31-33"><a href="analisis-bivariado..html#cb31-33" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb31-34"><a href="analisis-bivariado..html#cb31-34" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-35"><a href="analisis-bivariado..html#cb31-35" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Desempleo Área vs Nacional&quot;</span>,</span>
+<span id="cb31-36"><a href="analisis-bivariado..html#cb31-36" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;TDA&quot;</span>,</span>
+<span id="cb31-37"><a href="analisis-bivariado..html#cb31-37" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;TDN&quot;</span></span>
+<span id="cb31-38"><a href="analisis-bivariado..html#cb31-38" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb31-39"><a href="analisis-bivariado..html#cb31-39" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb31-40"><a href="analisis-bivariado..html#cb31-40" tabindex="-1"></a></span>
+<span id="cb31-41"><a href="analisis-bivariado..html#cb31-41" tabindex="-1"></a>g1 <span class="sc">/</span> g2 <span class="sc">/</span> g3</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;
+## `geom_smooth()` using formula = &#39;y ~ x&#39;
+## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-12-1.png" alt="" width="672" /></p>
+<p>Al analizar las relaciones gráficas entre los indicadores del mercado laboral, se observan patrones claros y consistentes con la teoría económica.
+En el primer gráfico, <strong>Desempleo vs Ocupación Nacional</strong>, se aprecia una clara relación inversa: a medida que aumenta la tasa de ocupación (TON), la tasa de desempleo nacional (TDN) tiende a disminuir, con puntos que oscilan entre aproximadamente 45% y 65% de ocupación y desempleo que va del 20% a valores cercanos a cero. En el segundo gráfico, <strong>Desempleo vs Participación Nacional</strong>, la relación es menos pronunciada pero también negativa: cuando la participación global (TGPN) aumenta —ubicándose entre 55% y 70%—, el desempleo tiende a reducirse, aunque con mayor dispersión. Finalmente, el gráfico <strong>Desempleo Área vs Nacional</strong> confirma una fuerte correlación positiva, donde los puntos se alinean casi perfectamente en una tendencia lineal ascendente, indicando que el comportamiento del desempleo a nivel local replica fielmente el comportamiento nacional.</p>
+<ul>
+<li>Dado que los datos corresponden a observaciones mensuales a lo largo del tiempo, es importante analizar el comportamiento de la variable objetivo desde una perspectiva temporal. Un gráfico de evolución temporal permite visualizar tendencias, cambios estructurales y posibles periodos de incremento o disminución del desempleo a lo largo del período de estudio.
+Vamos a analizar la variable objetivo respecto a la ocupación donde se refleja:</li>
+</ul>
+<p><strong>1. Cuando ocupación sube → desempleo baja.</strong></p>
+<p><strong>2. Comportamiento inverso del mercado laboral.</strong></p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="analisis-bivariado..html#cb33-1" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb33-2"><a href="analisis-bivariado..html#cb33-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb33-3"><a href="analisis-bivariado..html#cb33-3" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb33-4"><a href="analisis-bivariado..html#cb33-4" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="analisis-bivariado..html#cb33-5" tabindex="-1"></a>MLC_temp1 <span class="ot">&lt;-</span> MLC <span class="sc">%&gt;%</span></span>
+<span id="cb33-6"><a href="analisis-bivariado..html#cb33-6" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb33-7"><a href="analisis-bivariado..html#cb33-7" tabindex="-1"></a>    fecha,</span>
+<span id="cb33-8"><a href="analisis-bivariado..html#cb33-8" tabindex="-1"></a>    tasa_desempleo_nacional,</span>
+<span id="cb33-9"><a href="analisis-bivariado..html#cb33-9" tabindex="-1"></a>    tasa_ocupacion_nacional</span>
+<span id="cb33-10"><a href="analisis-bivariado..html#cb33-10" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb33-11"><a href="analisis-bivariado..html#cb33-11" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb33-12"><a href="analisis-bivariado..html#cb33-12" tabindex="-1"></a>    <span class="sc">-</span>fecha,</span>
+<span id="cb33-13"><a href="analisis-bivariado..html#cb33-13" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>,</span>
+<span id="cb33-14"><a href="analisis-bivariado..html#cb33-14" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">&quot;valor&quot;</span></span>
+<span id="cb33-15"><a href="analisis-bivariado..html#cb33-15" tabindex="-1"></a>  )</span>
+<span id="cb33-16"><a href="analisis-bivariado..html#cb33-16" tabindex="-1"></a></span>
+<span id="cb33-17"><a href="analisis-bivariado..html#cb33-17" tabindex="-1"></a><span class="fu">ggplot</span>(MLC_temp1,</span>
+<span id="cb33-18"><a href="analisis-bivariado..html#cb33-18" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> fecha, <span class="at">y =</span> valor, <span class="at">color =</span> variable)) <span class="sc">+</span></span>
+<span id="cb33-19"><a href="analisis-bivariado..html#cb33-19" tabindex="-1"></a>  </span>
+<span id="cb33-20"><a href="analisis-bivariado..html#cb33-20" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb33-21"><a href="analisis-bivariado..html#cb33-21" tabindex="-1"></a>  </span>
+<span id="cb33-22"><a href="analisis-bivariado..html#cb33-22" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb33-23"><a href="analisis-bivariado..html#cb33-23" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Evolución Temporal: Desempleo vs Ocupación Nacional&quot;</span>,</span>
+<span id="cb33-24"><a href="analisis-bivariado..html#cb33-24" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Fecha&quot;</span>,</span>
+<span id="cb33-25"><a href="analisis-bivariado..html#cb33-25" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa (%)&quot;</span>,</span>
+<span id="cb33-26"><a href="analisis-bivariado..html#cb33-26" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;Indicador&quot;</span></span>
+<span id="cb33-27"><a href="analisis-bivariado..html#cb33-27" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb33-28"><a href="analisis-bivariado..html#cb33-28" tabindex="-1"></a>  </span>
+<span id="cb33-29"><a href="analisis-bivariado..html#cb33-29" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="index_files/figure-html/unnamed-chunk-13-1.png" alt="" width="672" /></p>
+<p>Al observar la evolución temporal del mercado laboral nacional entre los años 2000 y 2025, se identifican dinámicas inversas y claramente definidas entre el desempleo y la ocupación. La tasa de desempleo nacional (línea azul) muestra picos pronunciados en periodos de crisis especialmente alrededor de 2010 y nuevamente cerca de 2020, coincidiendo con caídas simultáneas en la tasa de ocupación nacional (línea roja), lo que refleja la sensibilidad del empleo ante choques económicos. En contraste, en los periodos de recuperación, la ocupación aumenta mientras el desempleo desciende, manteniendo consistentemente la relación inversa esperada entre ambos indicadores. Esta gráfica valida visualmente la correlación negativa observada en análisis anteriores y permite identificar con claridad los momentos de mayor tensión en el mercado laboral a lo largo de las últimas dos décadas.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="analisis-de-las-variables-caracteristicas.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusiones..html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

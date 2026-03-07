@@ -16,7 +16,25 @@ El mercado laboral constituye uno de los principales indicadores del desempeño 
 
 El presente proyecto tiene como objetivo analizar el comportamiento del mercado laboral colombiano a partir de los indicadores mensuales publicados por el Banco de la República y producidos por el Departamento Administrativo Nacional de Estadística (DANE), correspondientes al período comprendido entre enero de 2001 y diciembre de 2025. Dichos indicadores se expresan en términos porcentuales y presentan una periodicidad mensual, lo que permite estudiar la evolución temporal del mercado laboral con un alto nivel de detalle.
 
-El conjunto de datos empleado incluye variables fundamentales como la tasa global de participación, la tasa de ocupación y la tasa de desempleo, tanto para el total nacional como para el agregado de las trece principales áreas metropolitanas del país. La tasa global de participación mide la proporción de la población en edad de trabajar que forma parte de la fuerza laboral, reflejando la presión ejercida sobre el mercado de trabajo. Por su parte, la tasa de ocupación representa la relación entre la población ocupada y la población en edad de trabajar, mientras que la tasa de desempleo cuantifica el porcentaje de personas desocupadas dentro de la fuerza laboral total.
+Las variables analizadas son las siguientes:
+
+- **Tasa Global de Participación – 13 áreas (TGP área):**
+Representa la relación porcentual entre la población que hace parte de la fuerza de trabajo y la población en edad de trabajar en las principales trece áreas metropolitanas del país. Este indicador refleja la presión que ejerce la población en edad de trabajar sobre el mercado laboral en dichas áreas.
+
+- **Tasa Global de Participación – Total Nacional (TGP nacional):**
+Corresponde a la relación porcentual entre la población que integra la fuerza de trabajo y la población en edad de trabajar a nivel nacional. Este indicador permite medir la participación de la población en el mercado laboral en todo el país.
+
+- **Tasa de Desempleo – 13 áreas:**
+Se define como la relación porcentual entre el número de personas desocupadas y el número total de personas que integran la fuerza de trabajo en las principales trece áreas metropolitanas del país.
+
+- **Tasa de Desempleo – Total Nacional:**
+Corresponde a la relación porcentual entre el número de personas desocupadas y el total de personas que conforman la fuerza de trabajo a nivel nacional.
+
+- **Tasa de Ocupación – 13 áreas:**
+Es la relación porcentual entre la población ocupada y la población en edad de trabajar en las principales trece áreas metropolitanas del país. Este indicador permite observar el grado de aprovechamiento de la población en edad productiva dentro del mercado laboral.
+
+- **Tasa de Ocupación – Total Nacional:**
+Representa la relación porcentual entre la población ocupada y la población en edad de trabajar a nivel nacional, permitiendo evaluar el nivel de empleo en el conjunto del país.
 
 Dentro de este conjunto de indicadores, se selecciona como variable objetivo la tasa de desempleo total nacional, debido a que este indicador sintetiza el estado general del mercado laboral y representa el resultado del equilibrio entre la oferta y la demanda de trabajo en la economía colombiana.
 
@@ -24,9 +42,11 @@ A partir de esta variable, se busca responder la siguiente pregunta de investiga
 
 **¿Cómo ha evolucionado la tasa de desempleo en Colombia a lo largo del tiempo y qué relación presenta con otros indicadores del mercado laboral como la tasa de ocupación y la tasa global de participación?**
 
-## EDA
+# EDA
 
-- Carga de datos:
+El Análisis Exploratorio de Datos (EDA) se realiza con el objetivo de comprender la estructura y el comportamiento de los indicadores del mercado laboral en Colombia antes de aplicar análisis más avanzados. A través de herramientas como histogramas, diagramas de caja, gráficos de dispersión y matrices de correlación, se busca identificar la distribución de las variables, detectar valores atípicos y analizar las relaciones entre la tasa de desempleo nacional (variable objetivo) y otros indicadores como la tasa de ocupación y la tasa global de participación, permitiendo obtener una primera comprensión de la dinámica del mercado laboral en el período analizado.
+
+- Se hace una carga de los datos:
 
 
 ``` r
@@ -170,7 +190,7 @@ missmap(MLC)
 
 <img src="index_files/figure-html/unnamed-chunk-4-1.png" alt="" width="672" />
 
-## Analisis de la variable tasa_desempleo_nacional.
+# Analisis de la variable tasa_desempleo_nacional.
 
 Consideremos el resumen de tasa_desempleo_nacional (objetivo):
 
@@ -198,7 +218,7 @@ MLC %>%
 La variable tasa_desempleo_nacional fue analizada a partir de 300 observaciones. Se obtuvo una media de 11.61247 que se refleja como la tasa de desempleo nacional que se refleja como porcentaje, donde la mitad de la muestra se encuentr por debajo de 11.19275.
 El minimo registrado fue de 7.02, lo que indica que en una fecha en especifico se presentó una tasa de desempleo menor a la media. Por su parte el maximo fue de 21.972, lo cual refleja una tasa de desempleo alta en una fecha en especifico.
 
-Veamos un histograma:
+- Con el fin de analizar la distribución de la variable tasa de desempleo nacional, se construye un histograma. Este grafico permite visualizar la concentración de los valores, identifica posibles asimetrías en la distribución, ayuda fundamentalmente para caracterizar la variable antes de estudiar sus relaciones con otros indicadores del mercado laboral.
 
 
 ``` r
@@ -260,7 +280,7 @@ El histograma presenta la distribución de frecuencias de la tasa de desempleo n
 
 La altura de las barras permite identificar la concentración de los datos. Si las frecuencias más altas se encuentran en los intervalos inferiores (cercanos a 10), predominan tasas de desempleo bajas. Por el contrario, si se concentran en valores superiores (cercanos a 20), predominan tasas altas. Este análisis visual facilita la comprensión del comportamiento del desempleo en el período estudiado y constituye una base descriptiva fundamental para estudios económicos y sociales.
 
-- Realicemos un grafico de caja y bigote:
+- Para complementar el análisis del histograma, se construye un boxplot. Este tipo de visualización resume la distribución de la variable mediante sus cuantiles, analizar su dispersion de los datos a traves del rango intercuartílico y además facilita la detección de valores atípicos.- Realicemos un grafico de caja y bigote:
 
 
 ``` r
@@ -289,57 +309,38 @@ ggplot(MLC, aes(y = tasa_desempleo_nacional)) +
 Se identifican tres puntos rojos fuera de este rango, lo que indica la presencia de valores atípicos o outliers: uno en el 20%, dos en el 15% y uno en el 10%. Estos valores se desvían del comportamiento general de la serie, posiblemente reflejando periodos con condiciones económicas excepcionales, como crisis o recuperaciones atípicas.
 Se reflejan unos outliers, pero al ser el dataset economico se mantendrá por ahora.
 
-Veamos donde se encuentran:
+- Una vez analizada la distribución de las variables mediante histogramas y detectados posibles valores atípicos con boxplot, se emplea el gráfico de dispersión con el fin de visualizar cada observación individualmente. Este tipo de gráfico permite confirmar la presencia de outliers, identificar patrones en los datos y complementar el análisis exploratorio previo.
 
 ``` r
 Q1 <- quantile(MLC$tasa_desempleo_nacional, 0.25, na.rm = TRUE)
 Q3 <- quantile(MLC$tasa_desempleo_nacional, 0.75, na.rm = TRUE)
 
-IQR_val <- Q3 - Q1
+IQR_val <- IQR(MLC$tasa_desempleo_nacional, na.rm = TRUE)
 
 lim_inf <- Q1 - 1.5 * IQR_val
 lim_sup <- Q3 + 1.5 * IQR_val
 
-MLC <- MLC %>%
-  mutate(
-    outlier = ifelse(
-      tasa_desempleo_nacional < lim_inf |
-      tasa_desempleo_nacional > lim_sup,
-      "Outlier",
-      "Normal"
-    )
-  )
+outliers <- MLC$tasa_desempleo_nacional < lim_inf | MLC$tasa_desempleo_nacional > lim_sup
+plot(MLC$fecha, MLC$tasa_desempleo_nacional,
+     main = "Dispersión de la tasa de desempleo nacional",
+     xlab = "Fecha",
+     ylab = "Tasa de desempleo (%)",
+     pch = 16)
 
-ggplot(MLC, aes(x = fecha, y = tasa_desempleo_nacional)) +
-  
-  geom_line(color = "steelblue", linewidth = 1) +
-  
-  geom_point(
-    aes(color = outlier),
-    size = 2
-  ) +
-  
-  scale_color_manual(
-    values = c("Normal" = "black",
-               "Outlier" = "red")
-  ) +
-  
-  labs(
-    title = "Serie Temporal de la Tasa de Desempleo Nacional",
-    subtitle = "Identificación de valores atípicos",
-    x = "Fecha",
-    y = "Tasa de desempleo (%)",
-    color = ""
-  ) +
-  
-  theme_minimal()
+points(MLC$fecha[outliers],
+       MLC$tasa_desempleo_nacional[outliers],
+       col = "red",
+       pch = 16,
+       cex = 1.4)
 ```
 
 <img src="index_files/figure-html/unnamed-chunk-8-1.png" alt="" width="672" />
 
-La serie temporal evidencia la evolución del desempleo en Colombia a lo largo del tiempo. Los valores atípicos identificados corresponden a períodos de choque económico significativo, reflejando incrementos excepcionales en la tasa de desempleo. Estos valores no fueron eliminados debido a que representan dinámicas reales del mercado laboral.
+El gráfico de dispersión muestra la evolución temporal de la tasa de desempleo nacional entre 2001 y 2025. La mayoría de los valores se concentran entre 8% y 14%, lo que indica un comportamiento relativamente estable durante gran parte del período.
 
-## Analisis de las variables caracteristicas:
+No obstante, se identifican valores atípicos, especialmente alrededor del año 2020, donde el desempleo supera el 20%, reflejando un choque significativo en el mercado laboral asociado al impacto económico de la pandemia de COVID-19. Estos puntos no representan errores en los datos, sino eventos económicos extraordinarios que afectaron temporalmente la dinámica del empleo en el país.
+
+# Analisis de las variables caracteristicas:
 
 
 ``` r
@@ -463,8 +464,9 @@ ggplot(MLC_long, aes(y = valor)) +
 Al analizar los boxplots presentados, observamos que la tasa de desempleo a nivel de área es el indicador con mayor variabilidad y valores más extremos, con una mediana cercana al 10% y un rango que se extiende hasta cerca del 20%, lo que refleja disparidades significativas en el desempleo local. En contraste, los indicadores de tasa de ocupación y tasa global de participación, tanto a nivel de área como nacional, presentan medianas centradas en cero y una dispersión mucho más contenida. Destaca especialmente que las versiones nacionales de estos indicadores muestran cajas más estrechas y bigotes más cortos que sus contrapartes de área, lo que sugiere que, a escala nacional, el mercado laboral tiende a ser más estable y homogéneo, mientras que a nivel local se experimentan fluctuaciones más pronunciadas y contextos laborales más diversos.
 
 
-## Analisis bivariado.
+# Analisis bivariado.
 
+Después de analizar cada variable de forma individual y de explorar algunas relaciones mediante gráficos de dispersion, resulta util complementar con una matriz de correlación que ayudará a evaluar de manera conjunta la fuerza y la dirección de la relación lineal entre los indicadores del mercado laboral. Va a permitir detectar relaciones positivas o negativas entre los indicadores, lo cuan aporta una vision mas clara de la interacción entre las variables. 
 
 ``` r
 library(dplyr)
@@ -568,10 +570,12 @@ g1 / g2 / g3
 Al analizar las relaciones gráficas entre los indicadores del mercado laboral, se observan patrones claros y consistentes con la teoría económica.
 En el primer gráfico, **Desempleo vs Ocupación Nacional**, se aprecia una clara relación inversa: a medida que aumenta la tasa de ocupación (TON), la tasa de desempleo nacional (TDN) tiende a disminuir, con puntos que oscilan entre aproximadamente 45% y 65% de ocupación y desempleo que va del 20% a valores cercanos a cero. En el segundo gráfico, **Desempleo vs Participación Nacional**, la relación es menos pronunciada pero también negativa: cuando la participación global (TGPN) aumenta —ubicándose entre 55% y 70%—, el desempleo tiende a reducirse, aunque con mayor dispersión. Finalmente, el gráfico **Desempleo Área vs Nacional** confirma una fuerte correlación positiva, donde los puntos se alinean casi perfectamente en una tendencia lineal ascendente, indicando que el comportamiento del desempleo a nivel local replica fielmente el comportamiento nacional.
 
+- Dado que los datos corresponden a observaciones mensuales a lo largo del tiempo, es importante analizar el comportamiento de la variable objetivo desde una perspectiva temporal. Un gráfico de evolución temporal permite visualizar tendencias, cambios estructurales y posibles periodos de incremento o disminución del desempleo a lo largo del período de estudio.
 Vamos a analizar la variable objetivo respecto a la ocupación donde se refleja:
 
-- Cuando ocupación sube → desempleo baja. 
-- Comportamiento inverso del mercado laboral.
+**1. Cuando ocupación sube → desempleo baja.** 
+
+**2. Comportamiento inverso del mercado laboral.**
 
 
 ``` r
@@ -610,27 +614,17 @@ ggplot(MLC_temp1,
 
 Al observar la evolución temporal del mercado laboral nacional entre los años 2000 y 2025, se identifican dinámicas inversas y claramente definidas entre el desempleo y la ocupación. La tasa de desempleo nacional (línea azul) muestra picos pronunciados en periodos de crisis  especialmente alrededor de 2010 y nuevamente cerca de 2020, coincidiendo con caídas simultáneas en la tasa de ocupación nacional (línea roja), lo que refleja la sensibilidad del empleo ante choques económicos. En contraste, en los periodos de recuperación, la ocupación aumenta mientras el desempleo desciende, manteniendo consistentemente la relación inversa esperada entre ambos indicadores. Esta gráfica valida visualmente la correlación negativa observada en análisis anteriores y permite identificar con claridad los momentos de mayor tensión en el mercado laboral a lo largo de las últimas dos décadas.
 
+# Conclusiones.
 
-Por ultimo hagamos la descomposición temporal que nos permite identificar los componentes estructurales de la tasa de desempleo nacional:
+A partir del análisis exploratorio de los indicadores del mercado laboral en Colombia para el período 2001–2025, se observa que la tasa de desempleo nacional presenta un comportamiento relativamente estable durante gran parte del tiempo, con valores que se concentran principalmente entre el 8% y el 14%. Sin embargo, el análisis temporal permite identificar episodios de alta volatilidad asociados a choques económicos importantes. En particular, alrededor del año 2020 se evidencia un incremento considerable del desempleo, superando el 20%, lo cual refleja el fuerte impacto que tuvo la pandemia de COVID-19 sobre la actividad económica y el mercado laboral del país.
 
+El análisis de la distribución de la variable objetivo mediante histogramas y diagramas de caja permitió comprender su comportamiento estadístico, evidenciando una dispersión moderada y la presencia de algunos valores atípicos. Estos valores no corresponden a errores en los datos, sino a periodos extraordinarios en la economía colombiana. Por esta razón, se decidió conservarlos dentro del análisis, ya que aportan información relevante sobre la dinámica real del mercado laboral.
 
-``` r
-library(dplyr)
-library(forecast)
+Por otro lado, el análisis de las variables caracteristicas mostró que los indicadores de participación y ocupación presentan una variabilidad relativamente menor en comparación con las tasas de desempleo. Esto sugiere que, aunque el nivel de participación y ocupación de la población tiende a mantenerse dentro de ciertos rangos estables, el desempleo puede experimentar fluctuaciones más pronunciadas ante cambios en el contexto económico.
 
-ts_desempleo <- ts(
-  MLC$tasa_desempleo_nacional,
-  start = c(year(min(MLC$fecha)),
-            month(min(MLC$fecha))),
-  frequency = 12   
-)
+El análisis bivariado permitió identificar relaciones claras entre los indicadores del mercado laboral. En particular, se observó una fuerte relación negativa entre la tasa de desempleo y la tasa de ocupación, lo cual coincide con la lógica económica: a medida que aumenta el número de personas ocupadas, la proporción de personas desempleadas tiende a disminuir. Asimismo, la matriz de correlación evidenció una alta correspondencia entre las tasas calculadas para las principales áreas metropolitanas y las tasas a nivel nacional, indicando que los comportamientos regionales están estrechamente vinculados con la dinámica del mercado laboral del país en su conjunto.
 
-descomp <- stl(ts_desempleo, s.window = "periodic")
+Los gráficos de dispersión también permitieron visualizar estas relaciones de forma clara, confirmando la relación inversa entre desempleo y ocupación, así como la fuerte relación positiva entre las tasas de desempleo de área y nacional. Estos resultados sugieren que el comportamiento del desempleo en las principales áreas urbanas constituye un buen indicador del comportamiento general del mercado laboral colombiano.
 
-plot(descomp,
-     main = "Descomposición Temporal - Tasa de Desempleo Nacional")
-```
+En conjunto, el análisis exploratorio permitió comprender la estructura del conjunto de datos, identificar patrones relevantes, detectar valores atípicos y analizar las relaciones existentes entre los principales indicadores laborales.
 
-<img src="index_files/figure-html/unnamed-chunk-14-1.png" alt="" width="672" />
-
-Al aplicar la descomposición temporal a la tasa de desempleo nacional, podemos distinguir claramente sus tres componentes fundamentales. El componente de tendencia (trend) revela un comportamiento cíclico de largo plazo: se observa un descenso sostenido desde mediados de la década de 2000 hasta aproximadamente 2015, seguido de una tendencia alcista que se acelera hacia 2020, reflejando el impacto de crisis económicas recientes. Por su parte, el componente estacional (seasonal) muestra fluctuaciones regulares y predecibles a lo largo del año, con amplitudes que oscilan entre -1.0 y 1.0, lo que indica que el desempleo sigue patrones repetitivos asociados a dinámicas estacionales del mercado laboral, como periodos de contratación o despidos en ciertas épocas del año. Finalmente, el gráfico superior (data) presenta la serie original, que combina ambos efectos, permitiendo visualizar cómo la tendencia y la estacionalidad interactúan para generar los valores reales observados en cada periodo.
