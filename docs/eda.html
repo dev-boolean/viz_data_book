@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 EDA | Bookdown R Visualización de datos</title>
-  <meta name="description" content="2 EDA | Bookdown R Visualización de datos" />
+  <title>Chapter 2 EDA | Mercado Laboral Colombiano</title>
+  <meta name="description" content="Chapter 2 EDA | Mercado Laboral Colombiano" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 EDA | Bookdown R Visualización de datos" />
+  <meta property="og:title" content="Chapter 2 EDA | Mercado Laboral Colombiano" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 EDA | Bookdown R Visualización de datos" />
+  <meta name="twitter:title" content="Chapter 2 EDA | Mercado Laboral Colombiano" />
   
   
   
@@ -23,6 +23,7 @@
 <meta name="author" content="Andrés Parejo, Santiago Hurtado" />
 
 
+<meta name="date" content="2026-04-05" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -30,7 +31,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="analisis-de-la-variable-tasa_desempleo_nacional..html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -124,6 +125,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
 
+<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
 <body>
@@ -136,12 +138,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduccion</a></li>
-<li class="chapter" data-level="2" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>2</b> EDA</a></li>
-<li class="chapter" data-level="3" data-path="analisis-de-la-variable-tasa_desempleo_nacional..html"><a href="analisis-de-la-variable-tasa_desempleo_nacional..html"><i class="fa fa-check"></i><b>3</b> Analisis de la variable tasa_desempleo_nacional.</a></li>
-<li class="chapter" data-level="4" data-path="analisis-de-las-variables-caracteristicas.html"><a href="analisis-de-las-variables-caracteristicas.html"><i class="fa fa-check"></i><b>4</b> Analisis de las variables caracteristicas:</a></li>
-<li class="chapter" data-level="5" data-path="analisis-bivariado..html"><a href="analisis-bivariado..html"><i class="fa fa-check"></i><b>5</b> Analisis bivariado.</a></li>
-<li class="chapter" data-level="6" data-path="conclusiones..html"><a href="conclusiones..html"><i class="fa fa-check"></i><b>6</b> Conclusiones.</a></li>
+<li>
+  <a href="index.html">
+    <img src="icon.png" style="height:30px; vertical-align:middle; margin-right:10px;">
+    Mercado Laboral Colombiano
+  </a>
+</li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#tasa-global-de-participaci%C3%B3n-13-%C3%A1reas-tgp-%C3%A1rea."><i class="fa fa-check"></i><b>1.0.1</b> Tasa Global de Participación – 13 áreas (TGP área).</a></li>
+<li class="chapter" data-level="1.0.2" data-path="index.html"><a href="index.html#tasa-global-de-participaci%C3%B3n-total-nacional-tgp-nacional."><i class="fa fa-check"></i><b>1.0.2</b> Tasa Global de Participación – Total nacional (TGP nacional).</a></li>
+<li class="chapter" data-level="1.0.3" data-path="index.html"><a href="index.html#tasa-de-desempleo-13-%C3%A1reas."><i class="fa fa-check"></i><b>1.0.3</b> Tasa de Desempleo – 13 áreas.</a></li>
+<li class="chapter" data-level="1.0.4" data-path="index.html"><a href="index.html#tasa-de-desempleo-total-nacional."><i class="fa fa-check"></i><b>1.0.4</b> Tasa de Desempleo – Total nacional.</a></li>
+<li class="chapter" data-level="1.0.5" data-path="index.html"><a href="index.html#tasa-de-ocupaci%C3%B3n-13-%C3%A1reas."><i class="fa fa-check"></i><b>1.0.5</b> Tasa de Ocupación – 13 áreas.</a></li>
+<li class="chapter" data-level="1.0.6" data-path="index.html"><a href="index.html#tasa-de-ocupaci%C3%B3n-total-nacional."><i class="fa fa-check"></i><b>1.0.6</b> Tasa de Ocupación – Total nacional.</a></li>
+<li class="chapter" data-level="1.0.7" data-path="index.html"><a href="index.html#justificaci%C3%B3n."><i class="fa fa-check"></i><b>1.0.7</b> Justificación.</a></li>
+<li class="chapter" data-level="1.0.8" data-path="index.html"><a href="index.html#objetivo-general"><i class="fa fa-check"></i><b>1.0.8</b> Objetivo general</a></li>
+<li class="chapter" data-level="1.0.9" data-path="index.html"><a href="index.html#objetivos-espec%C3%ADficos"><i class="fa fa-check"></i><b>1.0.9</b> Objetivos específicos</a></li>
+<li class="chapter" data-level="1.0.10" data-path="index.html"><a href="index.html#marco-te%C3%B3rico."><i class="fa fa-check"></i><b>1.0.10</b> Marco teórico.</a></li>
+<li class="chapter" data-level="1.0.11" data-path="index.html"><a href="index.html#hip%C3%B3tesis."><i class="fa fa-check"></i><b>1.0.11</b> Hipótesis.</a></li>
+<li class="chapter" data-level="1.0.12" data-path="index.html"><a href="index.html#metodolog%C3%ADa."><i class="fa fa-check"></i><b>1.0.12</b> Metodología.</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>2</b> EDA</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="eda.html"><a href="eda.html#analisis-de-la-variable-tasa_desempleo_nacional."><i class="fa fa-check"></i><b>2.0.1</b> Analisis de la variable tasa_desempleo_nacional.</a></li>
+<li class="chapter" data-level="2.0.2" data-path="eda.html"><a href="eda.html#analisis-de-las-variables-caracteristicas"><i class="fa fa-check"></i><b>2.0.2</b> Analisis de las variables caracteristicas:</a></li>
+<li class="chapter" data-level="2.0.3" data-path="eda.html"><a href="eda.html#analisis-bivariado."><i class="fa fa-check"></i><b>2.0.3</b> Analisis bivariado.</a></li>
+<li class="chapter" data-level="2.0.4" data-path="eda.html"><a href="eda.html#conclusiones."><i class="fa fa-check"></i><b>2.0.4</b> Conclusiones.</a></li>
+<li class="chapter" data-level="2.0.5" data-path="eda.html"><a href="eda.html#referencias"><i class="fa fa-check"></i><b>2.0.5</b> Referencias:</a></li>
+</ul></li>
 </ul>
 
       </nav>
@@ -151,7 +178,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bookdown R Visualización de datos</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mercado Laboral Colombiano</a>
           </h1>
         </div>
 
@@ -160,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="eda" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">2</span> EDA<a href="eda.html#eda" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Chapter 2</span> EDA<a href="eda.html#eda" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>El Análisis Exploratorio de Datos (EDA) se realiza con el objetivo de comprender la estructura y el comportamiento de los indicadores del mercado laboral en Colombia antes de aplicar análisis más avanzados. A través de herramientas como histogramas, diagramas de caja, gráficos de dispersión y matrices de correlación, se busca identificar la distribución de las variables, detectar valores atípicos y analizar las relaciones entre la tasa de desempleo nacional (variable objetivo) y otros indicadores como la tasa de ocupación y la tasa global de participación, permitiendo obtener una primera comprensión de la dinámica del mercado laboral en el período analizado.</p>
 <ul>
 <li>Se hace una carga de los datos:</li>
@@ -172,17 +199,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-5"><a href="eda.html#cb1-5" tabindex="-1"></a>        <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>, <span class="st">&quot;numeric&quot;</span>))</span>
 <span id="cb1-6"><a href="eda.html#cb1-6" tabindex="-1"></a><span class="fu">head</span>(MLC)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 7
-##   fecha               tasa_global_participacion_area tasa_global_participacion…¹
-##   &lt;dttm&gt;                                       &lt;dbl&gt;                       &lt;dbl&gt;
-## 1 2001-01-31 00:00:00                           70.0                        69.1
-## 2 2001-02-28 00:00:00                           70.2                        68.9
-## 3 2001-03-31 00:00:00                           69.1                        68.4
-## 4 2001-04-30 00:00:00                           67.7                        65.2
-## 5 2001-05-31 00:00:00                           68.1                        65.4
-## 6 2001-06-30 00:00:00                           68.7                        66.3
+##   fecha               tasa_global_participacion_area tasa_global_participacion…¹ tasa_desempleo_area
+##   &lt;dttm&gt;                                       &lt;dbl&gt;                       &lt;dbl&gt;               &lt;dbl&gt;
+## 1 2001-01-31 00:00:00                           70.0                        69.1                20.7
+## 2 2001-02-28 00:00:00                           70.2                        68.9                19.6
+## 3 2001-03-31 00:00:00                           69.1                        68.4                19.1
+## 4 2001-04-30 00:00:00                           67.7                        65.2                17.6
+## 5 2001-05-31 00:00:00                           68.1                        65.4                17.8
+## 6 2001-06-30 00:00:00                           68.7                        66.3                18.7
 ## # ℹ abbreviated name: ¹​tasa_global_participacion_nacional
-## # ℹ 4 more variables: tasa_desempleo_area &lt;dbl&gt;, tasa_desempleo_nacional &lt;dbl&gt;,
-## #   tasa_ocupacion_area &lt;dbl&gt;, tasa_ocupacion_nacional &lt;dbl&gt;</code></pre>
+## # ℹ 3 more variables: tasa_desempleo_nacional &lt;dbl&gt;, tasa_ocupacion_area &lt;dbl&gt;,
+## #   tasa_ocupacion_nacional &lt;dbl&gt;</code></pre>
 <p>Se realiza una inspección inicial de los datos del dataset:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="eda.html#cb3-1" tabindex="-1"></a><span class="fu">colnames</span>(MLC)</span></code></pre></div>
 <pre><code>## [1] &quot;fecha&quot;                              &quot;tasa_global_participacion_area&quot;    
@@ -191,7 +218,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [7] &quot;tasa_ocupacion_nacional&quot;</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="eda.html#cb5-1" tabindex="-1"></a><span class="fu">str</span>(MLC)</span></code></pre></div>
 <pre><code>## tibble [300 × 7] (S3: tbl_df/tbl/data.frame)
-##  $ fecha                             : POSIXct[1:300], format: &quot;2001-01-31&quot; &quot;2001-02-28&quot; ...
+##  $ fecha                             : POSIXct[1:300], format: &quot;2001-01-31&quot; &quot;2001-02-28&quot; &quot;2001-03-31&quot; ...
 ##  $ tasa_global_participacion_area    : num [1:300] 70 70.2 69.1 67.7 68.1 ...
 ##  $ tasa_global_participacion_nacional: num [1:300] 69.1 68.9 68.4 65.2 65.4 ...
 ##  $ tasa_desempleo_area               : num [1:300] 20.7 19.6 19.1 17.6 17.8 ...
@@ -201,27 +228,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="eda.html#cb7-1" tabindex="-1"></a><span class="fu">dim</span>(MLC)</span></code></pre></div>
 <pre><code>## [1] 300   7</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="eda.html#cb9-1" tabindex="-1"></a><span class="fu">summary</span>(MLC)</span></code></pre></div>
-<pre><code>##      fecha                     tasa_global_participacion_area
-##  Min.   :2001-01-31 00:00:00   Min.   :55.09                 
-##  1st Qu.:2007-04-22 12:00:00   1st Qu.:66.57                 
-##  Median :2013-07-15 12:00:00   Median :67.95                 
-##  Mean   :2013-07-15 18:38:24   Mean   :67.76                 
-##  3rd Qu.:2019-10-07 18:00:00   3rd Qu.:69.47                 
-##  Max.   :2025-12-31 00:00:00   Max.   :72.15                 
-##  tasa_global_participacion_nacional tasa_desempleo_area tasa_desempleo_nacional
-##  Min.   :53.45                      Min.   : 7.27       Min.   : 7.020         
-##  1st Qu.:64.09                      1st Qu.:10.45       1st Qu.: 9.735         
-##  Median :66.14                      Median :11.73       Median :11.193         
-##  Mean   :65.74                      Mean   :12.63       Mean   :11.612         
-##  3rd Qu.:67.48                      3rd Qu.:14.02       3rd Qu.:12.909         
-##  Max.   :70.62                      Max.   :25.79       Max.   :21.972         
-##  tasa_ocupacion_area tasa_ocupacion_nacional
-##  Min.   :41.66       Min.   :42.50          
-##  1st Qu.:57.71       1st Qu.:56.84          
-##  Median :59.59       Median :58.31          
-##  Mean   :59.22       Mean   :58.12          
-##  3rd Qu.:61.13       3rd Qu.:59.96          
-##  Max.   :64.61       Max.   :64.01</code></pre>
+<pre><code>##      fecha                     tasa_global_participacion_area tasa_global_participacion_nacional
+##  Min.   :2001-01-31 00:00:00   Min.   :55.09                  Min.   :53.45                     
+##  1st Qu.:2007-04-22 12:00:00   1st Qu.:66.57                  1st Qu.:64.09                     
+##  Median :2013-07-15 12:00:00   Median :67.95                  Median :66.14                     
+##  Mean   :2013-07-15 18:38:24   Mean   :67.76                  Mean   :65.74                     
+##  3rd Qu.:2019-10-07 18:00:00   3rd Qu.:69.47                  3rd Qu.:67.48                     
+##  Max.   :2025-12-31 00:00:00   Max.   :72.15                  Max.   :70.62                     
+##  tasa_desempleo_area tasa_desempleo_nacional tasa_ocupacion_area tasa_ocupacion_nacional
+##  Min.   : 7.27       Min.   : 7.020          Min.   :41.66       Min.   :42.50          
+##  1st Qu.:10.45       1st Qu.: 9.735          1st Qu.:57.71       1st Qu.:56.84          
+##  Median :11.73       Median :11.193          Median :59.59       Median :58.31          
+##  Mean   :12.63       Mean   :11.612          Mean   :59.22       Mean   :58.12          
+##  3rd Qu.:14.02       3rd Qu.:12.909          3rd Qu.:61.13       3rd Qu.:59.96          
+##  Max.   :25.79       Max.   :21.972          Max.   :64.61       Max.   :64.01</code></pre>
 <p>Verificamos que no hayan datos faltantes ni casillas vacias:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="eda.html#cb11-1" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(MLC))</span></code></pre></div>
 <pre><code>##                              fecha     tasa_global_participacion_area 
@@ -234,27 +254,587 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##                                  0</code></pre>
 <p>En efecto, no encontramos ningún NA. Esto nos facilita el trabajar con los datos que la limpieza no debe ser tan rigurosa.
 Otra forma de verlo sería:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="eda.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(Amelia)</span></code></pre></div>
-<pre><code>## Loading required package: Rcpp</code></pre>
-<pre><code>## ## 
-## ## Amelia II: Multiple Imputation
-## ## (Version 1.8.3, built: 2024-11-07)
-## ## Copyright (C) 2005-2026 James Honaker, Gary King and Matthew Blackwell
-## ## Refer to http://gking.harvard.edu/amelia/ for more information
-## ##</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="eda.html#cb16-1" tabindex="-1"></a><span class="fu">missmap</span>(MLC)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="eda.html#cb13-1" tabindex="-1"></a><span class="fu">library</span>(Amelia)</span>
+<span id="cb13-2"><a href="eda.html#cb13-2" tabindex="-1"></a><span class="fu">missmap</span>(MLC)</span></code></pre></div>
 <pre><code>## Warning: Unknown or uninitialised column: `arguments`.
 ## Unknown or uninitialised column: `arguments`.</code></pre>
 <pre><code>## Warning: Unknown or uninitialised column: `imputations`.</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" alt="" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" alt="" width="672" /></p>
+<div id="analisis-de-la-variable-tasa_desempleo_nacional." class="section level3 hasAnchor" number="2.0.1">
+<h3><span class="header-section-number">2.0.1</span> Analisis de la variable tasa_desempleo_nacional.<a href="eda.html#analisis-de-la-variable-tasa_desempleo_nacional." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Consideremos el resumen de tasa_desempleo_nacional (objetivo):</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="eda.html#cb16-1" tabindex="-1"></a>MLC <span class="sc">%&gt;%</span> </span>
+<span id="cb16-2"><a href="eda.html#cb16-2" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb16-3"><a href="eda.html#cb16-3" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">length</span>(tasa_desempleo_nacional),</span>
+<span id="cb16-4"><a href="eda.html#cb16-4" tabindex="-1"></a>    <span class="at">media =</span> <span class="fu">mean</span>(tasa_desempleo_nacional),</span>
+<span id="cb16-5"><a href="eda.html#cb16-5" tabindex="-1"></a>    <span class="at">ds =</span> <span class="fu">sd</span>(tasa_desempleo_nacional),</span>
+<span id="cb16-6"><a href="eda.html#cb16-6" tabindex="-1"></a>    <span class="at">mediana =</span> <span class="fu">median</span>(tasa_desempleo_nacional),</span>
+<span id="cb16-7"><a href="eda.html#cb16-7" tabindex="-1"></a>    <span class="at">minimo =</span> <span class="fu">min</span>(tasa_desempleo_nacional),</span>
+<span id="cb16-8"><a href="eda.html#cb16-8" tabindex="-1"></a>    <span class="at">maximo =</span> <span class="fu">max</span>(tasa_desempleo_nacional),</span>
+<span id="cb16-9"><a href="eda.html#cb16-9" tabindex="-1"></a>    <span class="at">Q1 =</span> <span class="fu">quantile</span>(tasa_desempleo_nacional, <span class="fl">0.25</span>),</span>
+<span id="cb16-10"><a href="eda.html#cb16-10" tabindex="-1"></a>    <span class="at">Q3 =</span> <span class="fu">quantile</span>(tasa_desempleo_nacional, <span class="fl">0.75</span>),</span>
+<span id="cb16-11"><a href="eda.html#cb16-11" tabindex="-1"></a>    <span class="at">IQR =</span> <span class="fu">IQR</span>(tasa_desempleo_nacional)</span>
+<span id="cb16-12"><a href="eda.html#cb16-12" tabindex="-1"></a>  )</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 9
+##       n media    ds mediana minimo maximo    Q1    Q3   IQR
+##   &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1   300  11.6  2.45    11.2   7.02   22.0  9.74  12.9  3.17</code></pre>
+<p>La variable tasa_desempleo_nacional fue analizada a partir de 300 observaciones. Se obtuvo una media de 11.61247 que se refleja como la tasa de desempleo nacional que se refleja como porcentaje, donde la mitad de la muestra se encuentr por debajo de 11.19275.
+El minimo registrado fue de 7.02, lo que indica que en una fecha en especifico se presentó una tasa de desempleo menor a la media. Por su parte el maximo fue de 21.972, lo cual refleja una tasa de desempleo alta en una fecha en especifico.</p>
+<ul>
+<li>Con el fin de analizar la distribución de la variable tasa de desempleo nacional, se construye un histograma. Este grafico permite visualizar la concentración de los valores, identifica posibles asimetrías en la distribución, ayuda fundamentalmente para caracterizar la variable antes de estudiar sus relaciones con otros indicadores del mercado laboral.</li>
+</ul>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="eda.html#cb18-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb18-2"><a href="eda.html#cb18-2" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="eda.html#cb18-3" tabindex="-1"></a>media_des <span class="ot">&lt;-</span> <span class="fu">mean</span>(MLC<span class="sc">$</span>tasa_desempleo_nacional, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-4"><a href="eda.html#cb18-4" tabindex="-1"></a>mediana_des <span class="ot">&lt;-</span> <span class="fu">median</span>(MLC<span class="sc">$</span>tasa_desempleo_nacional, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb18-5"><a href="eda.html#cb18-5" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="eda.html#cb18-6" tabindex="-1"></a><span class="fu">ggplot</span>(MLC, <span class="fu">aes</span>(<span class="at">x =</span> tasa_desempleo_nacional)) <span class="sc">+</span></span>
+<span id="cb18-7"><a href="eda.html#cb18-7" tabindex="-1"></a>  </span>
+<span id="cb18-8"><a href="eda.html#cb18-8" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(</span>
+<span id="cb18-9"><a href="eda.html#cb18-9" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">y =</span> ..density..),</span>
+<span id="cb18-10"><a href="eda.html#cb18-10" tabindex="-1"></a>    <span class="at">bins =</span> <span class="dv">30</span>,</span>
+<span id="cb18-11"><a href="eda.html#cb18-11" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;skyblue&quot;</span>,</span>
+<span id="cb18-12"><a href="eda.html#cb18-12" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb18-13"><a href="eda.html#cb18-13" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.7</span></span>
+<span id="cb18-14"><a href="eda.html#cb18-14" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-15"><a href="eda.html#cb18-15" tabindex="-1"></a>  </span>
+<span id="cb18-16"><a href="eda.html#cb18-16" tabindex="-1"></a>  <span class="fu">geom_density</span>(</span>
+<span id="cb18-17"><a href="eda.html#cb18-17" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;red&quot;</span>,</span>
+<span id="cb18-18"><a href="eda.html#cb18-18" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="fl">1.2</span></span>
+<span id="cb18-19"><a href="eda.html#cb18-19" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-20"><a href="eda.html#cb18-20" tabindex="-1"></a>  </span>
+<span id="cb18-21"><a href="eda.html#cb18-21" tabindex="-1"></a>  <span class="fu">geom_vline</span>(</span>
+<span id="cb18-22"><a href="eda.html#cb18-22" tabindex="-1"></a>    <span class="at">xintercept =</span> media_des,</span>
+<span id="cb18-23"><a href="eda.html#cb18-23" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb18-24"><a href="eda.html#cb18-24" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
+<span id="cb18-25"><a href="eda.html#cb18-25" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="dv">1</span></span>
+<span id="cb18-26"><a href="eda.html#cb18-26" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-27"><a href="eda.html#cb18-27" tabindex="-1"></a>  </span>
+<span id="cb18-28"><a href="eda.html#cb18-28" tabindex="-1"></a>  <span class="fu">geom_vline</span>(</span>
+<span id="cb18-29"><a href="eda.html#cb18-29" tabindex="-1"></a>    <span class="at">xintercept =</span> mediana_des,</span>
+<span id="cb18-30"><a href="eda.html#cb18-30" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;darkgreen&quot;</span>,</span>
+<span id="cb18-31"><a href="eda.html#cb18-31" tabindex="-1"></a>    <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
+<span id="cb18-32"><a href="eda.html#cb18-32" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="dv">1</span></span>
+<span id="cb18-33"><a href="eda.html#cb18-33" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-34"><a href="eda.html#cb18-34" tabindex="-1"></a>  </span>
+<span id="cb18-35"><a href="eda.html#cb18-35" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb18-36"><a href="eda.html#cb18-36" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Distribución de la Tasa de Desempleo Nacional en Colombia&quot;</span>,</span>
+<span id="cb18-37"><a href="eda.html#cb18-37" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Histograma con densidad, media y mediana&quot;</span>,</span>
+<span id="cb18-38"><a href="eda.html#cb18-38" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Tasa de desempleo nacional (%)&quot;</span>,</span>
+<span id="cb18-39"><a href="eda.html#cb18-39" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Densidad&quot;</span></span>
+<span id="cb18-40"><a href="eda.html#cb18-40" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-41"><a href="eda.html#cb18-41" tabindex="-1"></a>  </span>
+<span id="cb18-42"><a href="eda.html#cb18-42" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" alt="" width="672" /></p>
+<p>El histograma presenta la distribución de frecuencias de la tasa de desempleo nacional. En el eje horizontal se ubican los intervalos de la variable (10, 15 y 20), mientras que el eje vertical muestra la frecuencia de observaciones en cada rango, con un máximo de 20.</p>
+<p>La altura de las barras permite identificar la concentración de los datos. Si las frecuencias más altas se encuentran en los intervalos inferiores (cercanos a 10), predominan tasas de desempleo bajas. Por el contrario, si se concentran en valores superiores (cercanos a 20), predominan tasas altas. Este análisis visual facilita la comprensión del comportamiento del desempleo en el período estudiado y constituye una base descriptiva fundamental para estudios económicos y sociales.</p>
+<ul>
+<li>Para complementar el análisis del histograma, se construye un boxplot. Este tipo de visualización resume la distribución de la variable mediante sus cuantiles, analizar su dispersion de los datos a traves del rango intercuartílico y además facilita la detección de valores atípicos.- Realicemos un grafico de caja y bigote:</li>
+</ul>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="eda.html#cb19-1" tabindex="-1"></a><span class="fu">ggplot</span>(MLC, <span class="fu">aes</span>(<span class="at">y =</span> tasa_desempleo_nacional)) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="eda.html#cb19-2" tabindex="-1"></a>  </span>
+<span id="cb19-3"><a href="eda.html#cb19-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb19-4"><a href="eda.html#cb19-4" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;skyblue&quot;</span>,</span>
+<span id="cb19-5"><a href="eda.html#cb19-5" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb19-6"><a href="eda.html#cb19-6" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">0.3</span>,</span>
+<span id="cb19-7"><a href="eda.html#cb19-7" tabindex="-1"></a>    <span class="at">outlier.color =</span> <span class="st">&quot;red&quot;</span>,</span>
+<span id="cb19-8"><a href="eda.html#cb19-8" tabindex="-1"></a>    <span class="at">outlier.size =</span> <span class="dv">2</span></span>
+<span id="cb19-9"><a href="eda.html#cb19-9" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb19-10"><a href="eda.html#cb19-10" tabindex="-1"></a>  </span>
+<span id="cb19-11"><a href="eda.html#cb19-11" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb19-12"><a href="eda.html#cb19-12" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Diagrama de Caja y Bigotes&quot;</span>,</span>
+<span id="cb19-13"><a href="eda.html#cb19-13" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Tasa de Desempleo Nacional en Colombia&quot;</span>,</span>
+<span id="cb19-14"><a href="eda.html#cb19-14" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Tasa de desempleo nacional (%)&quot;</span>,</span>
+<span id="cb19-15"><a href="eda.html#cb19-15" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb19-16"><a href="eda.html#cb19-16" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb19-17"><a href="eda.html#cb19-17" tabindex="-1"></a>  </span>
+<span id="cb19-18"><a href="eda.html#cb19-18" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" alt="" width="672" /></p>
+<p>Se identifican tres puntos rojos fuera de este rango, lo que indica la presencia de valores atípicos o outliers: uno en el 20%, dos en el 15% y uno en el 10%. Estos valores se desvían del comportamiento general de la serie, posiblemente reflejando periodos con condiciones económicas excepcionales, como crisis o recuperaciones atípicas.
+Se reflejan unos outliers, pero al ser el dataset economico se mantendrá por ahora.</p>
+<ul>
+<li>Una vez analizada la distribución de las variables mediante histogramas y detectados posibles valores atípicos con boxplot, se emplea el gráfico de dispersión con el fin de visualizar cada observación individualmente. Este tipo de gráfico permite confirmar la presencia de outliers, identificar patrones en los datos y complementar el análisis exploratorio previo.</li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="eda.html#cb20-1" tabindex="-1"></a>Q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(MLC<span class="sc">$</span>tasa_desempleo_nacional, <span class="fl">0.25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb20-2"><a href="eda.html#cb20-2" tabindex="-1"></a>Q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(MLC<span class="sc">$</span>tasa_desempleo_nacional, <span class="fl">0.75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb20-3"><a href="eda.html#cb20-3" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="eda.html#cb20-4" tabindex="-1"></a>IQR_val <span class="ot">&lt;-</span> <span class="fu">IQR</span>(MLC<span class="sc">$</span>tasa_desempleo_nacional, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb20-5"><a href="eda.html#cb20-5" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="eda.html#cb20-6" tabindex="-1"></a>lim_inf <span class="ot">&lt;-</span> Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR_val</span>
+<span id="cb20-7"><a href="eda.html#cb20-7" tabindex="-1"></a>lim_sup <span class="ot">&lt;-</span> Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR_val</span>
+<span id="cb20-8"><a href="eda.html#cb20-8" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="eda.html#cb20-9" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> MLC<span class="sc">$</span>tasa_desempleo_nacional <span class="sc">&lt;</span> lim_inf <span class="sc">|</span> MLC<span class="sc">$</span>tasa_desempleo_nacional <span class="sc">&gt;</span> lim_sup</span>
+<span id="cb20-10"><a href="eda.html#cb20-10" tabindex="-1"></a><span class="fu">plot</span>(MLC<span class="sc">$</span>fecha, MLC<span class="sc">$</span>tasa_desempleo_nacional,</span>
+<span id="cb20-11"><a href="eda.html#cb20-11" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Dispersión de la tasa de desempleo nacional&quot;</span>,</span>
+<span id="cb20-12"><a href="eda.html#cb20-12" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Fecha&quot;</span>,</span>
+<span id="cb20-13"><a href="eda.html#cb20-13" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Tasa de desempleo (%)&quot;</span>,</span>
+<span id="cb20-14"><a href="eda.html#cb20-14" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">16</span>)</span>
+<span id="cb20-15"><a href="eda.html#cb20-15" tabindex="-1"></a></span>
+<span id="cb20-16"><a href="eda.html#cb20-16" tabindex="-1"></a><span class="fu">points</span>(MLC<span class="sc">$</span>fecha[outliers],</span>
+<span id="cb20-17"><a href="eda.html#cb20-17" tabindex="-1"></a>       MLC<span class="sc">$</span>tasa_desempleo_nacional[outliers],</span>
+<span id="cb20-18"><a href="eda.html#cb20-18" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;red&quot;</span>,</span>
+<span id="cb20-19"><a href="eda.html#cb20-19" tabindex="-1"></a>       <span class="at">pch =</span> <span class="dv">16</span>,</span>
+<span id="cb20-20"><a href="eda.html#cb20-20" tabindex="-1"></a>       <span class="at">cex =</span> <span class="fl">1.4</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" alt="" width="672" /></p>
+<p>El gráfico de dispersión muestra la evolución temporal de la tasa de desempleo nacional entre 2001 y 2025. La mayoría de los valores se concentran entre 8% y 14%, lo que indica un comportamiento relativamente estable durante gran parte del período.</p>
+<p>No obstante, se identifican valores atípicos, especialmente alrededor del año 2020, donde el desempleo supera el 20%, reflejando un choque significativo en el mercado laboral asociado al impacto económico de la pandemia de COVID-19. Estos puntos no representan errores en los datos, sino eventos económicos extraordinarios que afectaron temporalmente la dinámica del empleo en el país.</p>
+</div>
+<div id="analisis-de-las-variables-caracteristicas" class="section level3 hasAnchor" number="2.0.2">
+<h3><span class="header-section-number">2.0.2</span> Analisis de las variables caracteristicas:<a href="eda.html#analisis-de-las-variables-caracteristicas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="eda.html#cb21-1" tabindex="-1"></a>MLC <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="eda.html#cb21-2" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb21-3"><a href="eda.html#cb21-3" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">length</span>(tasa_global_participacion_area),</span>
+<span id="cb21-4"><a href="eda.html#cb21-4" tabindex="-1"></a>    <span class="at">media =</span> <span class="fu">mean</span>(tasa_global_participacion_area),</span>
+<span id="cb21-5"><a href="eda.html#cb21-5" tabindex="-1"></a>    <span class="at">ds =</span> <span class="fu">sd</span>(tasa_global_participacion_area),</span>
+<span id="cb21-6"><a href="eda.html#cb21-6" tabindex="-1"></a>    <span class="at">mediana =</span> <span class="fu">median</span>(tasa_global_participacion_area),</span>
+<span id="cb21-7"><a href="eda.html#cb21-7" tabindex="-1"></a>    <span class="at">minimo =</span> <span class="fu">min</span>(tasa_global_participacion_area),</span>
+<span id="cb21-8"><a href="eda.html#cb21-8" tabindex="-1"></a>    <span class="at">maximo =</span> <span class="fu">max</span>(tasa_global_participacion_area),</span>
+<span id="cb21-9"><a href="eda.html#cb21-9" tabindex="-1"></a>    <span class="at">Q1 =</span> <span class="fu">quantile</span>(tasa_global_participacion_area, <span class="fl">0.25</span>),</span>
+<span id="cb21-10"><a href="eda.html#cb21-10" tabindex="-1"></a>    <span class="at">Q3 =</span> <span class="fu">quantile</span>(tasa_global_participacion_area, <span class="fl">0.75</span>),</span>
+<span id="cb21-11"><a href="eda.html#cb21-11" tabindex="-1"></a>    <span class="at">IQR =</span> <span class="fu">IQR</span>(tasa_global_participacion_area)) <span class="sc">%&gt;%</span></span>
+<span id="cb21-12"><a href="eda.html#cb21-12" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">variable =</span> <span class="st">&quot;tasa_global_participacion_area&quot;</span>) <span class="ot">-&gt;</span> var_num_tgpa</span>
+<span id="cb21-13"><a href="eda.html#cb21-13" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="eda.html#cb21-14" tabindex="-1"></a>MLC <span class="sc">%&gt;%</span> </span>
+<span id="cb21-15"><a href="eda.html#cb21-15" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb21-16"><a href="eda.html#cb21-16" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">length</span>(tasa_global_participacion_nacional),</span>
+<span id="cb21-17"><a href="eda.html#cb21-17" tabindex="-1"></a>    <span class="at">media =</span> <span class="fu">mean</span>(tasa_global_participacion_nacional),</span>
+<span id="cb21-18"><a href="eda.html#cb21-18" tabindex="-1"></a>    <span class="at">ds =</span> <span class="fu">sd</span>(tasa_global_participacion_nacional),</span>
+<span id="cb21-19"><a href="eda.html#cb21-19" tabindex="-1"></a>    <span class="at">mediana =</span> <span class="fu">median</span>(tasa_global_participacion_nacional),</span>
+<span id="cb21-20"><a href="eda.html#cb21-20" tabindex="-1"></a>    <span class="at">minimo =</span> <span class="fu">min</span>(tasa_global_participacion_nacional),</span>
+<span id="cb21-21"><a href="eda.html#cb21-21" tabindex="-1"></a>    <span class="at">maximo =</span> <span class="fu">max</span>(tasa_global_participacion_nacional),</span>
+<span id="cb21-22"><a href="eda.html#cb21-22" tabindex="-1"></a>    <span class="at">Q1 =</span> <span class="fu">quantile</span>(tasa_global_participacion_nacional, <span class="fl">0.25</span>),</span>
+<span id="cb21-23"><a href="eda.html#cb21-23" tabindex="-1"></a>    <span class="at">Q3 =</span> <span class="fu">quantile</span>(tasa_global_participacion_nacional, <span class="fl">0.75</span>),</span>
+<span id="cb21-24"><a href="eda.html#cb21-24" tabindex="-1"></a>    <span class="at">IQR =</span> <span class="fu">IQR</span>(tasa_global_participacion_nacional)) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-25"><a href="eda.html#cb21-25" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">variable =</span> <span class="st">&quot;tasa_global_participacion_nacional&quot;</span>) <span class="ot">-&gt;</span> var_num_tgpn</span>
+<span id="cb21-26"><a href="eda.html#cb21-26" tabindex="-1"></a></span>
+<span id="cb21-27"><a href="eda.html#cb21-27" tabindex="-1"></a>MLC <span class="sc">%&gt;%</span> </span>
+<span id="cb21-28"><a href="eda.html#cb21-28" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb21-29"><a href="eda.html#cb21-29" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">length</span>(tasa_desempleo_area),</span>
+<span id="cb21-30"><a href="eda.html#cb21-30" tabindex="-1"></a>    <span class="at">media =</span> <span class="fu">mean</span>(tasa_desempleo_area),</span>
+<span id="cb21-31"><a href="eda.html#cb21-31" tabindex="-1"></a>    <span class="at">ds =</span> <span class="fu">sd</span>(tasa_desempleo_area),</span>
+<span id="cb21-32"><a href="eda.html#cb21-32" tabindex="-1"></a>    <span class="at">mediana =</span> <span class="fu">median</span>(tasa_desempleo_area),</span>
+<span id="cb21-33"><a href="eda.html#cb21-33" tabindex="-1"></a>    <span class="at">minimo =</span> <span class="fu">min</span>(tasa_desempleo_area),</span>
+<span id="cb21-34"><a href="eda.html#cb21-34" tabindex="-1"></a>    <span class="at">maximo =</span> <span class="fu">max</span>(tasa_desempleo_area),</span>
+<span id="cb21-35"><a href="eda.html#cb21-35" tabindex="-1"></a>    <span class="at">Q1 =</span> <span class="fu">quantile</span>(tasa_desempleo_area, <span class="fl">0.25</span>),</span>
+<span id="cb21-36"><a href="eda.html#cb21-36" tabindex="-1"></a>    <span class="at">Q3 =</span> <span class="fu">quantile</span>(tasa_desempleo_area, <span class="fl">0.75</span>),</span>
+<span id="cb21-37"><a href="eda.html#cb21-37" tabindex="-1"></a>    <span class="at">IQR =</span> <span class="fu">IQR</span>(tasa_desempleo_area)) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-38"><a href="eda.html#cb21-38" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">variable =</span> <span class="st">&quot;tasa_desempleo_area&quot;</span>)<span class="ot">-&gt;</span> var_num_tsa</span>
+<span id="cb21-39"><a href="eda.html#cb21-39" tabindex="-1"></a></span>
+<span id="cb21-40"><a href="eda.html#cb21-40" tabindex="-1"></a>MLC <span class="sc">%&gt;%</span> </span>
+<span id="cb21-41"><a href="eda.html#cb21-41" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb21-42"><a href="eda.html#cb21-42" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">length</span>(tasa_ocupacion_area),</span>
+<span id="cb21-43"><a href="eda.html#cb21-43" tabindex="-1"></a>    <span class="at">media =</span> <span class="fu">mean</span>(tasa_ocupacion_area),</span>
+<span id="cb21-44"><a href="eda.html#cb21-44" tabindex="-1"></a>    <span class="at">ds =</span> <span class="fu">sd</span>(tasa_ocupacion_area),</span>
+<span id="cb21-45"><a href="eda.html#cb21-45" tabindex="-1"></a>    <span class="at">mediana =</span> <span class="fu">median</span>(tasa_ocupacion_area),</span>
+<span id="cb21-46"><a href="eda.html#cb21-46" tabindex="-1"></a>    <span class="at">minimo =</span> <span class="fu">min</span>(tasa_ocupacion_area),</span>
+<span id="cb21-47"><a href="eda.html#cb21-47" tabindex="-1"></a>    <span class="at">maximo =</span> <span class="fu">max</span>(tasa_ocupacion_area),</span>
+<span id="cb21-48"><a href="eda.html#cb21-48" tabindex="-1"></a>    <span class="at">Q1 =</span> <span class="fu">quantile</span>(tasa_ocupacion_area, <span class="fl">0.25</span>),</span>
+<span id="cb21-49"><a href="eda.html#cb21-49" tabindex="-1"></a>    <span class="at">Q3 =</span> <span class="fu">quantile</span>(tasa_ocupacion_area, <span class="fl">0.75</span>),</span>
+<span id="cb21-50"><a href="eda.html#cb21-50" tabindex="-1"></a>    <span class="at">IQR =</span> <span class="fu">IQR</span>(tasa_ocupacion_area)) <span class="sc">%&gt;%</span></span>
+<span id="cb21-51"><a href="eda.html#cb21-51" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">variable =</span> <span class="st">&quot;tasa_ocupacion_area&quot;</span>) <span class="ot">-&gt;</span> var_num_toa</span>
+<span id="cb21-52"><a href="eda.html#cb21-52" tabindex="-1"></a></span>
+<span id="cb21-53"><a href="eda.html#cb21-53" tabindex="-1"></a>MLC <span class="sc">%&gt;%</span> </span>
+<span id="cb21-54"><a href="eda.html#cb21-54" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb21-55"><a href="eda.html#cb21-55" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">length</span>(tasa_ocupacion_nacional),</span>
+<span id="cb21-56"><a href="eda.html#cb21-56" tabindex="-1"></a>    <span class="at">media =</span> <span class="fu">mean</span>(tasa_ocupacion_nacional),</span>
+<span id="cb21-57"><a href="eda.html#cb21-57" tabindex="-1"></a>    <span class="at">ds =</span> <span class="fu">sd</span>(tasa_ocupacion_nacional),</span>
+<span id="cb21-58"><a href="eda.html#cb21-58" tabindex="-1"></a>    <span class="at">mediana =</span> <span class="fu">median</span>(tasa_ocupacion_nacional),</span>
+<span id="cb21-59"><a href="eda.html#cb21-59" tabindex="-1"></a>    <span class="at">minimo =</span> <span class="fu">min</span>(tasa_ocupacion_nacional),</span>
+<span id="cb21-60"><a href="eda.html#cb21-60" tabindex="-1"></a>    <span class="at">maximo =</span> <span class="fu">max</span>(tasa_ocupacion_nacional),</span>
+<span id="cb21-61"><a href="eda.html#cb21-61" tabindex="-1"></a>    <span class="at">Q1 =</span> <span class="fu">quantile</span>(tasa_ocupacion_nacional, <span class="fl">0.25</span>),</span>
+<span id="cb21-62"><a href="eda.html#cb21-62" tabindex="-1"></a>    <span class="at">Q3 =</span> <span class="fu">quantile</span>(tasa_ocupacion_nacional, <span class="fl">0.75</span>),</span>
+<span id="cb21-63"><a href="eda.html#cb21-63" tabindex="-1"></a>    <span class="at">IQR =</span> <span class="fu">IQR</span>(tasa_ocupacion_nacional)) <span class="sc">%&gt;%</span></span>
+<span id="cb21-64"><a href="eda.html#cb21-64" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">variable =</span> <span class="st">&quot;tasa_ocupacion_nacional&quot;</span>) <span class="ot">-&gt;</span> var_num_ton</span>
+<span id="cb21-65"><a href="eda.html#cb21-65" tabindex="-1"></a></span>
+<span id="cb21-66"><a href="eda.html#cb21-66" tabindex="-1"></a><span class="fu">bind_rows</span>(var_num_tgpa, var_num_tgpn, var_num_tsa, var_num_toa, var_num_ton ) <span class="sc">%&gt;%</span></span>
+<span id="cb21-67"><a href="eda.html#cb21-67" tabindex="-1"></a>  <span class="fu">select</span>(variable, <span class="fu">everything</span>())</span></code></pre></div>
+<pre><code>## # A tibble: 5 × 10
+##   variable                               n media    ds mediana minimo maximo    Q1    Q3   IQR
+##   &lt;chr&gt;                              &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 tasa_global_participacion_area       300  67.8  2.22    68.0  55.1    72.1  66.6  69.5  2.90
+## 2 tasa_global_participacion_nacional   300  65.7  2.35    66.1  53.4    70.6  64.1  67.5  3.40
+## 3 tasa_desempleo_area                  300  12.6  3.15    11.7   7.27   25.8  10.4  14.0  3.57
+## 4 tasa_ocupacion_area                  300  59.2  3.10    59.6  41.7    64.6  57.7  61.1  3.42
+## 5 tasa_ocupacion_nacional              300  58.1  2.85    58.3  42.5    64.0  56.8  60.0  3.12</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="eda.html#cb23-1" tabindex="-1"></a>MLC_long <span class="ot">&lt;-</span> MLC <span class="sc">%&gt;%</span></span>
+<span id="cb23-2"><a href="eda.html#cb23-2" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb23-3"><a href="eda.html#cb23-3" tabindex="-1"></a>    tasa_global_participacion_area,</span>
+<span id="cb23-4"><a href="eda.html#cb23-4" tabindex="-1"></a>    tasa_global_participacion_nacional,</span>
+<span id="cb23-5"><a href="eda.html#cb23-5" tabindex="-1"></a>    tasa_desempleo_area,</span>
+<span id="cb23-6"><a href="eda.html#cb23-6" tabindex="-1"></a>    tasa_ocupacion_area,</span>
+<span id="cb23-7"><a href="eda.html#cb23-7" tabindex="-1"></a>    tasa_ocupacion_nacional</span>
+<span id="cb23-8"><a href="eda.html#cb23-8" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb23-9"><a href="eda.html#cb23-9" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb23-10"><a href="eda.html#cb23-10" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb23-11"><a href="eda.html#cb23-11" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>,</span>
+<span id="cb23-12"><a href="eda.html#cb23-12" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">&quot;valor&quot;</span></span>
+<span id="cb23-13"><a href="eda.html#cb23-13" tabindex="-1"></a>  )</span>
+<span id="cb23-14"><a href="eda.html#cb23-14" tabindex="-1"></a></span>
+<span id="cb23-15"><a href="eda.html#cb23-15" tabindex="-1"></a><span class="fu">ggplot</span>(MLC_long, <span class="fu">aes</span>(<span class="at">y =</span> valor)) <span class="sc">+</span></span>
+<span id="cb23-16"><a href="eda.html#cb23-16" tabindex="-1"></a>  </span>
+<span id="cb23-17"><a href="eda.html#cb23-17" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb23-18"><a href="eda.html#cb23-18" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;skyblue&quot;</span>,</span>
+<span id="cb23-19"><a href="eda.html#cb23-19" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb23-20"><a href="eda.html#cb23-20" tabindex="-1"></a>    <span class="at">outlier.color =</span> <span class="st">&quot;red&quot;</span></span>
+<span id="cb23-21"><a href="eda.html#cb23-21" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb23-22"><a href="eda.html#cb23-22" tabindex="-1"></a>  </span>
+<span id="cb23-23"><a href="eda.html#cb23-23" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>variable, <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-24"><a href="eda.html#cb23-24" tabindex="-1"></a>  </span>
+<span id="cb23-25"><a href="eda.html#cb23-25" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb23-26"><a href="eda.html#cb23-26" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Diagramas de Caja por Indicador del Mercado Laboral&quot;</span>,</span>
+<span id="cb23-27"><a href="eda.html#cb23-27" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Valor (%)&quot;</span>,</span>
+<span id="cb23-28"><a href="eda.html#cb23-28" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb23-29"><a href="eda.html#cb23-29" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb23-30"><a href="eda.html#cb23-30" tabindex="-1"></a>  </span>
+<span id="cb23-31"><a href="eda.html#cb23-31" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" alt="" width="672" /></p>
+<p>Al analizar los boxplots presentados, observamos que la tasa de desempleo a nivel de área es el indicador con mayor variabilidad y valores más extremos, con una mediana cercana al 10% y un rango que se extiende hasta cerca del 20%, lo que refleja disparidades significativas en el desempleo local. En contraste, los indicadores de tasa de ocupación y tasa global de participación, tanto a nivel de área como nacional, presentan medianas centradas en cero y una dispersión mucho más contenida. Destaca especialmente que las versiones nacionales de estos indicadores muestran cajas más estrechas y bigotes más cortos que sus contrapartes de área, lo que sugiere que, a escala nacional, el mercado laboral tiende a ser más estable y homogéneo, mientras que a nivel local se experimentan fluctuaciones más pronunciadas y contextos laborales más diversos.</p>
+</div>
+<div id="analisis-bivariado." class="section level3 hasAnchor" number="2.0.3">
+<h3><span class="header-section-number">2.0.3</span> Analisis bivariado.<a href="eda.html#analisis-bivariado." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Después de analizar cada variable de forma individual y de explorar algunas relaciones mediante gráficos de dispersion, resulta util complementar con una matriz de correlación que ayudará a evaluar de manera conjunta la fuerza y la dirección de la relación lineal entre los indicadores del mercado laboral. Va a permitir detectar relaciones positivas o negativas entre los indicadores, lo cuan aporta una vision mas clara de la interacción entre las variables.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="eda.html#cb24-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb24-2"><a href="eda.html#cb24-2" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb24-3"><a href="eda.html#cb24-3" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="eda.html#cb24-4" tabindex="-1"></a>MLC_corr <span class="ot">&lt;-</span> MLC <span class="sc">%&gt;%</span></span>
+<span id="cb24-5"><a href="eda.html#cb24-5" tabindex="-1"></a>  <span class="fu">select</span>(</span>
+<span id="cb24-6"><a href="eda.html#cb24-6" tabindex="-1"></a>    tasa_global_participacion_area,</span>
+<span id="cb24-7"><a href="eda.html#cb24-7" tabindex="-1"></a>    tasa_global_participacion_nacional,</span>
+<span id="cb24-8"><a href="eda.html#cb24-8" tabindex="-1"></a>    tasa_desempleo_area,</span>
+<span id="cb24-9"><a href="eda.html#cb24-9" tabindex="-1"></a>    tasa_desempleo_nacional,</span>
+<span id="cb24-10"><a href="eda.html#cb24-10" tabindex="-1"></a>    tasa_ocupacion_area,</span>
+<span id="cb24-11"><a href="eda.html#cb24-11" tabindex="-1"></a>    tasa_ocupacion_nacional</span>
+<span id="cb24-12"><a href="eda.html#cb24-12" tabindex="-1"></a>  )</span>
+<span id="cb24-13"><a href="eda.html#cb24-13" tabindex="-1"></a></span>
+<span id="cb24-14"><a href="eda.html#cb24-14" tabindex="-1"></a>matriz_cor <span class="ot">&lt;-</span> <span class="fu">cor</span>(MLC_corr,</span>
+<span id="cb24-15"><a href="eda.html#cb24-15" tabindex="-1"></a>                  <span class="at">use =</span> <span class="st">&quot;complete.obs&quot;</span>,</span>
+<span id="cb24-16"><a href="eda.html#cb24-16" tabindex="-1"></a>                  <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span>
+<span id="cb24-17"><a href="eda.html#cb24-17" tabindex="-1"></a></span>
+<span id="cb24-18"><a href="eda.html#cb24-18" tabindex="-1"></a><span class="fu">corrplot</span>(</span>
+<span id="cb24-19"><a href="eda.html#cb24-19" tabindex="-1"></a>  matriz_cor,</span>
+<span id="cb24-20"><a href="eda.html#cb24-20" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">&quot;color&quot;</span>,</span>
+<span id="cb24-21"><a href="eda.html#cb24-21" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;upper&quot;</span>,</span>
+<span id="cb24-22"><a href="eda.html#cb24-22" tabindex="-1"></a>  <span class="at">addCoef.col =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb24-23"><a href="eda.html#cb24-23" tabindex="-1"></a>  <span class="at">tl.col =</span> <span class="st">&quot;black&quot;</span>,</span>
+<span id="cb24-24"><a href="eda.html#cb24-24" tabindex="-1"></a>  <span class="at">tl.srt =</span> <span class="dv">45</span>,</span>
+<span id="cb24-25"><a href="eda.html#cb24-25" tabindex="-1"></a>  <span class="at">number.cex =</span> <span class="fl">0.7</span></span>
+<span id="cb24-26"><a href="eda.html#cb24-26" tabindex="-1"></a>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" alt="" width="672" /></p>
+<p>Al examinar la matriz de correlaciones, se identifican relaciones clave en el mercado laboral. Destaca una alta correlación positiva entre las tasas de desempleo de área y nacional (0.96), así como entre las tasas de ocupación de ambos niveles (0.94), lo que indica que los comportamientos locales y nacionales tienden a moverse de manera sincronizada. Asimismo, la participación global muestra una fuerte consistencia entre el área y la nación (0.95). Por otro lado, se observa una correlación negativa significativa entre la tasa de desempleo y la tasa de ocupación (aproximadamente -0.80 en ambos niveles), lo que refleja la relación inversa esperada: a mayor desempleo, menor ocupación. Finalmente, la participación global presenta una correlación moderada a alta con la ocupación (alrededor de 0.80), sugiriendo que una mayor participación en el mercado laboral se asocia con mayores niveles de ocupación, aunque su relación con el desempleo es débil y negativa.</p>
+<p>Tomemos las variables en el grafico de dispersion como:</p>
+<ul>
+<li>Tasa de ocupacion nacional (TON)</li>
+<li>Tasa de desempleo nacional (TDN)</li>
+<li>Tasa global de participación nacional (TGPN)</li>
+<li>Tasa de desempleo area (TDA)</li>
+</ul>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="eda.html#cb25-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb25-2"><a href="eda.html#cb25-2" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb25-3"><a href="eda.html#cb25-3" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="eda.html#cb25-4" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(MLC,</span>
+<span id="cb25-5"><a href="eda.html#cb25-5" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> tasa_ocupacion_nacional,</span>
+<span id="cb25-6"><a href="eda.html#cb25-6" tabindex="-1"></a>                 <span class="at">y =</span> tasa_desempleo_nacional)) <span class="sc">+</span></span>
+<span id="cb25-7"><a href="eda.html#cb25-7" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb25-8"><a href="eda.html#cb25-8" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb25-9"><a href="eda.html#cb25-9" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb25-10"><a href="eda.html#cb25-10" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Desempleo vs Ocupación Nacional&quot;</span>,</span>
+<span id="cb25-11"><a href="eda.html#cb25-11" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;TON&quot;</span>,</span>
+<span id="cb25-12"><a href="eda.html#cb25-12" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;TDN&quot;</span></span>
+<span id="cb25-13"><a href="eda.html#cb25-13" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb25-14"><a href="eda.html#cb25-14" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb25-15"><a href="eda.html#cb25-15" tabindex="-1"></a></span>
+<span id="cb25-16"><a href="eda.html#cb25-16" tabindex="-1"></a></span>
+<span id="cb25-17"><a href="eda.html#cb25-17" tabindex="-1"></a>g2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(MLC,</span>
+<span id="cb25-18"><a href="eda.html#cb25-18" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> tasa_global_participacion_nacional,</span>
+<span id="cb25-19"><a href="eda.html#cb25-19" tabindex="-1"></a>                 <span class="at">y =</span> tasa_desempleo_nacional)) <span class="sc">+</span></span>
+<span id="cb25-20"><a href="eda.html#cb25-20" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb25-21"><a href="eda.html#cb25-21" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb25-22"><a href="eda.html#cb25-22" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb25-23"><a href="eda.html#cb25-23" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Desempleo vs Participación Nacional&quot;</span>,</span>
+<span id="cb25-24"><a href="eda.html#cb25-24" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;TGPN&quot;</span>,</span>
+<span id="cb25-25"><a href="eda.html#cb25-25" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;TDN&quot;</span></span>
+<span id="cb25-26"><a href="eda.html#cb25-26" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb25-27"><a href="eda.html#cb25-27" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb25-28"><a href="eda.html#cb25-28" tabindex="-1"></a></span>
+<span id="cb25-29"><a href="eda.html#cb25-29" tabindex="-1"></a>g3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(MLC,</span>
+<span id="cb25-30"><a href="eda.html#cb25-30" tabindex="-1"></a>             <span class="fu">aes</span>(<span class="at">x =</span> tasa_desempleo_area,</span>
+<span id="cb25-31"><a href="eda.html#cb25-31" tabindex="-1"></a>                 <span class="at">y =</span> tasa_desempleo_nacional)) <span class="sc">+</span></span>
+<span id="cb25-32"><a href="eda.html#cb25-32" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;purple&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb25-33"><a href="eda.html#cb25-33" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb25-34"><a href="eda.html#cb25-34" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb25-35"><a href="eda.html#cb25-35" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Desempleo Área vs Nacional&quot;</span>,</span>
+<span id="cb25-36"><a href="eda.html#cb25-36" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;TDA&quot;</span>,</span>
+<span id="cb25-37"><a href="eda.html#cb25-37" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;TDN&quot;</span></span>
+<span id="cb25-38"><a href="eda.html#cb25-38" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb25-39"><a href="eda.html#cb25-39" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb25-40"><a href="eda.html#cb25-40" tabindex="-1"></a></span>
+<span id="cb25-41"><a href="eda.html#cb25-41" tabindex="-1"></a>g1 <span class="sc">/</span> g2 <span class="sc">/</span> g3</span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;
+## `geom_smooth()` using formula = &#39;y ~ x&#39;
+## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" alt="" width="672" /></p>
+<p>Al analizar las relaciones gráficas entre los indicadores del mercado laboral, se observan patrones claros y consistentes con la teoría económica.
+En el primer gráfico, <strong>Desempleo vs Ocupación Nacional</strong>, se aprecia una clara relación inversa: a medida que aumenta la tasa de ocupación (TON), la tasa de desempleo nacional (TDN) tiende a disminuir, con puntos que oscilan entre aproximadamente 45% y 65% de ocupación y desempleo que va del 20% a valores cercanos a cero. En el segundo gráfico, <strong>Desempleo vs Participación Nacional</strong>, la relación es menos pronunciada pero también negativa: cuando la participación global (TGPN) aumenta —ubicándose entre 55% y 70%—, el desempleo tiende a reducirse, aunque con mayor dispersión. Finalmente, el gráfico <strong>Desempleo Área vs Nacional</strong> confirma una fuerte correlación positiva, donde los puntos se alinean casi perfectamente en una tendencia lineal ascendente, indicando que el comportamiento del desempleo a nivel local replica fielmente el comportamiento nacional.</p>
+<ul>
+<li>Dado que los datos corresponden a observaciones mensuales a lo largo del tiempo, es importante analizar el comportamiento de la variable objetivo desde una perspectiva temporal. Un gráfico de evolución temporal permite visualizar tendencias, cambios estructurales y posibles periodos de incremento o disminución del desempleo a lo largo del período de estudio.
+Vamos a analizar la variable objetivo respecto a la ocupación donde se refleja:</li>
+</ul>
+<p><strong>1. Cuando ocupación sube → desempleo baja.</strong></p>
+<p><strong>2. Comportamiento inverso del mercado laboral.</strong></p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="eda.html#cb27-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb27-2"><a href="eda.html#cb27-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb27-3"><a href="eda.html#cb27-3" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb27-4"><a href="eda.html#cb27-4" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="eda.html#cb27-5" tabindex="-1"></a>MLC_long <span class="ot">&lt;-</span> MLC <span class="sc">%&gt;%</span></span>
+<span id="cb27-6"><a href="eda.html#cb27-6" tabindex="-1"></a>  <span class="fu">select</span>(fecha, tasa_desempleo_nacional, tasa_ocupacion_nacional) <span class="sc">%&gt;%</span></span>
+<span id="cb27-7"><a href="eda.html#cb27-7" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>fecha, <span class="at">names_to =</span> <span class="st">&quot;Indicador&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;valor&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb27-8"><a href="eda.html#cb27-8" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Indicador =</span> <span class="fu">recode</span>(Indicador,</span>
+<span id="cb27-9"><a href="eda.html#cb27-9" tabindex="-1"></a>    <span class="st">&quot;tasa_desempleo_nacional&quot;</span> <span class="ot">=</span> <span class="st">&quot;Desempleo&quot;</span>,</span>
+<span id="cb27-10"><a href="eda.html#cb27-10" tabindex="-1"></a>    <span class="st">&quot;tasa_ocupacion_nacional&quot;</span> <span class="ot">=</span> <span class="st">&quot;Ocupación&quot;</span></span>
+<span id="cb27-11"><a href="eda.html#cb27-11" tabindex="-1"></a>  ))</span>
+<span id="cb27-12"><a href="eda.html#cb27-12" tabindex="-1"></a></span>
+<span id="cb27-13"><a href="eda.html#cb27-13" tabindex="-1"></a>etiquetas <span class="ot">&lt;-</span> MLC_long <span class="sc">%&gt;%</span></span>
+<span id="cb27-14"><a href="eda.html#cb27-14" tabindex="-1"></a>  <span class="fu">group_by</span>(Indicador) <span class="sc">%&gt;%</span></span>
+<span id="cb27-15"><a href="eda.html#cb27-15" tabindex="-1"></a>  <span class="fu">slice_max</span>(fecha, <span class="at">n =</span> <span class="dv">1</span>)</span>
+<span id="cb27-16"><a href="eda.html#cb27-16" tabindex="-1"></a></span>
+<span id="cb27-17"><a href="eda.html#cb27-17" tabindex="-1"></a><span class="fu">ggplot</span>(MLC_long, <span class="fu">aes</span>(<span class="at">x =</span> fecha, <span class="at">y =</span> valor, <span class="at">color =</span> Indicador)) <span class="sc">+</span></span>
+<span id="cb27-18"><a href="eda.html#cb27-18" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">0.65</span>) <span class="sc">+</span></span>
+<span id="cb27-19"><a href="eda.html#cb27-19" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;rect&quot;</span>,</span>
+<span id="cb27-20"><a href="eda.html#cb27-20" tabindex="-1"></a>    <span class="at">xmin =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2020-01-01&quot;</span>), <span class="at">xmax =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2021-06-01&quot;</span>),</span>
+<span id="cb27-21"><a href="eda.html#cb27-21" tabindex="-1"></a>    <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>, <span class="at">ymax =</span> <span class="cn">Inf</span>, <span class="at">fill =</span> <span class="st">&quot;grey70&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.15</span></span>
+<span id="cb27-22"><a href="eda.html#cb27-22" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-23"><a href="eda.html#cb27-23" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>,</span>
+<span id="cb27-24"><a href="eda.html#cb27-24" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2020-09-01&quot;</span>), <span class="at">y =</span> <span class="dv">67</span>,</span>
+<span id="cb27-25"><a href="eda.html#cb27-25" tabindex="-1"></a>    <span class="at">label =</span> <span class="st">&quot;COVID-19&quot;</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">&quot;grey45&quot;</span></span>
+<span id="cb27-26"><a href="eda.html#cb27-26" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-27"><a href="eda.html#cb27-27" tabindex="-1"></a>  <span class="fu">geom_text</span>(</span>
+<span id="cb27-28"><a href="eda.html#cb27-28" tabindex="-1"></a>    <span class="at">data =</span> etiquetas,</span>
+<span id="cb27-29"><a href="eda.html#cb27-29" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">label =</span> Indicador),</span>
+<span id="cb27-30"><a href="eda.html#cb27-30" tabindex="-1"></a>    <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.1</span>, <span class="at">size =</span> <span class="fl">3.2</span>, <span class="at">fontface =</span> <span class="st">&quot;bold&quot;</span></span>
+<span id="cb27-31"><a href="eda.html#cb27-31" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-32"><a href="eda.html#cb27-32" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Desempleo&quot;</span> <span class="ot">=</span> <span class="st">&quot;#3876c4&quot;</span>, <span class="st">&quot;Ocupación&quot;</span> <span class="ot">=</span> <span class="st">&quot;#d03a3a&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb27-33"><a href="eda.html#cb27-33" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">70</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">70</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb27-34"><a href="eda.html#cb27-34" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(</span>
+<span id="cb27-35"><a href="eda.html#cb27-35" tabindex="-1"></a>    <span class="at">date_breaks  =</span> <span class="st">&quot;4 years&quot;</span>,</span>
+<span id="cb27-36"><a href="eda.html#cb27-36" tabindex="-1"></a>    <span class="at">date_labels  =</span> <span class="st">&quot;%Y&quot;</span>,</span>
+<span id="cb27-37"><a href="eda.html#cb27-37" tabindex="-1"></a>    <span class="at">expand       =</span> <span class="fu">expansion</span>(<span class="at">mult =</span> <span class="fu">c</span>(<span class="fl">0.01</span>, <span class="fl">0.12</span>))  </span>
+<span id="cb27-38"><a href="eda.html#cb27-38" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-39"><a href="eda.html#cb27-39" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb27-40"><a href="eda.html#cb27-40" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Evolución Temporal: Desempleo vs Ocupación Nacional&quot;</span>,</span>
+<span id="cb27-41"><a href="eda.html#cb27-41" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Fecha&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Tasa (%)&quot;</span></span>
+<span id="cb27-42"><a href="eda.html#cb27-42" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb27-43"><a href="eda.html#cb27-43" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb27-44"><a href="eda.html#cb27-44" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb27-45"><a href="eda.html#cb27-45" tabindex="-1"></a>    <span class="at">plot.title       =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">13</span>),</span>
+<span id="cb27-46"><a href="eda.html#cb27-46" tabindex="-1"></a>    <span class="at">legend.position  =</span> <span class="st">&quot;none&quot;</span>,          </span>
+<span id="cb27-47"><a href="eda.html#cb27-47" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb27-48"><a href="eda.html#cb27-48" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;grey92&quot;</span>)</span>
+<span id="cb27-49"><a href="eda.html#cb27-49" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" alt="" width="672" /></p>
+<p>Al observar la evolución temporal del mercado laboral nacional entre los años 2000 y 2025, se identifican dinámicas inversas y claramente definidas entre el desempleo y la ocupación. La tasa de desempleo nacional (línea azul) muestra picos pronunciados en periodos de crisis especialmente alrededor de 2010 y nuevamente cerca de 2020, coincidiendo con caídas simultáneas en la tasa de ocupación nacional (línea roja), lo que refleja la sensibilidad del empleo ante choques económicos. En contraste, en los periodos de recuperación, la ocupación aumenta mientras el desempleo desciende, manteniendo consistentemente la relación inversa esperada entre ambos indicadores. Esta gráfica valida visualmente la correlación negativa observada en análisis anteriores y permite identificar con claridad los momentos de mayor tensión en el mercado laboral a lo largo de las últimas dos décadas.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="eda.html#cb28-1" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb28-2"><a href="eda.html#cb28-2" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="eda.html#cb28-3" tabindex="-1"></a>MLC <span class="sc">%&gt;%</span></span>
+<span id="cb28-4"><a href="eda.html#cb28-4" tabindex="-1"></a>  <span class="fu">select</span>(fecha, tasa_desempleo_nacional) <span class="sc">%&gt;%</span></span>
+<span id="cb28-5"><a href="eda.html#cb28-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">anio =</span> <span class="fu">factor</span>(<span class="fu">year</span>(fecha))) <span class="sc">%&gt;%</span></span>
+<span id="cb28-6"><a href="eda.html#cb28-6" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> anio, <span class="at">y =</span> tasa_desempleo_nacional)) <span class="sc">+</span></span>
+<span id="cb28-7"><a href="eda.html#cb28-7" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb28-8"><a href="eda.html#cb28-8" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;#3876c4&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#3876c4&quot;</span>,</span>
+<span id="cb28-9"><a href="eda.html#cb28-9" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.25</span>, <span class="at">outlier.size =</span> <span class="fl">1.2</span>, <span class="at">outlier.alpha =</span> <span class="fl">0.5</span>,</span>
+<span id="cb28-10"><a href="eda.html#cb28-10" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="fl">0.45</span>, <span class="at">width =</span> <span class="fl">0.55</span></span>
+<span id="cb28-11"><a href="eda.html#cb28-11" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb28-12"><a href="eda.html#cb28-12" tabindex="-1"></a>  <span class="fu">stat_summary</span>(</span>
+<span id="cb28-13"><a href="eda.html#cb28-13" tabindex="-1"></a>    <span class="at">fun =</span> median, <span class="at">geom =</span> <span class="st">&quot;line&quot;</span>, <span class="fu">aes</span>(<span class="at">group =</span> <span class="dv">1</span>),</span>
+<span id="cb28-14"><a href="eda.html#cb28-14" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;#3876c4&quot;</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span></span>
+<span id="cb28-15"><a href="eda.html#cb28-15" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb28-16"><a href="eda.html#cb28-16" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb28-17"><a href="eda.html#cb28-17" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">7</span>, <span class="dv">23</span>),</span>
+<span id="cb28-18"><a href="eda.html#cb28-18" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">8</span>, <span class="dv">22</span>, <span class="at">by =</span> <span class="dv">2</span>)</span>
+<span id="cb28-19"><a href="eda.html#cb28-19" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb28-20"><a href="eda.html#cb28-20" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb28-21"><a href="eda.html#cb28-21" tabindex="-1"></a>    <span class="at">title    =</span> <span class="st">&quot;Desempleo — distribución anual&quot;</span>,</span>
+<span id="cb28-22"><a href="eda.html#cb28-22" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Línea punteada = mediana anual&quot;</span>,</span>
+<span id="cb28-23"><a href="eda.html#cb28-23" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Año&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Tasa (%)&quot;</span></span>
+<span id="cb28-24"><a href="eda.html#cb28-24" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb28-25"><a href="eda.html#cb28-25" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb28-26"><a href="eda.html#cb28-26" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb28-27"><a href="eda.html#cb28-27" tabindex="-1"></a>    <span class="at">plot.title    =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">color =</span> <span class="st">&quot;#3876c4&quot;</span>),</span>
+<span id="cb28-28"><a href="eda.html#cb28-28" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">color =</span> <span class="st">&quot;grey55&quot;</span>),</span>
+<span id="cb28-29"><a href="eda.html#cb28-29" tabindex="-1"></a>    <span class="at">axis.text.x   =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">9</span>),</span>
+<span id="cb28-30"><a href="eda.html#cb28-30" tabindex="-1"></a>    <span class="at">panel.grid.minor   =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb28-31"><a href="eda.html#cb28-31" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb28-32"><a href="eda.html#cb28-32" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-14-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="eda.html#cb29-1" tabindex="-1"></a>MLC <span class="sc">%&gt;%</span></span>
+<span id="cb29-2"><a href="eda.html#cb29-2" tabindex="-1"></a>  <span class="fu">select</span>(fecha, tasa_ocupacion_nacional) <span class="sc">%&gt;%</span></span>
+<span id="cb29-3"><a href="eda.html#cb29-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">anio =</span> <span class="fu">factor</span>(<span class="fu">year</span>(fecha))) <span class="sc">%&gt;%</span></span>
+<span id="cb29-4"><a href="eda.html#cb29-4" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> anio, <span class="at">y =</span> tasa_ocupacion_nacional)) <span class="sc">+</span></span>
+<span id="cb29-5"><a href="eda.html#cb29-5" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(</span>
+<span id="cb29-6"><a href="eda.html#cb29-6" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">&quot;#d03a3a&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#d03a3a&quot;</span>,</span>
+<span id="cb29-7"><a href="eda.html#cb29-7" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.25</span>, <span class="at">outlier.size =</span> <span class="fl">1.2</span>, <span class="at">outlier.alpha =</span> <span class="fl">0.5</span>,</span>
+<span id="cb29-8"><a href="eda.html#cb29-8" tabindex="-1"></a>    <span class="at">linewidth =</span> <span class="fl">0.45</span>, <span class="at">width =</span> <span class="fl">0.55</span></span>
+<span id="cb29-9"><a href="eda.html#cb29-9" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb29-10"><a href="eda.html#cb29-10" tabindex="-1"></a>  <span class="fu">stat_summary</span>(</span>
+<span id="cb29-11"><a href="eda.html#cb29-11" tabindex="-1"></a>    <span class="at">fun =</span> median, <span class="at">geom =</span> <span class="st">&quot;line&quot;</span>, <span class="fu">aes</span>(<span class="at">group =</span> <span class="dv">1</span>),</span>
+<span id="cb29-12"><a href="eda.html#cb29-12" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;#d03a3a&quot;</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span></span>
+<span id="cb29-13"><a href="eda.html#cb29-13" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb29-14"><a href="eda.html#cb29-14" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb29-15"><a href="eda.html#cb29-15" tabindex="-1"></a>    <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">40</span>, <span class="dv">66</span>),</span>
+<span id="cb29-16"><a href="eda.html#cb29-16" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">40</span>, <span class="dv">65</span>, <span class="at">by =</span> <span class="dv">5</span>)</span>
+<span id="cb29-17"><a href="eda.html#cb29-17" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb29-18"><a href="eda.html#cb29-18" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb29-19"><a href="eda.html#cb29-19" tabindex="-1"></a>    <span class="at">title    =</span> <span class="st">&quot;Ocupación — distribución anual&quot;</span>,</span>
+<span id="cb29-20"><a href="eda.html#cb29-20" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Línea punteada = mediana anual&quot;</span>,</span>
+<span id="cb29-21"><a href="eda.html#cb29-21" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Año&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Tasa (%)&quot;</span></span>
+<span id="cb29-22"><a href="eda.html#cb29-22" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb29-23"><a href="eda.html#cb29-23" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb29-24"><a href="eda.html#cb29-24" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb29-25"><a href="eda.html#cb29-25" tabindex="-1"></a>    <span class="at">plot.title    =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">color =</span> <span class="st">&quot;#d03a3a&quot;</span>),</span>
+<span id="cb29-26"><a href="eda.html#cb29-26" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">color =</span> <span class="st">&quot;grey55&quot;</span>),</span>
+<span id="cb29-27"><a href="eda.html#cb29-27" tabindex="-1"></a>    <span class="at">axis.text.x   =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">9</span>),</span>
+<span id="cb29-28"><a href="eda.html#cb29-28" tabindex="-1"></a>    <span class="at">panel.grid.minor   =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb29-29"><a href="eda.html#cb29-29" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb29-30"><a href="eda.html#cb29-30" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" alt="" width="672" /></p>
+<p>Al observar los gráficos en conjunto (teniendo en cuenta la evolución temporal), cuentan que el mercado laboral es dinamico, lejos de ser estacionario. A largo plazo, se notan tendencias claras, como la mejora progresiva en la ocupación hasta 2015 acompañada de unas variaciones estacionales que suceden todos los años que se refleja en el tamaño de las cajas. Sin embargo, el quiebre o choque economico se nota en el año 2020. La pandemia no solo hundió bruscamente los indicadores, sino que generó un nivel de volatilidad alto, ensanchando las cajas a unas proporciones que en los anteriores años no se habían visto.</p>
+<p>De cara a predecir algo, esto nos deja un camino: no podemos simplemente proyectar el pasado hacia al fututo de forma lineal. El modelo a realizar deberá aislar ese choque de la pandemia conteniendo los ciclos que se dieron anualmente para no generar pronósticos sesgados.</p>
+<ul>
+<li>Se hace la prueba ADF (Augmented Dickey–Fuller). Esta herramienta nos ayuda a detectar estacionariedad. La razon primordial es determinar si una serie es estacionaria o si tiene una raíz unitaria.
+Esto importa porque la mayoría de los modelos estadísticos (como ARIMA) asumen que las propiedades estadísticas de la serie son constantes en el tiempo. Si la serie no es estacionaria, los resultados pueden ser sesgados.</li>
+</ul>
+<p>Si <span class="math inline">\(p \le \alpha\)</span> (0.05): Rechaza la hipótesis nula. La serie es estacionaria.</p>
+<p>Si <span class="math inline">\(p &gt; \alpha\)</span>: No se rechaza la hipótesis nula. La serie es no estacionaria (tiene raíz unitaria).</p>
+<p>Veamos a continuación con las variables tratadas.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="eda.html#cb30-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb30-2"><a href="eda.html#cb30-2" tabindex="-1"></a><span class="fu">library</span>(tseries)</span>
+<span id="cb30-3"><a href="eda.html#cb30-3" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb30-4"><a href="eda.html#cb30-4" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="eda.html#cb30-5" tabindex="-1"></a>resultados_adf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb30-6"><a href="eda.html#cb30-6" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">c</span>(</span>
+<span id="cb30-7"><a href="eda.html#cb30-7" tabindex="-1"></a>    <span class="st">&quot;participacion_area&quot;</span>,</span>
+<span id="cb30-8"><a href="eda.html#cb30-8" tabindex="-1"></a>    <span class="st">&quot;participacion_nacional&quot;</span>,</span>
+<span id="cb30-9"><a href="eda.html#cb30-9" tabindex="-1"></a>    <span class="st">&quot;desempleo_area&quot;</span>,</span>
+<span id="cb30-10"><a href="eda.html#cb30-10" tabindex="-1"></a>    <span class="st">&quot;desempleo_nacional&quot;</span>,</span>
+<span id="cb30-11"><a href="eda.html#cb30-11" tabindex="-1"></a>    <span class="st">&quot;ocupacion_area&quot;</span>,</span>
+<span id="cb30-12"><a href="eda.html#cb30-12" tabindex="-1"></a>    <span class="st">&quot;ocupacion_nacional&quot;</span></span>
+<span id="cb30-13"><a href="eda.html#cb30-13" tabindex="-1"></a>  ),</span>
+<span id="cb30-14"><a href="eda.html#cb30-14" tabindex="-1"></a>  <span class="at">p_value =</span> <span class="fu">c</span>(</span>
+<span id="cb30-15"><a href="eda.html#cb30-15" tabindex="-1"></a>    <span class="fu">adf.test</span>(MLC<span class="sc">$</span>tasa_global_participacion_area)<span class="sc">$</span>p.value,</span>
+<span id="cb30-16"><a href="eda.html#cb30-16" tabindex="-1"></a>    <span class="fu">adf.test</span>(MLC<span class="sc">$</span>tasa_global_participacion_nacional)<span class="sc">$</span>p.value,</span>
+<span id="cb30-17"><a href="eda.html#cb30-17" tabindex="-1"></a>    <span class="fu">adf.test</span>(MLC<span class="sc">$</span>tasa_desempleo_area)<span class="sc">$</span>p.value,</span>
+<span id="cb30-18"><a href="eda.html#cb30-18" tabindex="-1"></a>    <span class="fu">adf.test</span>(MLC<span class="sc">$</span>tasa_desempleo_nacional)<span class="sc">$</span>p.value,</span>
+<span id="cb30-19"><a href="eda.html#cb30-19" tabindex="-1"></a>    <span class="fu">adf.test</span>(MLC<span class="sc">$</span>tasa_ocupacion_area)<span class="sc">$</span>p.value,</span>
+<span id="cb30-20"><a href="eda.html#cb30-20" tabindex="-1"></a>    <span class="fu">adf.test</span>(MLC<span class="sc">$</span>tasa_ocupacion_nacional)<span class="sc">$</span>p.value</span>
+<span id="cb30-21"><a href="eda.html#cb30-21" tabindex="-1"></a>  )</span>
+<span id="cb30-22"><a href="eda.html#cb30-22" tabindex="-1"></a>)</span>
+<span id="cb30-23"><a href="eda.html#cb30-23" tabindex="-1"></a></span>
+<span id="cb30-24"><a href="eda.html#cb30-24" tabindex="-1"></a>resultados_adf <span class="ot">&lt;-</span> resultados_adf <span class="sc">%&gt;%</span></span>
+<span id="cb30-25"><a href="eda.html#cb30-25" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb30-26"><a href="eda.html#cb30-26" tabindex="-1"></a>    <span class="at">Estacionaria =</span> <span class="fu">ifelse</span>(p_value <span class="sc">&lt;</span> <span class="fl">0.05</span>, <span class="st">&quot;Sí&quot;</span>, <span class="st">&quot;No&quot;</span>)</span>
+<span id="cb30-27"><a href="eda.html#cb30-27" tabindex="-1"></a>  )</span>
+<span id="cb30-28"><a href="eda.html#cb30-28" tabindex="-1"></a></span>
+<span id="cb30-29"><a href="eda.html#cb30-29" tabindex="-1"></a><span class="fu">kable</span>(resultados_adf, <span class="at">digits =</span> <span class="dv">4</span>, <span class="at">caption =</span> <span class="st">&quot;Resultados prueba ADF&quot;</span>)</span></code></pre></div>
+<table>
+<caption><span id="tab:unnamed-chunk-16">Table 2.1: </span>Resultados prueba ADF</caption>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="right">p_value</th>
+<th align="left">Estacionaria</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">participacion_area</td>
+<td align="right">0.4705</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="left">participacion_nacional</td>
+<td align="right">0.3607</td>
+<td align="left">No</td>
+</tr>
+<tr class="odd">
+<td align="left">desempleo_area</td>
+<td align="right">0.1898</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="left">desempleo_nacional</td>
+<td align="right">0.1104</td>
+<td align="left">No</td>
+</tr>
+<tr class="odd">
+<td align="left">ocupacion_area</td>
+<td align="right">0.3919</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="left">ocupacion_nacional</td>
+<td align="right">0.2840</td>
+<td align="left">No</td>
+</tr>
+</tbody>
+</table>
+<p>A partir de los resultados obtenidos en la prueba Augmented Dickey-Fuller (ADF), se observa que todas las variables presentan p-values superiores a 0.05.
+Esto implica que no se rechaza la hipótesis nula de presencia de raíz unitaria, por lo que ninguna de las series es estacionaria en niveles.</p>
+<ul>
+<li>Se realiza una descomposicion para separar la serie en tendencia, estacioanlidad y componenete irregular, permitiendo identificar patrones estructurales y comportamientos periodicos en los datos.</li>
+</ul>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="eda.html#cb31-1" tabindex="-1"></a>ts_desempleo_nacional <span class="ot">&lt;-</span> <span class="fu">ts</span>(MLC<span class="sc">$</span>tasa_desempleo_nacional, <span class="at">frequency =</span> <span class="dv">12</span>)</span>
+<span id="cb31-2"><a href="eda.html#cb31-2" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="eda.html#cb31-3" tabindex="-1"></a><span class="co"># Variable complementaria (opcional para comparación)</span></span>
+<span id="cb31-4"><a href="eda.html#cb31-4" tabindex="-1"></a>ts_desempleo_area <span class="ot">&lt;-</span> <span class="fu">ts</span>(MLC<span class="sc">$</span>tasa_desempleo_area, <span class="at">frequency =</span> <span class="dv">12</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="eda.html#cb32-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb32-2"><a href="eda.html#cb32-2" tabindex="-1"></a><span class="fu">library</span>(forecast)</span>
+<span id="cb32-3"><a href="eda.html#cb32-3" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="eda.html#cb32-4" tabindex="-1"></a><span class="fu">autoplot</span>(<span class="fu">decompose</span>(ts_desempleo_nacional, <span class="at">type =</span> <span class="st">&quot;multiplicative&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb32-5"><a href="eda.html#cb32-5" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Descomposición Clásica Multiplicativa - Desempleo Nacional&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-18-1.png" alt="" width="672" /></p>
+<p>En el grafico se puede ver que la serie refleja una tendencia decreciente por un choque el cual fue del año 2020 por la pandemia, con un patron estacional claro y residuos que s ecomportan bien, excepto durante ese año. A su vez, el modelo a realizar debe contemplar la estacionalidad y considerar ese año.</p>
+<ul>
+<li>La ACF y PACF (Función de autocorrelación y la Función de autocorrelación parcial), permiten analizar la dependencia temporal de la serie, identificando patrones de autocorrelación para apoyar a la hora de realizar el modelo.</li>
+</ul>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="eda.html#cb33-1" tabindex="-1"></a><span class="fu">library</span>(forecast)</span>
+<span id="cb33-2"><a href="eda.html#cb33-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb33-3"><a href="eda.html#cb33-3" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="eda.html#cb33-4" tabindex="-1"></a><span class="fu">ggtsdisplay</span>(ts_desempleo_nacional,</span>
+<span id="cb33-5"><a href="eda.html#cb33-5" tabindex="-1"></a>            <span class="at">main =</span> <span class="st">&quot;Serie, ACF y PACF - Desempleo Nacional&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" alt="" width="672" /></p>
+<p>La ACF confirma la no estacionariedad. La PACF tiene una caída en el primer rezago. Esto al final nos sugiere que una vez se controle ese efecto del primer rezago, la mayor parte de la serie quedará explicada, aunque la estacionalidad sigue siendo relevante.
+Al final requiere una transformación, en palabras técnicas una diferenciación, lo que nos orienta a un modelo tipo ARIMA.</p>
+<p>Como conclusion general estos resultados nos dicen que antes de realizar cualquier modelo se debe realizar una transformación.</p>
+<p>La descomposición clásica multiplicativa, las pruebas ACF y PACF, y la prueba de Dickey-Fuller aumentada se aplicaron exclusivamente sobre la tasa de desempleo nacional debido a que esta es la variable objetivo del estudio y la única que será sometida a modelado predictivo.
+Adicionalmente, las correlaciones superiores a 0.94 evidenciadas entre los indicadores de área y nacional permiten anticipar que todas las series comparten una estructura temporal similar, lo que hace innecesaria su verificación individual y refuerza la decisión de centrar el análisis de estacionariedad y dependencia temporal en la variable que guía el modelado.</p>
+</div>
+<div id="conclusiones." class="section level3 hasAnchor" number="2.0.4">
+<h3><span class="header-section-number">2.0.4</span> Conclusiones.<a href="eda.html#conclusiones." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A partir del análisis exploratorio de los indicadores del mercado laboral en Colombia para el período 2001–2025, se observa que la tasa de desempleo nacional presenta un comportamiento relativamente estable durante gran parte del tiempo, con valores que se concentran principalmente entre el 8% y el 14%. Sin embargo, el análisis temporal permite identificar episodios de alta volatilidad asociados a choques económicos importantes. En particular, alrededor del año 2020 se evidencia un incremento considerable del desempleo, superando el 20%, lo cual refleja el fuerte impacto que tuvo la pandemia de COVID-19 sobre la actividad económica y el mercado laboral del país.</p>
+<p>El análisis de la distribución de la variable objetivo mediante histogramas y diagramas de caja permitió comprender su comportamiento estadístico, evidenciando una dispersión moderada y la presencia de algunos valores atípicos. Estos valores no corresponden a errores en los datos, sino a periodos extraordinarios en la economía colombiana. Por esta razón, se decidió conservarlos dentro del análisis, ya que aportan información relevante sobre la dinámica real del mercado laboral.</p>
+<p>Por otro lado, el análisis de las variables caracteristicas mostró que los indicadores de participación y ocupación presentan una variabilidad relativamente menor en comparación con las tasas de desempleo. Esto sugiere que, aunque el nivel de participación y ocupación de la población tiende a mantenerse dentro de ciertos rangos estables, el desempleo puede experimentar fluctuaciones más pronunciadas ante cambios en el contexto económico.</p>
+<p>El análisis bivariado permitió identificar relaciones claras entre los indicadores del mercado laboral. En particular, se observó una fuerte relación negativa entre la tasa de desempleo y la tasa de ocupación, lo cual coincide con la lógica económica: a medida que aumenta el número de personas ocupadas, la proporción de personas desempleadas tiende a disminuir. Asimismo, la matriz de correlación evidenció una alta correspondencia entre las tasas calculadas para las principales áreas metropolitanas y las tasas a nivel nacional, indicando que los comportamientos regionales están estrechamente vinculados con la dinámica del mercado laboral del país en su conjunto.</p>
+<p>Los gráficos de dispersión también permitieron visualizar estas relaciones de forma clara, confirmando la relación inversa entre desempleo y ocupación, así como la fuerte relación positiva entre las tasas de desempleo de área y nacional. Estos resultados sugieren que el comportamiento del desempleo en las principales áreas urbanas constituye un buen indicador del comportamiento general del mercado laboral colombiano.</p>
+<p>En conjunto, el análisis exploratorio permitió comprender la estructura del conjunto de datos, identificar patrones relevantes, detectar valores atípicos y analizar las relaciones existentes entre los principales indicadores laborales.</p>
+</div>
+<div id="referencias" class="section level3 hasAnchor" number="2.0.5">
+<h3><span class="header-section-number">2.0.5</span> Referencias:<a href="eda.html#referencias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Arango, L., Herrera, P., &amp; Posada, C. (2008). Comisión Permanente de Concertación de Políticas Salariales y Laborales. Ensayos sobre Política Económica, 26(56), 204–263.</p>
+<p>Banco de la República de Colombia. (s. f.). Series estadísticas históricas: Mercado laboral. <a href="https://www.banrep.gov.co/es/estadisticas-economicas/series-historicas/mercado-laboral" class="uri">https://www.banrep.gov.co/es/estadisticas-economicas/series-historicas/mercado-laboral</a></p>
+<p>Banco de la República de Colombia. (s. f.). Series estadísticas históricas: Mercado laboral. <a href="https://uba.banrep.gov.co/htmlcommons/SeriesHistoricas/mercado-laboral.html" class="uri">https://uba.banrep.gov.co/htmlcommons/SeriesHistoricas/mercado-laboral.html</a></p>
+<p>Departamento Administrativo Nacional de Estadística (DANE). (s. f.). Gran Encuesta Integrada de Hogares (GEIH): Empleo y desempleo – históricos. <a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral/empleo-y-desempleo/geih-historicos" class="uri">https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral/empleo-y-desempleo/geih-historicos</a></p>
+<p>Congreso de la República de Colombia. (1945). Ley 6 de 1945: Disposiciones sobre convenciones de trabajo, asociaciones profesionales, conflictos colectivos y jurisdicción especial de trabajo.</p>
+<p>Departamento Administrativo Nacional de Estadística (DANE). (s. f.). Mercado laboral. <a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral" class="uri">https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral</a></p>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="analisis-de-la-variable-tasa_desempleo_nacional..html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -296,7 +876,7 @@ gitbook.start({
     "link": null,
     "text": null
   },
-  "download": null,
+  "download": ["_main.pdf", "_main.epub"],
   "search": {
     "engine": "fuse",
     "options": null
@@ -308,6 +888,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
