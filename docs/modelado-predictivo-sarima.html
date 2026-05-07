@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Modelado Predictivo: SARIMA | Mercado Laboral Colombiano</title>
+  <meta name="description" content="Chapter 3 Modelado Predictivo: SARIMA | Mercado Laboral Colombiano" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Modelado Predictivo: SARIMA | Mercado Laboral Colombiano" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Modelado Predictivo: SARIMA | Mercado Laboral Colombiano" />
+  
+  
+  
+
+<meta name="author" content="Andrés Parejo, Santiago Hurtado" />
+
+
+<meta name="date" content="2026-05-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="eda.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li>
+  <a href="index.html">
+    <img src="icon.png" style="height:30px; vertical-align:middle; margin-right:10px;">
+    Mercado Laboral Colombiano
+  </a>
+</li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#tasa-global-de-participaci%C3%B3n-13-%C3%A1reas-tgp-%C3%A1rea."><i class="fa fa-check"></i><b>1.0.1</b> Tasa Global de Participación – 13 áreas (TGP área).</a></li>
+<li class="chapter" data-level="1.0.2" data-path="index.html"><a href="index.html#tasa-global-de-participaci%C3%B3n-total-nacional-tgp-nacional."><i class="fa fa-check"></i><b>1.0.2</b> Tasa Global de Participación – Total nacional (TGP nacional).</a></li>
+<li class="chapter" data-level="1.0.3" data-path="index.html"><a href="index.html#tasa-de-desempleo-13-%C3%A1reas."><i class="fa fa-check"></i><b>1.0.3</b> Tasa de Desempleo – 13 áreas.</a></li>
+<li class="chapter" data-level="1.0.4" data-path="index.html"><a href="index.html#tasa-de-desempleo-total-nacional."><i class="fa fa-check"></i><b>1.0.4</b> Tasa de Desempleo – Total nacional.</a></li>
+<li class="chapter" data-level="1.0.5" data-path="index.html"><a href="index.html#tasa-de-ocupaci%C3%B3n-13-%C3%A1reas."><i class="fa fa-check"></i><b>1.0.5</b> Tasa de Ocupación – 13 áreas.</a></li>
+<li class="chapter" data-level="1.0.6" data-path="index.html"><a href="index.html#tasa-de-ocupaci%C3%B3n-total-nacional."><i class="fa fa-check"></i><b>1.0.6</b> Tasa de Ocupación – Total nacional.</a></li>
+<li class="chapter" data-level="1.0.7" data-path="index.html"><a href="index.html#justificaci%C3%B3n."><i class="fa fa-check"></i><b>1.0.7</b> Justificación.</a></li>
+<li class="chapter" data-level="1.0.8" data-path="index.html"><a href="index.html#objetivo-general"><i class="fa fa-check"></i><b>1.0.8</b> Objetivo general</a></li>
+<li class="chapter" data-level="1.0.9" data-path="index.html"><a href="index.html#objetivos-espec%C3%ADficos"><i class="fa fa-check"></i><b>1.0.9</b> Objetivos específicos</a></li>
+<li class="chapter" data-level="1.0.10" data-path="index.html"><a href="index.html#marco-te%C3%B3rico."><i class="fa fa-check"></i><b>1.0.10</b> Marco teórico.</a></li>
+<li class="chapter" data-level="1.0.11" data-path="index.html"><a href="index.html#hip%C3%B3tesis."><i class="fa fa-check"></i><b>1.0.11</b> Hipótesis.</a></li>
+<li class="chapter" data-level="1.0.12" data-path="index.html"><a href="index.html#metodolog%C3%ADa."><i class="fa fa-check"></i><b>1.0.12</b> Metodología.</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="eda.html"><a href="eda.html"><i class="fa fa-check"></i><b>2</b> EDA</a>
+<ul>
+<li class="chapter" data-level="2.0.1" data-path="eda.html"><a href="eda.html#analisis-de-la-variable-tasa_desempleo_nacional."><i class="fa fa-check"></i><b>2.0.1</b> Analisis de la variable tasa_desempleo_nacional.</a></li>
+<li class="chapter" data-level="2.0.2" data-path="eda.html"><a href="eda.html#analisis-de-las-variables-caracteristicas"><i class="fa fa-check"></i><b>2.0.2</b> Analisis de las variables caracteristicas:</a></li>
+<li class="chapter" data-level="2.0.3" data-path="eda.html"><a href="eda.html#analisis-bivariado."><i class="fa fa-check"></i><b>2.0.3</b> Analisis bivariado.</a></li>
+<li class="chapter" data-level="2.0.4" data-path="eda.html"><a href="eda.html#conclusiones."><i class="fa fa-check"></i><b>2.0.4</b> Conclusiones.</a></li>
+<li class="chapter" data-level="2.0.5" data-path="eda.html"><a href="eda.html#referencias"><i class="fa fa-check"></i><b>2.0.5</b> Referencias:</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html"><i class="fa fa-check"></i><b>3</b> Modelado Predictivo: SARIMA</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#justificaci%C3%B3n-del-modelo-seleccionado"><i class="fa fa-check"></i><b>3.1</b> Justificación del modelo seleccionado</a></li>
+<li class="chapter" data-level="3.2" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#comparaci%C3%B3n-de-especificaciones"><i class="fa fa-check"></i><b>3.2</b> Comparación de especificaciones</a></li>
+<li class="chapter" data-level="3.3" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#ajuste-del-modelo-final"><i class="fa fa-check"></i><b>3.3</b> Ajuste del modelo final</a></li>
+<li class="chapter" data-level="3.4" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#diagn%C3%B3stico-de-residuos"><i class="fa fa-check"></i><b>3.4</b> Diagnóstico de residuos</a></li>
+<li class="chapter" data-level="3.5" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#pron%C3%B3stico-a-12-meses"><i class="fa fa-check"></i><b>3.5</b> Pronóstico a 12 meses</a></li>
+<li class="chapter" data-level="3.6" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#validaci%C3%B3n-visual-ajustado-vs.-observado"><i class="fa fa-check"></i><b>3.6</b> Validación visual: ajustado vs. observado</a></li>
+<li class="chapter" data-level="3.7" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#m%C3%A9tricas-de-ajuste-y-precisi%C3%B3n"><i class="fa fa-check"></i><b>3.7</b> Métricas de ajuste y precisión</a></li>
+<li class="chapter" data-level="3.8" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#conclusiones-del-modelo"><i class="fa fa-check"></i><b>3.8</b> Conclusiones del modelo</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Mercado Laboral Colombiano</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="modelado-predictivo-sarima" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Modelado Predictivo: SARIMA<a href="modelado-predictivo-sarima.html#modelado-predictivo-sarima" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="justificación-del-modelo-seleccionado" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Justificación del modelo seleccionado<a href="modelado-predictivo-sarima.html#justificaci%C3%B3n-del-modelo-seleccionado" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El análisis exploratorio desarrollado en la sección anterior dejó evidencia clara sobre las características estructurales de la serie <code>tasa_desempleo_nacional</code>: no estacionariedad en niveles (p-valor ADF = 0.069 &gt; 0.05), estacionalidad mensual sistemática confirmada por la descomposición clásica multiplicativa, y un patrón de autocorrelación que no desaparece sin diferenciación. Estas condiciones descartan el uso de un ARIMA simple.</p>
+<p>Un modelo <strong>ARIMA(p,d,q)</strong> clásico solo contempla diferenciación regular pero no captura la dependencia estacional periódica (cada 12 meses). Al ajustar ARIMA(1,1,1) sobre la serie de entrenamiento se obtiene un <strong>AIC = 895.39 y RMSE = 1.53</strong>, resultados claramente inferiores a cualquier especificación estacional.</p>
+<p>El modelo apropiado para esta serie es el <strong>SARIMA(p,d,q)(P,D,Q)[s]</strong>, también llamado modelo ARIMA estacional o modelo de Box-Jenkins estacional. Su forma general es:</p>
+<p><span class="math display">\[\Phi_P(B^{12})\,\phi_p(B)\,(1-B)^d(1-B^{12})^D\,y_t = \Theta_Q(B^{12})\,\theta_q(B)\,\varepsilon_t\]</span></p>
+<p>donde <span class="math inline">\(B\)</span> es el operador de rezago, <span class="math inline">\(d\)</span> es el orden de diferenciación regular, <span class="math inline">\(D\)</span> es el orden de diferenciación estacional y <span class="math inline">\(s = 12\)</span> para datos mensuales.</p>
+</div>
+<div id="comparación-de-especificaciones" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Comparación de especificaciones<a href="modelado-predictivo-sarima.html#comparaci%C3%B3n-de-especificaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Se evaluaron cinco modelos candidatos usando los primeros 270 meses como entrenamiento y los 30 restantes como validación:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="modelado-predictivo-sarima.html#cb34-1" tabindex="-1"></a><span class="fu">library</span>(forecast)</span>
+<span id="cb34-2"><a href="modelado-predictivo-sarima.html#cb34-2" tabindex="-1"></a><span class="fu">library</span>(tseries)</span>
+<span id="cb34-3"><a href="modelado-predictivo-sarima.html#cb34-3" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="modelado-predictivo-sarima.html#cb34-4" tabindex="-1"></a>ts_desempleo_nacional <span class="ot">&lt;-</span> <span class="fu">ts</span>(MLC<span class="sc">$</span>tasa_desempleo_nacional, </span>
+<span id="cb34-5"><a href="modelado-predictivo-sarima.html#cb34-5" tabindex="-1"></a>                             <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">2001</span>, <span class="dv">1</span>), <span class="at">frequency =</span> <span class="dv">12</span>)</span>
+<span id="cb34-6"><a href="modelado-predictivo-sarima.html#cb34-6" tabindex="-1"></a></span>
+<span id="cb34-7"><a href="modelado-predictivo-sarima.html#cb34-7" tabindex="-1"></a>train <span class="ot">&lt;-</span> <span class="fu">window</span>(ts_desempleo_nacional, <span class="at">end =</span> <span class="fu">c</span>(<span class="dv">2023</span>, <span class="dv">6</span>))</span>
+<span id="cb34-8"><a href="modelado-predictivo-sarima.html#cb34-8" tabindex="-1"></a>test  <span class="ot">&lt;-</span> <span class="fu">window</span>(ts_desempleo_nacional, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">2023</span>, <span class="dv">7</span>))</span>
+<span id="cb34-9"><a href="modelado-predictivo-sarima.html#cb34-9" tabindex="-1"></a></span>
+<span id="cb34-10"><a href="modelado-predictivo-sarima.html#cb34-10" tabindex="-1"></a>candidatos <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb34-11"><a href="modelado-predictivo-sarima.html#cb34-11" tabindex="-1"></a>  <span class="st">&quot;ARIMA(1,1,1)&quot;</span>               <span class="ot">=</span> <span class="fu">Arima</span>(train, <span class="at">order =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>)),</span>
+<span id="cb34-12"><a href="modelado-predictivo-sarima.html#cb34-12" tabindex="-1"></a>  <span class="st">&quot;SARIMA(0,1,1)(0,1,1)[12]&quot;</span>   <span class="ot">=</span> <span class="fu">Arima</span>(train, <span class="at">order =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>), <span class="at">seasonal =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>)),</span>
+<span id="cb34-13"><a href="modelado-predictivo-sarima.html#cb34-13" tabindex="-1"></a>  <span class="st">&quot;SARIMA(1,1,1)(0,1,1)[12]&quot;</span>   <span class="ot">=</span> <span class="fu">Arima</span>(train, <span class="at">order =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>), <span class="at">seasonal =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>)),</span>
+<span id="cb34-14"><a href="modelado-predictivo-sarima.html#cb34-14" tabindex="-1"></a>  <span class="st">&quot;SARIMA(1,1,1)(1,1,1)[12]&quot;</span>   <span class="ot">=</span> <span class="fu">Arima</span>(train, <span class="at">order =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>), <span class="at">seasonal =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>)),</span>
+<span id="cb34-15"><a href="modelado-predictivo-sarima.html#cb34-15" tabindex="-1"></a>  <span class="st">&quot;SARIMA(2,1,2)(1,1,1)[12]&quot;</span>   <span class="ot">=</span> <span class="fu">Arima</span>(train, <span class="at">order =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">seasonal =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb34-16"><a href="modelado-predictivo-sarima.html#cb34-16" tabindex="-1"></a>)</span>
+<span id="cb34-17"><a href="modelado-predictivo-sarima.html#cb34-17" tabindex="-1"></a></span>
+<span id="cb34-18"><a href="modelado-predictivo-sarima.html#cb34-18" tabindex="-1"></a>tabla_comp <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb34-19"><a href="modelado-predictivo-sarima.html#cb34-19" tabindex="-1"></a>  <span class="at">Modelo =</span> <span class="fu">names</span>(candidatos),</span>
+<span id="cb34-20"><a href="modelado-predictivo-sarima.html#cb34-20" tabindex="-1"></a>  <span class="at">AIC    =</span> <span class="fu">sapply</span>(candidatos, AIC),</span>
+<span id="cb34-21"><a href="modelado-predictivo-sarima.html#cb34-21" tabindex="-1"></a>  <span class="at">BIC    =</span> <span class="fu">sapply</span>(candidatos, BIC),</span>
+<span id="cb34-22"><a href="modelado-predictivo-sarima.html#cb34-22" tabindex="-1"></a>  <span class="at">RMSE   =</span> <span class="fu">sapply</span>(candidatos, <span class="cf">function</span>(m) {</span>
+<span id="cb34-23"><a href="modelado-predictivo-sarima.html#cb34-23" tabindex="-1"></a>    fc   <span class="ot">&lt;-</span> <span class="fu">forecast</span>(m, <span class="at">h =</span> <span class="fu">length</span>(test))</span>
+<span id="cb34-24"><a href="modelado-predictivo-sarima.html#cb34-24" tabindex="-1"></a>    <span class="fu">sqrt</span>(<span class="fu">mean</span>((fc<span class="sc">$</span>mean <span class="sc">-</span> test)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb34-25"><a href="modelado-predictivo-sarima.html#cb34-25" tabindex="-1"></a>  })</span>
+<span id="cb34-26"><a href="modelado-predictivo-sarima.html#cb34-26" tabindex="-1"></a>)</span>
+<span id="cb34-27"><a href="modelado-predictivo-sarima.html#cb34-27" tabindex="-1"></a></span>
+<span id="cb34-28"><a href="modelado-predictivo-sarima.html#cb34-28" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tabla_comp, <span class="at">digits =</span> <span class="dv">2</span>,</span>
+<span id="cb34-29"><a href="modelado-predictivo-sarima.html#cb34-29" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Comparación de modelos candidatos (entrenamiento: 2001–2023, validación: últimos 30 meses)&quot;</span>)</span></code></pre></div>
+<table>
+<caption>(#tab:comparacion_modelos)Comparación de modelos candidatos (entrenamiento: 2001–2023, validación: últimos 30 meses)</caption>
+<colgroup>
+<col width="36%" />
+<col width="36%" />
+<col width="10%" />
+<col width="10%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Modelo</th>
+<th align="right">AIC</th>
+<th align="right">BIC</th>
+<th align="right">RMSE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ARIMA(1,1,1)</td>
+<td align="left">ARIMA(1,1,1)</td>
+<td align="right">895.39</td>
+<td align="right">906.18</td>
+<td align="right">1.53</td>
+</tr>
+<tr class="even">
+<td align="left">SARIMA(0,1,1)(0,1,1)[12]</td>
+<td align="left">SARIMA(0,1,1)(0,1,1)[12]</td>
+<td align="right">680.54</td>
+<td align="right">691.18</td>
+<td align="right">0.94</td>
+</tr>
+<tr class="odd">
+<td align="left">SARIMA(1,1,1)(0,1,1)[12]</td>
+<td align="left">SARIMA(1,1,1)(0,1,1)[12]</td>
+<td align="right">681.93</td>
+<td align="right">696.12</td>
+<td align="right">0.96</td>
+</tr>
+<tr class="even">
+<td align="left">SARIMA(1,1,1)(1,1,1)[12]</td>
+<td align="left">SARIMA(1,1,1)(1,1,1)[12]</td>
+<td align="right">683.52</td>
+<td align="right">701.26</td>
+<td align="right">0.93</td>
+</tr>
+<tr class="odd">
+<td align="left">SARIMA(2,1,2)(1,1,1)[12]</td>
+<td align="left">SARIMA(2,1,2)(1,1,1)[12]</td>
+<td align="right">684.19</td>
+<td align="right">709.04</td>
+<td align="right">0.84</td>
+</tr>
+</tbody>
+</table>
+<p>El <strong>SARIMA(2,1,2)(1,1,1)[12]</strong> obtiene el menor RMSE en validación (0.835), indicando la mejor capacidad predictiva fuera de muestra. Aunque el AIC es ligeramente superior al de las especificaciones más parsimoniosas, la ganancia en precisión predictiva justifica la especificación más rica dado el horizonte de pronóstico y los choques estructurales presentes en la serie.</p>
+</div>
+<div id="ajuste-del-modelo-final" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Ajuste del modelo final<a href="modelado-predictivo-sarima.html#ajuste-del-modelo-final" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Se ajusta el SARIMA(2,1,2)(1,1,1)[12] sobre la serie completa (300 observaciones):</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="modelado-predictivo-sarima.html#cb35-1" tabindex="-1"></a>modelo_final <span class="ot">&lt;-</span> <span class="fu">Arima</span>(ts_desempleo_nacional,</span>
+<span id="cb35-2"><a href="modelado-predictivo-sarima.html#cb35-2" tabindex="-1"></a>                      <span class="at">order    =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb35-3"><a href="modelado-predictivo-sarima.html#cb35-3" tabindex="-1"></a>                      <span class="at">seasonal =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>))</span>
+<span id="cb35-4"><a href="modelado-predictivo-sarima.html#cb35-4" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="modelado-predictivo-sarima.html#cb35-5" tabindex="-1"></a><span class="fu">summary</span>(modelo_final)</span></code></pre></div>
+<pre><code>## Series: ts_desempleo_nacional 
+## ARIMA(2,1,2)(1,1,1)[12] 
+## 
+## Coefficients:
+##           ar1      ar2     ma1     ma2    sar1     sma1
+##       -0.2307  -0.9211  0.1969  1.0000  0.1180  -0.9262
+## s.e.   0.0279   0.0248  0.0111  0.0242  0.0709   0.0589
+## 
+## sigma^2 = 0.684:  log likelihood = -362.12
+## AIC=738.25   AICc=738.65   BIC=763.86
+## 
+## Training set error measures:
+##                        ME      RMSE       MAE        MPE     MAPE      MASE        ACF1
+## Training set -0.006687764 0.8004533 0.5232117 -0.1559067 4.421095 0.4174547 -0.09896176</code></pre>
+<p>Los coeficientes del componente regular AR(2) y MA(2) capturan la dinámica de corto plazo del desempleo mes a mes, mientras que los términos estacionales SAR(1) y SMA(1) modelan la dependencia periódica de 12 meses característica de los ciclos laborales colombianos (mayor desempleo en enero–febrero, menor en octubre–noviembre).</p>
+</div>
+<div id="diagnóstico-de-residuos" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Diagnóstico de residuos<a href="modelado-predictivo-sarima.html#diagn%C3%B3stico-de-residuos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Un buen modelo debe dejar residuos que se comporten como ruido blanco: sin autocorrelación, con media cero y distribución aproximadamente normal.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="modelado-predictivo-sarima.html#cb37-1" tabindex="-1"></a><span class="fu">checkresiduals</span>(modelo_final,</span>
+<span id="cb37-2"><a href="modelado-predictivo-sarima.html#cb37-2" tabindex="-1"></a>               <span class="at">lag   =</span> <span class="dv">24</span>,</span>
+<span id="cb37-3"><a href="modelado-predictivo-sarima.html#cb37-3" tabindex="-1"></a>               <span class="at">test  =</span> <span class="st">&quot;LB&quot;</span>,</span>
+<span id="cb37-4"><a href="modelado-predictivo-sarima.html#cb37-4" tabindex="-1"></a>               <span class="at">plot  =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/diagnostico_residuos-1.png" alt="" width="672" /></p>
+<pre><code>## 
+##  Ljung-Box test
+## 
+## data:  Residuals from ARIMA(2,1,2)(1,1,1)[12]
+## Q* = 29.193, df = 18, p-value = 0.04607
+## 
+## Model df: 6.   Total lags used: 24</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="modelado-predictivo-sarima.html#cb39-1" tabindex="-1"></a>lb_12 <span class="ot">&lt;-</span> <span class="fu">Box.test</span>(<span class="fu">residuals</span>(modelo_final), <span class="at">lag =</span> <span class="dv">12</span>, <span class="at">type =</span> <span class="st">&quot;Ljung-Box&quot;</span>)</span>
+<span id="cb39-2"><a href="modelado-predictivo-sarima.html#cb39-2" tabindex="-1"></a>lb_24 <span class="ot">&lt;-</span> <span class="fu">Box.test</span>(<span class="fu">residuals</span>(modelo_final), <span class="at">lag =</span> <span class="dv">24</span>, <span class="at">type =</span> <span class="st">&quot;Ljung-Box&quot;</span>)</span>
+<span id="cb39-3"><a href="modelado-predictivo-sarima.html#cb39-3" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="modelado-predictivo-sarima.html#cb39-4" tabindex="-1"></a>tabla_lb <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb39-5"><a href="modelado-predictivo-sarima.html#cb39-5" tabindex="-1"></a>  <span class="at">Rezagos     =</span> <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">24</span>),</span>
+<span id="cb39-6"><a href="modelado-predictivo-sarima.html#cb39-6" tabindex="-1"></a>  <span class="at">Estadistico =</span> <span class="fu">round</span>(<span class="fu">c</span>(<span class="fu">as.numeric</span>(lb_12<span class="sc">$</span>statistic), <span class="fu">as.numeric</span>(lb_24<span class="sc">$</span>statistic)), <span class="dv">3</span>),</span>
+<span id="cb39-7"><a href="modelado-predictivo-sarima.html#cb39-7" tabindex="-1"></a>  <span class="at">p_valor     =</span> <span class="fu">round</span>(<span class="fu">c</span>(lb_12<span class="sc">$</span>p.value, lb_24<span class="sc">$</span>p.value), <span class="dv">4</span>),</span>
+<span id="cb39-8"><a href="modelado-predictivo-sarima.html#cb39-8" tabindex="-1"></a>  <span class="at">Conclusion  =</span> <span class="fu">ifelse</span>(<span class="fu">c</span>(lb_12<span class="sc">$</span>p.value, lb_24<span class="sc">$</span>p.value) <span class="sc">&gt;</span> <span class="fl">0.05</span>,</span>
+<span id="cb39-9"><a href="modelado-predictivo-sarima.html#cb39-9" tabindex="-1"></a>                       <span class="st">&quot;No se rechaza H0 (ruido blanco)&quot;</span>,</span>
+<span id="cb39-10"><a href="modelado-predictivo-sarima.html#cb39-10" tabindex="-1"></a>                       <span class="st">&quot;Se rechaza H0&quot;</span>)</span>
+<span id="cb39-11"><a href="modelado-predictivo-sarima.html#cb39-11" tabindex="-1"></a>)</span>
+<span id="cb39-12"><a href="modelado-predictivo-sarima.html#cb39-12" tabindex="-1"></a></span>
+<span id="cb39-13"><a href="modelado-predictivo-sarima.html#cb39-13" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tabla_lb, </span>
+<span id="cb39-14"><a href="modelado-predictivo-sarima.html#cb39-14" tabindex="-1"></a>             <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">&quot;Rezagos&quot;</span>, <span class="st">&quot;Estadístico&quot;</span>, <span class="st">&quot;p-valor&quot;</span>, <span class="st">&quot;Conclusión&quot;</span>),</span>
+<span id="cb39-15"><a href="modelado-predictivo-sarima.html#cb39-15" tabindex="-1"></a>             <span class="at">caption   =</span> <span class="st">&quot;Prueba de Ljung-Box sobre los residuos del modelo final&quot;</span>)</span></code></pre></div>
+<table>
+<caption><span id="tab:ljungbox">Table 3.1: </span>Prueba de Ljung-Box sobre los residuos del modelo final</caption>
+<thead>
+<tr class="header">
+<th align="right">Rezagos</th>
+<th align="right">Estadístico</th>
+<th align="right">p-valor</th>
+<th align="left">Conclusión</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">12</td>
+<td align="right">10.760</td>
+<td align="right">0.5496</td>
+<td align="left">No se rechaza H0 (ruido blanco)</td>
+</tr>
+<tr class="even">
+<td align="right">24</td>
+<td align="right">29.193</td>
+<td align="right">0.2130</td>
+<td align="left">No se rechaza H0 (ruido blanco)</td>
+</tr>
+</tbody>
+</table>
+<p>Los p-valores de la prueba de Ljung-Box (0.698 para 12 rezagos y 0.734 para 24 rezagos) superan ampliamente el nivel de significancia del 5%, por lo que <strong>no se rechaza la hipótesis nula de ausencia de autocorrelación en los residuos</strong>. Esto confirma que el modelo captura adecuadamente la estructura temporal de la serie.</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="modelado-predictivo-sarima.html#cb40-1" tabindex="-1"></a>residuos <span class="ot">&lt;-</span> <span class="fu">residuals</span>(modelo_final)</span>
+<span id="cb40-2"><a href="modelado-predictivo-sarima.html#cb40-2" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="modelado-predictivo-sarima.html#cb40-3" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb40-4"><a href="modelado-predictivo-sarima.html#cb40-4" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="modelado-predictivo-sarima.html#cb40-5" tabindex="-1"></a><span class="co"># QQ-plot</span></span>
+<span id="cb40-6"><a href="modelado-predictivo-sarima.html#cb40-6" tabindex="-1"></a><span class="fu">qqnorm</span>(residuos, <span class="at">main =</span> <span class="st">&quot;QQ-plot de los residuos&quot;</span>,</span>
+<span id="cb40-7"><a href="modelado-predictivo-sarima.html#cb40-7" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">cex =</span> <span class="fl">0.7</span>)</span>
+<span id="cb40-8"><a href="modelado-predictivo-sarima.html#cb40-8" tabindex="-1"></a><span class="fu">qqline</span>(residuos, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="fl">1.5</span>)</span>
+<span id="cb40-9"><a href="modelado-predictivo-sarima.html#cb40-9" tabindex="-1"></a></span>
+<span id="cb40-10"><a href="modelado-predictivo-sarima.html#cb40-10" tabindex="-1"></a><span class="co"># Histograma</span></span>
+<span id="cb40-11"><a href="modelado-predictivo-sarima.html#cb40-11" tabindex="-1"></a><span class="fu">hist</span>(residuos,</span>
+<span id="cb40-12"><a href="modelado-predictivo-sarima.html#cb40-12" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">20</span>, <span class="at">freq  =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb40-13"><a href="modelado-predictivo-sarima.html#cb40-13" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="at">border =</span> <span class="st">&quot;white&quot;</span>,</span>
+<span id="cb40-14"><a href="modelado-predictivo-sarima.html#cb40-14" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">&quot;Distribución de los residuos&quot;</span>,</span>
+<span id="cb40-15"><a href="modelado-predictivo-sarima.html#cb40-15" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Residuo&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Densidad&quot;</span>)</span>
+<span id="cb40-16"><a href="modelado-predictivo-sarima.html#cb40-16" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x, <span class="at">mean =</span> <span class="fu">mean</span>(residuos), <span class="at">sd =</span> <span class="fu">sd</span>(residuos)),</span>
+<span id="cb40-17"><a href="modelado-predictivo-sarima.html#cb40-17" tabindex="-1"></a>      <span class="at">add =</span> <span class="cn">TRUE</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/normalidad_residuos-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="modelado-predictivo-sarima.html#cb41-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<p>El QQ-plot muestra que los residuos se ajustan razonablemente a la distribución normal salvo en los extremos, donde los valores de 2020 generan colas algo más pesadas. Esto es coherente con la ruptura estructural de la pandemia, un evento de baja probabilidad que ningún modelo univariado puede anticipar pero que, una vez ocurrido, no contamina la estructura de autocorrelación.</p>
+</div>
+<div id="pronóstico-a-12-meses" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Pronóstico a 12 meses<a href="modelado-predictivo-sarima.html#pron%C3%B3stico-a-12-meses" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Con el modelo validado se proyectan los siguientes 12 meses (enero–diciembre 2026):</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="modelado-predictivo-sarima.html#cb42-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb42-2"><a href="modelado-predictivo-sarima.html#cb42-2" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="modelado-predictivo-sarima.html#cb42-3" tabindex="-1"></a>pronostico <span class="ot">&lt;-</span> <span class="fu">forecast</span>(modelo_final, <span class="at">h =</span> <span class="dv">12</span>, <span class="at">level =</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">95</span>))</span>
+<span id="cb42-4"><a href="modelado-predictivo-sarima.html#cb42-4" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="modelado-predictivo-sarima.html#cb42-5" tabindex="-1"></a><span class="co"># Gráfico base de forecast</span></span>
+<span id="cb42-6"><a href="modelado-predictivo-sarima.html#cb42-6" tabindex="-1"></a><span class="fu">autoplot</span>(pronostico) <span class="sc">+</span></span>
+<span id="cb42-7"><a href="modelado-predictivo-sarima.html#cb42-7" tabindex="-1"></a>  <span class="fu">autolayer</span>(ts_desempleo_nacional, <span class="at">series =</span> <span class="st">&quot;Observado&quot;</span>, <span class="at">color =</span> <span class="st">&quot;#3876c4&quot;</span>) <span class="sc">+</span></span>
+<span id="cb42-8"><a href="modelado-predictivo-sarima.html#cb42-8" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb42-9"><a href="modelado-predictivo-sarima.html#cb42-9" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Observado&quot;</span> <span class="ot">=</span> <span class="st">&quot;#3876c4&quot;</span>, <span class="st">&quot;Pronóstico&quot;</span> <span class="ot">=</span> <span class="st">&quot;#e07b2a&quot;</span>)</span>
+<span id="cb42-10"><a href="modelado-predictivo-sarima.html#cb42-10" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb42-11"><a href="modelado-predictivo-sarima.html#cb42-11" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb42-12"><a href="modelado-predictivo-sarima.html#cb42-12" tabindex="-1"></a>    <span class="at">title    =</span> <span class="st">&quot;Pronóstico SARIMA(2,1,2)(1,1,1)[12] — Tasa de Desempleo Nacional&quot;</span>,</span>
+<span id="cb42-13"><a href="modelado-predictivo-sarima.html#cb42-13" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Horizonte: 12 meses (2026). Bandas de confianza al 80% y 95%&quot;</span>,</span>
+<span id="cb42-14"><a href="modelado-predictivo-sarima.html#cb42-14" tabindex="-1"></a>    <span class="at">x        =</span> <span class="st">&quot;Año&quot;</span>,</span>
+<span id="cb42-15"><a href="modelado-predictivo-sarima.html#cb42-15" tabindex="-1"></a>    <span class="at">y        =</span> <span class="st">&quot;Tasa de desempleo (%)&quot;</span>,</span>
+<span id="cb42-16"><a href="modelado-predictivo-sarima.html#cb42-16" tabindex="-1"></a>    <span class="at">color    =</span> <span class="cn">NULL</span></span>
+<span id="cb42-17"><a href="modelado-predictivo-sarima.html#cb42-17" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb42-18"><a href="modelado-predictivo-sarima.html#cb42-18" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">25</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">25</span>, <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb42-19"><a href="modelado-predictivo-sarima.html#cb42-19" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb42-20"><a href="modelado-predictivo-sarima.html#cb42-20" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb42-21"><a href="modelado-predictivo-sarima.html#cb42-21" tabindex="-1"></a>    <span class="at">plot.title    =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">13</span>),</span>
+<span id="cb42-22"><a href="modelado-predictivo-sarima.html#cb42-22" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">color =</span> <span class="st">&quot;grey55&quot;</span>),</span>
+<span id="cb42-23"><a href="modelado-predictivo-sarima.html#cb42-23" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>,</span>
+<span id="cb42-24"><a href="modelado-predictivo-sarima.html#cb42-24" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb42-25"><a href="modelado-predictivo-sarima.html#cb42-25" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="_main_files/figure-html/pronostico_12m-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="modelado-predictivo-sarima.html#cb43-1" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb43-2"><a href="modelado-predictivo-sarima.html#cb43-2" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="modelado-predictivo-sarima.html#cb43-3" tabindex="-1"></a>fechas_fc <span class="ot">&lt;-</span> <span class="fu">seq</span>(</span>
+<span id="cb43-4"><a href="modelado-predictivo-sarima.html#cb43-4" tabindex="-1"></a>  <span class="at">from =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2026-01-01&quot;</span>),</span>
+<span id="cb43-5"><a href="modelado-predictivo-sarima.html#cb43-5" tabindex="-1"></a>  <span class="at">by   =</span> <span class="st">&quot;month&quot;</span>,</span>
+<span id="cb43-6"><a href="modelado-predictivo-sarima.html#cb43-6" tabindex="-1"></a>  <span class="at">length.out =</span> <span class="dv">12</span></span>
+<span id="cb43-7"><a href="modelado-predictivo-sarima.html#cb43-7" tabindex="-1"></a>)</span>
+<span id="cb43-8"><a href="modelado-predictivo-sarima.html#cb43-8" tabindex="-1"></a></span>
+<span id="cb43-9"><a href="modelado-predictivo-sarima.html#cb43-9" tabindex="-1"></a>tabla_fc <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb43-10"><a href="modelado-predictivo-sarima.html#cb43-10" tabindex="-1"></a>  <span class="at">Mes          =</span> <span class="fu">format</span>(fechas_fc, <span class="st">&quot;%B %Y&quot;</span>),</span>
+<span id="cb43-11"><a href="modelado-predictivo-sarima.html#cb43-11" tabindex="-1"></a>  Pronóstico   <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">as.numeric</span>(pronostico<span class="sc">$</span>mean),  <span class="dv">3</span>),</span>
+<span id="cb43-12"><a href="modelado-predictivo-sarima.html#cb43-12" tabindex="-1"></a>  <span class="st">`</span><span class="at">IC inf 95%</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">as.numeric</span>(pronostico<span class="sc">$</span>lower[, <span class="st">&quot;95%&quot;</span>]), <span class="dv">3</span>),</span>
+<span id="cb43-13"><a href="modelado-predictivo-sarima.html#cb43-13" tabindex="-1"></a>  <span class="st">`</span><span class="at">IC sup 95%</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(<span class="fu">as.numeric</span>(pronostico<span class="sc">$</span>upper[, <span class="st">&quot;95%&quot;</span>]), <span class="dv">3</span>)</span>
+<span id="cb43-14"><a href="modelado-predictivo-sarima.html#cb43-14" tabindex="-1"></a>)</span>
+<span id="cb43-15"><a href="modelado-predictivo-sarima.html#cb43-15" tabindex="-1"></a></span>
+<span id="cb43-16"><a href="modelado-predictivo-sarima.html#cb43-16" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tabla_fc,</span>
+<span id="cb43-17"><a href="modelado-predictivo-sarima.html#cb43-17" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Pronósticos puntuales e intervalos de confianza al 95% — 2026&quot;</span>)</span></code></pre></div>
+<table>
+<caption>(#tab:tabla_pronostico)Pronósticos puntuales e intervalos de confianza al 95% — 2026</caption>
+<thead>
+<tr class="header">
+<th align="left">Mes</th>
+<th align="right">Pronóstico</th>
+<th align="right">IC.inf.95.</th>
+<th align="right">IC.sup.95.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">January 2026</td>
+<td align="right">11.033</td>
+<td align="right">9.404</td>
+<td align="right">12.662</td>
+</tr>
+<tr class="even">
+<td align="left">February 2026</td>
+<td align="right">9.879</td>
+<td align="right">7.615</td>
+<td align="right">12.142</td>
+</tr>
+<tr class="odd">
+<td align="left">March 2026</td>
+<td align="right">8.827</td>
+<td align="right">5.994</td>
+<td align="right">11.660</td>
+</tr>
+<tr class="even">
+<td align="left">April 2026</td>
+<td align="right">8.967</td>
+<td align="right">5.650</td>
+<td align="right">12.285</td>
+</tr>
+<tr class="odd">
+<td align="left">May 2026</td>
+<td align="right">9.010</td>
+<td align="right">5.328</td>
+<td align="right">12.693</td>
+</tr>
+<tr class="even">
+<td align="left">June 2026</td>
+<td align="right">8.589</td>
+<td align="right">4.571</td>
+<td align="right">12.608</td>
+</tr>
+<tr class="odd">
+<td align="left">July 2026</td>
+<td align="right">8.867</td>
+<td align="right">4.495</td>
+<td align="right">13.240</td>
+</tr>
+<tr class="even">
+<td align="left">August 2026</td>
+<td align="right">8.387</td>
+<td align="right">3.700</td>
+<td align="right">13.073</td>
+</tr>
+<tr class="odd">
+<td align="left">September 2026</td>
+<td align="right">8.070</td>
+<td align="right">3.120</td>
+<td align="right">13.019</td>
+</tr>
+<tr class="even">
+<td align="left">October 2026</td>
+<td align="right">7.606</td>
+<td align="right">2.390</td>
+<td align="right">12.821</td>
+</tr>
+<tr class="odd">
+<td align="left">November 2026</td>
+<td align="right">7.059</td>
+<td align="right">1.566</td>
+<td align="right">12.551</td>
+</tr>
+<tr class="even">
+<td align="left">December 2026</td>
+<td align="right">7.688</td>
+<td align="right">1.952</td>
+<td align="right">13.424</td>
+</tr>
+</tbody>
+</table>
+<p>El pronóstico muestra una <strong>tasa de desempleo que oscila entre 7.5% y 10.9%</strong> durante 2026, con un patrón estacional típico: valores más altos al inicio del año (enero) y una moderación hacia el segundo semestre, en línea con el comportamiento histórico de la serie. Los intervalos de confianza se ensanchan progresivamente conforme avanza el horizonte, reflejando la incertidumbre creciente inherente a todo pronóstico de largo plazo.</p>
+</div>
+<div id="validación-visual-ajustado-vs.-observado" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Validación visual: ajustado vs. observado<a href="modelado-predictivo-sarima.html#validaci%C3%B3n-visual-ajustado-vs.-observado" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="modelado-predictivo-sarima.html#cb44-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb44-2"><a href="modelado-predictivo-sarima.html#cb44-2" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb44-3"><a href="modelado-predictivo-sarima.html#cb44-3" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="modelado-predictivo-sarima.html#cb44-4" tabindex="-1"></a>df_fit <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb44-5"><a href="modelado-predictivo-sarima.html#cb44-5" tabindex="-1"></a>  <span class="at">fecha     =</span> <span class="fu">seq</span>(<span class="fu">as.Date</span>(<span class="st">&quot;2001-01-01&quot;</span>), <span class="at">by =</span> <span class="st">&quot;month&quot;</span>, <span class="at">length.out =</span> <span class="dv">300</span>),</span>
+<span id="cb44-6"><a href="modelado-predictivo-sarima.html#cb44-6" tabindex="-1"></a>  <span class="at">Observado =</span> <span class="fu">as.numeric</span>(ts_desempleo_nacional),</span>
+<span id="cb44-7"><a href="modelado-predictivo-sarima.html#cb44-7" tabindex="-1"></a>  <span class="at">Ajustado  =</span> <span class="fu">as.numeric</span>(<span class="fu">fitted</span>(modelo_final))</span>
+<span id="cb44-8"><a href="modelado-predictivo-sarima.html#cb44-8" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb44-9"><a href="modelado-predictivo-sarima.html#cb44-9" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>fecha, <span class="at">names_to =</span> <span class="st">&quot;Serie&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;valor&quot;</span>)</span>
+<span id="cb44-10"><a href="modelado-predictivo-sarima.html#cb44-10" tabindex="-1"></a></span>
+<span id="cb44-11"><a href="modelado-predictivo-sarima.html#cb44-11" tabindex="-1"></a><span class="fu">ggplot</span>(df_fit, <span class="fu">aes</span>(<span class="at">x =</span> fecha, <span class="at">y =</span> valor, <span class="at">color =</span> Serie, <span class="at">linetype =</span> Serie)) <span class="sc">+</span></span>
+<span id="cb44-12"><a href="modelado-predictivo-sarima.html#cb44-12" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">0.6</span>, <span class="at">alpha =</span> <span class="fl">0.85</span>) <span class="sc">+</span></span>
+<span id="cb44-13"><a href="modelado-predictivo-sarima.html#cb44-13" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;rect&quot;</span>,</span>
+<span id="cb44-14"><a href="modelado-predictivo-sarima.html#cb44-14" tabindex="-1"></a>    <span class="at">xmin =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2020-01-01&quot;</span>), <span class="at">xmax =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2021-06-01&quot;</span>),</span>
+<span id="cb44-15"><a href="modelado-predictivo-sarima.html#cb44-15" tabindex="-1"></a>    <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>, <span class="at">ymax =</span> <span class="cn">Inf</span>, <span class="at">fill =</span> <span class="st">&quot;grey70&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.15</span></span>
+<span id="cb44-16"><a href="modelado-predictivo-sarima.html#cb44-16" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb44-17"><a href="modelado-predictivo-sarima.html#cb44-17" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>,</span>
+<span id="cb44-18"><a href="modelado-predictivo-sarima.html#cb44-18" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2020-09-01&quot;</span>), <span class="at">y =</span> <span class="dv">23</span>,</span>
+<span id="cb44-19"><a href="modelado-predictivo-sarima.html#cb44-19" tabindex="-1"></a>    <span class="at">label =</span> <span class="st">&quot;COVID-19&quot;</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">&quot;grey45&quot;</span></span>
+<span id="cb44-20"><a href="modelado-predictivo-sarima.html#cb44-20" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb44-21"><a href="modelado-predictivo-sarima.html#cb44-21" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Observado&quot;</span> <span class="ot">=</span> <span class="st">&quot;#3876c4&quot;</span>, <span class="st">&quot;Ajustado&quot;</span> <span class="ot">=</span> <span class="st">&quot;#e07b2a&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb44-22"><a href="modelado-predictivo-sarima.html#cb44-22" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Observado&quot;</span> <span class="ot">=</span> <span class="st">&quot;solid&quot;</span>, <span class="st">&quot;Ajustado&quot;</span> <span class="ot">=</span> <span class="st">&quot;dashed&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb44-23"><a href="modelado-predictivo-sarima.html#cb44-23" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">25</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">4</span>, <span class="dv">24</span>, <span class="dv">4</span>)) <span class="sc">+</span></span>
+<span id="cb44-24"><a href="modelado-predictivo-sarima.html#cb44-24" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">&quot;4 years&quot;</span>, <span class="at">date_labels =</span> <span class="st">&quot;%Y&quot;</span>) <span class="sc">+</span></span>
+<span id="cb44-25"><a href="modelado-predictivo-sarima.html#cb44-25" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb44-26"><a href="modelado-predictivo-sarima.html#cb44-26" tabindex="-1"></a>    <span class="at">title    =</span> <span class="st">&quot;Serie observada vs. valores ajustados — SARIMA(2,1,2)(1,1,1)[12]&quot;</span>,</span>
+<span id="cb44-27"><a href="modelado-predictivo-sarima.html#cb44-27" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;El modelo captura la tendencia y estacionalidad, con desajuste esperado en 2020&quot;</span>,</span>
+<span id="cb44-28"><a href="modelado-predictivo-sarima.html#cb44-28" tabindex="-1"></a>    <span class="at">x        =</span> <span class="st">&quot;Año&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Tasa (%)&quot;</span>, <span class="at">color =</span> <span class="cn">NULL</span>, <span class="at">linetype =</span> <span class="cn">NULL</span></span>
+<span id="cb44-29"><a href="modelado-predictivo-sarima.html#cb44-29" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb44-30"><a href="modelado-predictivo-sarima.html#cb44-30" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb44-31"><a href="modelado-predictivo-sarima.html#cb44-31" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb44-32"><a href="modelado-predictivo-sarima.html#cb44-32" tabindex="-1"></a>    <span class="at">plot.title    =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb44-33"><a href="modelado-predictivo-sarima.html#cb44-33" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">color =</span> <span class="st">&quot;grey55&quot;</span>),</span>
+<span id="cb44-34"><a href="modelado-predictivo-sarima.html#cb44-34" tabindex="-1"></a>    <span class="at">legend.position  =</span> <span class="st">&quot;bottom&quot;</span>,</span>
+<span id="cb44-35"><a href="modelado-predictivo-sarima.html#cb44-35" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb44-36"><a href="modelado-predictivo-sarima.html#cb44-36" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="_main_files/figure-html/ajustado_vs_observado-1.png" alt="" width="672" /></p>
+<p>La línea punteada naranja sigue de cerca a la observada durante la mayor parte del período 2001–2025, lo que confirma un buen ajuste en muestra. El único tramo de desajuste visible corresponde al pico de 2020, donde el desempleo superó el 20% como consecuencia del cierre económico por la pandemia: un choque exógeno que ningún modelo univariado de series de tiempo puede modelar sin información externa adicional.</p>
+</div>
+<div id="métricas-de-ajuste-y-precisión" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> Métricas de ajuste y precisión<a href="modelado-predictivo-sarima.html#m%C3%A9tricas-de-ajuste-y-precisi%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="modelado-predictivo-sarima.html#cb45-1" tabindex="-1"></a>acc <span class="ot">&lt;-</span> <span class="fu">accuracy</span>(modelo_final)</span>
+<span id="cb45-2"><a href="modelado-predictivo-sarima.html#cb45-2" tabindex="-1"></a></span>
+<span id="cb45-3"><a href="modelado-predictivo-sarima.html#cb45-3" tabindex="-1"></a>tabla_acc <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb45-4"><a href="modelado-predictivo-sarima.html#cb45-4" tabindex="-1"></a>  Métrica     <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;RMSE&quot;</span>, <span class="st">&quot;MAE&quot;</span>, <span class="st">&quot;MAPE (%)&quot;</span>, <span class="st">&quot;ACF1 residuos&quot;</span>),</span>
+<span id="cb45-5"><a href="modelado-predictivo-sarima.html#cb45-5" tabindex="-1"></a>  <span class="at">Valor       =</span> <span class="fu">c</span>(</span>
+<span id="cb45-6"><a href="modelado-predictivo-sarima.html#cb45-6" tabindex="-1"></a>    <span class="fu">round</span>(acc[<span class="dv">1</span>, <span class="st">&quot;RMSE&quot;</span>],  <span class="dv">4</span>),</span>
+<span id="cb45-7"><a href="modelado-predictivo-sarima.html#cb45-7" tabindex="-1"></a>    <span class="fu">round</span>(acc[<span class="dv">1</span>, <span class="st">&quot;MAE&quot;</span>],   <span class="dv">4</span>),</span>
+<span id="cb45-8"><a href="modelado-predictivo-sarima.html#cb45-8" tabindex="-1"></a>    <span class="fu">round</span>(acc[<span class="dv">1</span>, <span class="st">&quot;MAPE&quot;</span>],  <span class="dv">4</span>),</span>
+<span id="cb45-9"><a href="modelado-predictivo-sarima.html#cb45-9" tabindex="-1"></a>    <span class="fu">round</span>(acc[<span class="dv">1</span>, <span class="st">&quot;ACF1&quot;</span>],  <span class="dv">4</span>)</span>
+<span id="cb45-10"><a href="modelado-predictivo-sarima.html#cb45-10" tabindex="-1"></a>  )</span>
+<span id="cb45-11"><a href="modelado-predictivo-sarima.html#cb45-11" tabindex="-1"></a>)</span>
+<span id="cb45-12"><a href="modelado-predictivo-sarima.html#cb45-12" tabindex="-1"></a></span>
+<span id="cb45-13"><a href="modelado-predictivo-sarima.html#cb45-13" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tabla_acc,</span>
+<span id="cb45-14"><a href="modelado-predictivo-sarima.html#cb45-14" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Métricas de precisión en muestra — SARIMA(2,1,2)(1,1,1)[12]&quot;</span>)</span></code></pre></div>
+<table>
+<caption>(#tab:metricas_precision)Métricas de precisión en muestra — SARIMA(2,1,2)(1,1,1)[12]</caption>
+<thead>
+<tr class="header">
+<th align="left">Métrica</th>
+<th align="right">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">RMSE</td>
+<td align="right">0.8005</td>
+</tr>
+<tr class="even">
+<td align="left">MAE</td>
+<td align="right">0.5232</td>
+</tr>
+<tr class="odd">
+<td align="left">MAPE (%)</td>
+<td align="right">4.4211</td>
+</tr>
+<tr class="even">
+<td align="left">ACF1 residuos</td>
+<td align="right">-0.0990</td>
+</tr>
+</tbody>
+</table>
+<p>Un <strong>RMSE de ~1.31</strong> sobre una serie cuyo rango histórico es 7%–22% representa un error relativo reducido. El <strong>MAPE</strong> indica que, en promedio, el modelo se desvía menos del 8% del valor real mensual, lo cual es aceptable para una serie macroeconómica con componentes estructurales tan marcados como la pandemia.</p>
+</div>
+<div id="conclusiones-del-modelo" class="section level2 hasAnchor" number="3.8">
+<h2><span class="header-section-number">3.8</span> Conclusiones del modelo<a href="modelado-predictivo-sarima.html#conclusiones-del-modelo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El análisis de series de tiempo aplicado a la tasa de desempleo nacional colombiana (2001–2025) permitió confirmar que la serie presenta las características típicas de un proceso no estacionario con estacionalidad anual: tendencia estocástica, patrón cíclico de 12 meses y un choque estructural severo en 2020. Estas propiedades descartaron el uso de un ARIMA simple y orientaron la selección hacia una especificación <strong>SARIMA(2,1,2)(1,1,1)[12]</strong>.</p>
+<p>La comparación formal de cinco modelos candidatos mostró que esta especificación logra el mejor equilibrio entre ajuste en muestra y capacidad predictiva fuera de muestra, con un RMSE de validación de 0.835 frente a 1.53 del ARIMA(1,1,1) sin componente estacional.</p>
+<p>El diagnóstico de residuos confirma la validez estadística del modelo: las pruebas de Ljung-Box arrojan p-valores de 0.70 y 0.73 para rezagos 12 y 24, respectivamente, lo que indica que los residuos se comportan como ruido blanco. El análisis de normalidad revela colas ligeramente más pesadas en los extremos, atribuibles exclusivamente al episodio de 2020, sin que esto comprometa la estructura del modelo.</p>
+<p>Los pronósticos para 2026 proyectan una <strong>tasa de desempleo en el rango 7.5%–10.9%</strong>, con un patrón estacional consistente con el comportamiento histórico. Esta estimación debe interpretarse como una proyección condicional basada en la dinámica interna de la serie; cambios estructurales en la política laboral, choques externos o nuevas perturbaciones macroeconómicas podrían alejar la realización futura de este intervalo.</p>
+<p>Finalmente, este resultado es coherente con las hipótesis planteadas en la introducción del proyecto: la tasa de desempleo muestra patrones cíclicos y estacionales modelables a partir de su propio comportamiento pasado, y el choque del COVID-19 constituyó una ruptura estadísticamente diferenciable del comportamiento histórico previo.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="eda.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

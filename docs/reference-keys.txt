@@ -1,4 +1,5 @@
 tab:unnamed-chunk-16
+tab:ljungbox
 introducción
 tasa-global-de-participación-13-áreas-tgp-área.
 tasa-global-de-participación-total-nacional-tgp-nacional.
@@ -18,3 +19,12 @@ analisis-de-las-variables-caracteristicas
 analisis-bivariado.
 conclusiones.
 referencias
+modelado-predictivo-sarima
+justificación-del-modelo-seleccionado
+comparación-de-especificaciones
+ajuste-del-modelo-final
+diagnóstico-de-residuos
+pronóstico-a-12-meses
+validación-visual-ajustado-vs.-observado
+métricas-de-ajuste-y-precisión
+conclusiones-del-modelo

@@ -23,7 +23,7 @@
 <meta name="author" content="Andrés Parejo, Santiago Hurtado" />
 
 
-<meta name="date" content="2026-04-05" />
+<meta name="date" content="2026-05-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="index.html"/>
-
+<link rel="next" href="modelado-predictivo-sarima.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -168,6 +168,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.0.3" data-path="eda.html"><a href="eda.html#analisis-bivariado."><i class="fa fa-check"></i><b>2.0.3</b> Analisis bivariado.</a></li>
 <li class="chapter" data-level="2.0.4" data-path="eda.html"><a href="eda.html#conclusiones."><i class="fa fa-check"></i><b>2.0.4</b> Conclusiones.</a></li>
 <li class="chapter" data-level="2.0.5" data-path="eda.html"><a href="eda.html#referencias"><i class="fa fa-check"></i><b>2.0.5</b> Referencias:</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html"><i class="fa fa-check"></i><b>3</b> Modelado Predictivo: SARIMA</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#justificaci%C3%B3n-del-modelo-seleccionado"><i class="fa fa-check"></i><b>3.1</b> Justificación del modelo seleccionado</a></li>
+<li class="chapter" data-level="3.2" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#comparaci%C3%B3n-de-especificaciones"><i class="fa fa-check"></i><b>3.2</b> Comparación de especificaciones</a></li>
+<li class="chapter" data-level="3.3" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#ajuste-del-modelo-final"><i class="fa fa-check"></i><b>3.3</b> Ajuste del modelo final</a></li>
+<li class="chapter" data-level="3.4" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#diagn%C3%B3stico-de-residuos"><i class="fa fa-check"></i><b>3.4</b> Diagnóstico de residuos</a></li>
+<li class="chapter" data-level="3.5" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#pron%C3%B3stico-a-12-meses"><i class="fa fa-check"></i><b>3.5</b> Pronóstico a 12 meses</a></li>
+<li class="chapter" data-level="3.6" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#validaci%C3%B3n-visual-ajustado-vs.-observado"><i class="fa fa-check"></i><b>3.6</b> Validación visual: ajustado vs. observado</a></li>
+<li class="chapter" data-level="3.7" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#m%C3%A9tricas-de-ajuste-y-precisi%C3%B3n"><i class="fa fa-check"></i><b>3.7</b> Métricas de ajuste y precisión</a></li>
+<li class="chapter" data-level="3.8" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#conclusiones-del-modelo"><i class="fa fa-check"></i><b>3.8</b> Conclusiones del modelo</a></li>
 </ul></li>
 </ul>
 
@@ -826,7 +837,6 @@ Adicionalmente, las correlaciones superiores a 0.94 evidenciadas entre los indic
 <p>Congreso de la República de Colombia. (1945). Ley 6 de 1945: Disposiciones sobre convenciones de trabajo, asociaciones profesionales, conflictos colectivos y jurisdicción especial de trabajo.</p>
 <p>Departamento Administrativo Nacional de Estadística (DANE). (s. f.). Mercado laboral. <a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral" class="uri">https://www.dane.gov.co/index.php/estadisticas-por-tema/mercado-laboral</a></p>
 <p>Organización Internacional del Trabajo. (s.f.). Population and labour force. <a href="https://ilostat.ilo.org/es/topics/population-and-labour-force/" class="uri">https://ilostat.ilo.org/es/topics/population-and-labour-force/</a></p>
-
 </div>
 </div>
             </section>
@@ -834,8 +844,8 @@ Adicionalmente, las correlaciones superiores a 0.94 evidenciadas entre los indic
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="modelado-predictivo-sarima.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
