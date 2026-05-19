@@ -11,6 +11,13 @@ justificación.
 objetivo-general
 objetivos-específicos
 marco-teórico.
+el-mercado-laboral-oferta-demanda-y-mecanismos-de-ajuste
+tipos-de-desempleo-y-su-relevancia-analítica
+indicadores-del-mercado-laboral-definiciones-y-relaciones-estructurales
+la-curva-de-beveridge-y-la-dinámica-de-emparejamiento-laboral
+el-mercado-laboral-colombiano-contexto-e-institucionalidad
+series-de-tiempo-aplicadas-al-mercado-laboral
+evidencia-empírica-en-el-contexto-colombiano
 hipótesis.
 metodología.
 eda
@@ -18,7 +25,6 @@ analisis-de-la-variable-tasa_desempleo_nacional.
 analisis-de-las-variables-caracteristicas
 analisis-bivariado.
 conclusiones.
-referencias
 modelado-predictivo-sarima
 justificación-del-modelo-seleccionado
 comparación-de-especificaciones
@@ -28,3 +34,4 @@ pronóstico-a-12-meses
 validación-visual-ajustado-vs.-observado
 métricas-de-ajuste-y-precisión
 conclusiones-del-modelo
+referencias

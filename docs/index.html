@@ -23,7 +23,7 @@
 <meta name="author" content="Andrés Parejo, Santiago Hurtado" />
 
 
-<meta name="date" content="2026-05-07" />
+<meta name="date" content="2026-05-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -167,7 +167,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.0.2" data-path="eda.html"><a href="eda.html#analisis-de-las-variables-caracteristicas"><i class="fa fa-check"></i><b>2.0.2</b> Analisis de las variables caracteristicas:</a></li>
 <li class="chapter" data-level="2.0.3" data-path="eda.html"><a href="eda.html#analisis-bivariado."><i class="fa fa-check"></i><b>2.0.3</b> Analisis bivariado.</a></li>
 <li class="chapter" data-level="2.0.4" data-path="eda.html"><a href="eda.html#conclusiones."><i class="fa fa-check"></i><b>2.0.4</b> Conclusiones.</a></li>
-<li class="chapter" data-level="2.0.5" data-path="eda.html"><a href="eda.html#referencias"><i class="fa fa-check"></i><b>2.0.5</b> Referencias:</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html"><i class="fa fa-check"></i><b>3</b> Modelado Predictivo: SARIMA</a>
 <ul>
@@ -180,6 +179,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.7" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#m%C3%A9tricas-de-ajuste-y-precisi%C3%B3n"><i class="fa fa-check"></i><b>3.7</b> Métricas de ajuste y precisión</a></li>
 <li class="chapter" data-level="3.8" data-path="modelado-predictivo-sarima.html"><a href="modelado-predictivo-sarima.html#conclusiones-del-modelo"><i class="fa fa-check"></i><b>3.8</b> Conclusiones del modelo</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i><b>4</b> Referencias</a></li>
 </ul>
 
       </nav>
@@ -200,10 +200,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Mercado Laboral Colombiano</h1>
 <p class="author"><em>Andrés Parejo, Santiago Hurtado</em></p>
-<p class="date"><em>2026-05-07</em></p>
+<p class="date"><em>2026-05-18</em></p>
 </div>
 <div id="introducción" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number"></span>Introducción<a href="index.html#introducci%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Chapter 1</span> Introducción<a href="index.html#introducci%C3%B3n" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>El mercado laboral constituye uno de los principales indicadores del desempeño económico de un país, ya que refleja la capacidad de la economía de generar empleo. Su análisis permite comprender la interacción entre la oferta laboral y la demanda de trabajo, así como evaluar el funcionamiento general de la economía en términos de producción y generación de ingresos.</p>
 <p>Este seguimiento se realiza a partir de la Gran Encuesta Integrada de Hogares (GEIH), elaborada por el Departamento Administrativo Nacional de Estadística (DANE). Esta recoge y se constituye principalmente de información como lo son los indicadores los cuales caracterizan la dinámica del empleo y desempleo en el país. El análisis de estos indicadores resulta fundamental no solo para describir el mercado laboral, sino para identificar tendencias, posibles desequilibrios en el futuro y ciclos.</p>
 <p>El presente proyecto tiene objetivo analizar el comportamiento del mercado laboral colombiano a partir de esos indicadores mensuales publicados por el Banco e la Republica y producidos por el DANE, para el periodo comprendidos entre enero de 2001 y diciembre de 2025. A partir de esta información, se busca realizar un análisis descriptivo y temporal que permita identificar patrones relevantes en la evolución del empleo, así como posibles cambios asociados a choques económicos, cambios estructurales o ajustes en la medición estadística.
@@ -328,18 +328,55 @@ Este proyecto se justifica por el valor y la necesidad de contar una vision anal
 </div>
 <div id="marco-teórico." class="section level3 hasAnchor" number="1.0.10">
 <h3><span class="header-section-number">1.0.10</span> Marco teórico.<a href="index.html#marco-te%C3%B3rico." class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>El mercado laboral se define como el espacio economico en el que interactúan la oferta y la demanda de trabajo. El salario actúa como el mecanismo de ajuste que equilibra estas fuerzas: cuando ka demanda de trabajo supera la oferta, lo salarios tienen a subir, incentivando una mayor participación laboral, cuando ocurre lo contrario, el desempleo surge como consecuencia de un exceso de oferta (Mankiw, 2015).
-Sin embargo, en los últimos años este ajuste rara vez es inmediato ni perfecto, dado que existen fricciones, desacuerdos institucionales que afectan o distorsionan el equilibrio.</p>
-<p>Para un mejor entendimiento del comportamiento del mercado laboral colombiano, el DANE utiliza unas definiciones establecidas por la Organización Internacional del Trabajo. Bajo estos conceptos la población en edad de trabajar (PET) se divide en población económicamente activa (PEA o fuerza de trabajo) y población económicamente inactiva. A su vez, la PEA se subdivide en ocupados y desocupados, lo que da lugar a los tres indicadores centrales de este estudio:</p>
+<div id="el-mercado-laboral-oferta-demanda-y-mecanismos-de-ajuste" class="section level4 hasAnchor" number="1.0.10.1">
+<h4><span class="header-section-number">1.0.10.1</span> 1. El mercado laboral: oferta, demanda y mecanismos de ajuste<a href="index.html#el-mercado-laboral-oferta-demanda-y-mecanismos-de-ajuste" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El mercado laboral se define como el espacio económico en el que interactúan la oferta y la demanda de trabajo. Desde la perspectiva neoclásica, el salario actúa como el mecanismo de ajuste que equilibra estas fuerzas: cuando la demanda de trabajo supera la oferta, los salarios tienden a subir, incentivando una mayor participación laboral; cuando ocurre lo contrario, el desempleo surge como consecuencia de un exceso de oferta (Mankiw, 2015). Sin embargo, este ajuste rara vez es inmediato ni perfecto, dado que existen fricciones informacionales, rigideces salariales y asimetrías institucionales que distorsionan el equilibrio.</p>
+<p>La teoría keynesiana introdujo una visión alternativa: en el corto plazo, la demanda agregada determina el nivel de empleo. Cuando la demanda de bienes y servicios cae, las empresas reducen la producción y despiden trabajadores, lo que genera desempleo involuntario aunque los salarios no caigan proporcionalmente. Esta perspectiva es especialmente relevante para interpretar los choques severos que Colombia experimentó durante la pandemia de 2020, donde el colapso de la demanda derivó en tasas de desempleo históricamente altas (Keynes, 1936; Blanchard, 2017).</p>
+</div>
+<div id="tipos-de-desempleo-y-su-relevancia-analítica" class="section level4 hasAnchor" number="1.0.10.2">
+<h4><span class="header-section-number">1.0.10.2</span> 2. Tipos de desempleo y su relevancia analítica<a href="index.html#tipos-de-desempleo-y-su-relevancia-anal%C3%ADtica" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>La literatura económica distingue tres tipos fundamentales de desempleo, cada uno con implicaciones de política distintas:</p>
 <ul>
-<li><p>La tasa global de participación mide la proporción de la PET que hace parte de la fuerza laboral.</p></li>
-<li><p>La tasa de ocupación indica el porcentaje de la PET que se encuentra efectivamente trabajando.</p></li>
-<li><p>La tasa de desempleo dicta la proporción de la fuerza de trabajo que está disponible y buscando, pero que a su vez no encuentra.</p></li>
+<li><p><strong>Desempleo friccional:</strong> surge de la transición natural entre empleos. Es inherente a cualquier economía dinámica donde los trabajadores buscan oportunidades que se ajusten mejor a sus habilidades. Se considera desempleo de corto plazo y es en parte deseable, pues refleja la movilidad del mercado (Pissarides, 2000).</p></li>
+<li><p><strong>Desempleo estructural:</strong> ocurre cuando existe una desconexión entre las habilidades que poseen los trabajadores y las que demanda el mercado. En el caso colombiano, este tipo de desempleo es particularmente relevante dada la alta informalidad y los bajos niveles de calificación técnica en segmentos importantes de la fuerza laboral (Lora &amp; Pagés, 2010).</p></li>
+<li><p><strong>Desempleo cíclico:</strong> es el que fluctúa con el ciclo económico. Aumenta durante las recesiones y disminuye en las expansiones. El choque del COVID-19 en 2020 es el ejemplo más claro de desempleo cíclico en la historia reciente de Colombia, con la tasa nacional superando el 20% en el segundo trimestre de 2020 (DANE, 2020).</p></li>
 </ul>
-<p>Estos 3 indicadores que son los que llamaremos los principales del estudio no son independientes, deben estar relacionados entre sí.</p>
-<p>Desde el enfoque de las series de tiempo, el mercado laboral arroja componentes que lo hacen en parte complejo, ya que hay: tendencias a largo plazo asociadas a cambios demográficos, ciclos y choques económicos; y estacionalidades derivadas de contrataciones en ciertas épocas del año.
-Para su analisis riguroso, se emplea modelos ARIMA y más recientemente modelos de machine learning aplicados a la predicción de series temporales económicas (Hynman &amp; Athanasopoulos, 2021).</p>
-<p>En el contexto colombiano, trabajos como el de Arango, Herrera y Posada (2008) han documentado la persistencia del desempleo y la importancia de factores institucionales en su determinación, mientras que el Banco de la República ha señalado reiteradamente el impacto diferencial de los choques externos sobre el empleo. El periodo de 2020-2021 constituye un lapso de tiempo a tener demasiado en cuenta ya que generó una ruptura estructural que cualquier modelo predictivo debería estar atento.</p>
+<p>La diferencia entre la tasa de desempleo observada y la tasa de desempleo natural (o NAIRU —Non-Accelerating Inflation Rate of Unemployment—) permite evaluar si la economía opera por encima o por debajo de su potencial. Cuando el desempleo se ubica persistentemente por encima de la NAIRU, se evidencian pérdidas de bienestar que justifican intervenciones de política (Friedman, 1968).</p>
+</div>
+<div id="indicadores-del-mercado-laboral-definiciones-y-relaciones-estructurales" class="section level4 hasAnchor" number="1.0.10.3">
+<h4><span class="header-section-number">1.0.10.3</span> 3. Indicadores del mercado laboral: definiciones y relaciones estructurales<a href="index.html#indicadores-del-mercado-laboral-definiciones-y-relaciones-estructurales" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para un análisis riguroso del comportamiento laboral colombiano, el DANE adopta las definiciones metodológicas establecidas por la Organización Internacional del Trabajo (OIT). Bajo este marco conceptual, la población en edad de trabajar (PET) —conformada por todas las personas de 12 años o más en Colombia— se divide en dos grandes grupos: la población económicamente activa (PEA o fuerza de trabajo) y la población económicamente inactiva (PEI). A su vez, la PEA se subdivide en ocupados y desocupados, lo que da lugar a los tres indicadores centrales de este estudio:</p>
+<p><span class="math display">\[\text{TGP} = \frac{\text{PEA}}{\text{PET}} \times 100\]</span></p>
+<p><span class="math display">\[\text{TO} = \frac{\text{Ocupados}}{\text{PET}} \times 100\]</span></p>
+<p><span class="math display">\[\text{TD} = \frac{\text{Desocupados}}{\text{PEA}} \times 100\]</span></p>
+<p>Estos tres indicadores no son independientes entre sí: se articulan de forma estructural a través de la identidad contable del mercado laboral. Una mayor tasa global de participación no implica necesariamente menor desempleo; si la oferta laboral crece más rápido que la capacidad de absorción de la economía, la tasa de desempleo puede aumentar simultáneamente con la participación. Esta relación compleja hace que el análisis conjunto de los tres indicadores sea indispensable para una lectura correcta de la dinámica laboral (OIT, 2023).</p>
+</div>
+<div id="la-curva-de-beveridge-y-la-dinámica-de-emparejamiento-laboral" class="section level4 hasAnchor" number="1.0.10.4">
+<h4><span class="header-section-number">1.0.10.4</span> 4. La curva de Beveridge y la dinámica de emparejamiento laboral<a href="index.html#la-curva-de-beveridge-y-la-din%C3%A1mica-de-emparejamiento-laboral" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Un marco teórico complementario para entender el mercado laboral es la curva de Beveridge, que representa la relación inversa entre la tasa de vacantes (puestos sin cubrir) y la tasa de desempleo a lo largo del ciclo económico. En tiempos de expansión, las vacantes son altas y el desempleo es bajo; en recesiones, ocurre lo contrario. Los desplazamientos de la curva hacia afuera —mayor desempleo para un mismo nivel de vacantes— indican deterioro en la eficiencia del proceso de emparejamiento entre trabajadores y empleadores, lo que puede estar asociado a fenómenos como la histéresis laboral (Blanchard &amp; Diamond, 1989).</p>
+<p>La <strong>histéresis del desempleo</strong> es un concepto central para el análisis de largo plazo: cuando el desempleo permanece elevado durante períodos prolongados, los trabajadores pueden perder habilidades, reducir su intensidad de búsqueda o ser discriminados por los empleadores, lo que dificulta su reincorporación al mercado incluso cuando las condiciones económicas mejoran. Este fenómeno, documentado en economías europeas y latinoamericanas, es relevante para interpretar la lenta recuperación del empleo colombiano tras el choque de 2020 (Blanchard &amp; Summers, 1987; Arango et al., 2008).</p>
+</div>
+<div id="el-mercado-laboral-colombiano-contexto-e-institucionalidad" class="section level4 hasAnchor" number="1.0.10.5">
+<h4><span class="header-section-number">1.0.10.5</span> 5. El mercado laboral colombiano: contexto e institucionalidad<a href="index.html#el-mercado-laboral-colombiano-contexto-e-institucionalidad" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>El mercado laboral colombiano presenta características estructurales que condicionan la interpretación de sus indicadores. En primer lugar, la alta informalidad —estimada en más del 55% de los ocupados a nivel nacional— implica que una parte significativa de los trabajadores no está cubierta por las instituciones formales del trabajo, como la seguridad social o los contratos laborales regulados (DANE, 2023). Esto hace que la tasa de desempleo subestime la verdadera precariedad laboral, puesto que muchas personas optan por la informalidad ante la ausencia de empleo formal.</p>
+<p>En segundo lugar, existe una marcada brecha urbano-rural. Las 13 principales áreas metropolitanas concentran una proporción desproporcionada de la actividad económica formal, lo que explica por qué las tasas de desempleo urbano tienden a ser superiores a las rurales: en las zonas rurales, el subempleo y la economía campesina absorben mano de obra que en un contexto urbano quedaría desempleada. Esta heterogeneidad justifica el análisis diferenciado entre los indicadores de área y los nacionales que se realiza en este estudio (Lora &amp; Pagés, 2010; Banco de la República, 2022).</p>
+<p>En tercer lugar, la rigidez relativa del mercado laboral colombiano —derivada de los costos no salariales del trabajo, los mecanismos de negociación colectiva y la regulación del salario mínimo— limita la velocidad de ajuste ante choques externos. Estudios del Banco de la República han documentado que los efectos de un choque negativo sobre el empleo formal persisten varios meses antes de que el mercado logre reequilibrarse (Arango et al., 2008; Posada &amp; Ospina, 2012).</p>
+</div>
+<div id="series-de-tiempo-aplicadas-al-mercado-laboral" class="section level4 hasAnchor" number="1.0.10.6">
+<h4><span class="header-section-number">1.0.10.6</span> 6. Series de tiempo aplicadas al mercado laboral<a href="index.html#series-de-tiempo-aplicadas-al-mercado-laboral" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Dado que los indicadores analizados corresponden a observaciones mensuales ordenadas cronológicamente, el enfoque metodológico más apropiado es el de las series de tiempo. Este tipo de datos presenta propiedades que deben considerarse antes del modelado:</p>
+<ul>
+<li><p><strong>No estacionariedad:</strong> la media y la varianza de la serie cambian a lo largo del tiempo, lo que invalida el uso directo de métodos estadísticos clásicos sin transformación previa. La presencia de raíz unitaria se verifica mediante pruebas formales como la de Dickey-Fuller aumentada (ADF) o la de Phillips-Perron (PP).</p></li>
+<li><p><strong>Estacionalidad:</strong> muchas series laborales presentan patrones recurrentes asociados al calendario. En Colombia, el desempleo tiende a ser más alto en los primeros meses del año —cuando terminan los contratos temporales de fin de año— y se modera hacia el segundo semestre, coincidiendo con períodos de mayor actividad en sectores como el comercio y la construcción (DANE, 2023).</p></li>
+<li><p><strong>Autocorrelación:</strong> el valor de la tasa de desempleo en un mes determinado está correlacionado con sus valores en meses anteriores, lo que implica que la historia de la serie contiene información valiosa para la predicción.</p></li>
+</ul>
+<p>Para capturar estas características de forma integrada, la literatura especializada recurre a los modelos <strong>ARIMA (Autoregressive Integrated Moving Average)</strong> y su extensión estacional <strong>SARIMA</strong>, propuesta originalmente por Box y Jenkins (1970) y sistematizada en Hyndman y Athanasopoulos (2021). Estos modelos son los más utilizados para la predicción de series macroeconómicas de frecuencia mensual, precisamente porque permiten incorporar la diferenciación necesaria para lograr estacionariedad, los componentes autorregresivos y de medias móviles para modelar la autocorrelación, y los términos estacionales para capturar los ciclos periódicos.</p>
+</div>
+<div id="evidencia-empírica-en-el-contexto-colombiano" class="section level4 hasAnchor" number="1.0.10.7">
+<h4><span class="header-section-number">1.0.10.7</span> 7. Evidencia empírica en el contexto colombiano<a href="index.html#evidencia-emp%C3%ADrica-en-el-contexto-colombiano" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Diversas investigaciones han abordado el comportamiento del mercado laboral colombiano desde una perspectiva cuantitativa. Arango, Herrera y Posada (2008) documentaron la persistencia del desempleo y su relación con factores institucionales como el salario mínimo y los costos de contratación, señalando que el mercado laboral colombiano exhibe una baja elasticidad del empleo ante variaciones salariales. Por su parte, el Banco de la República ha publicado análisis periódicos sobre el impacto diferencial de los choques externos sobre el empleo formal e informal, destacando la vulnerabilidad del sector de servicios y comercio ante contracciones de la demanda interna.</p>
+<p>El periodo 2020-2021 merece una mención especial en cualquier análisis de series de tiempo del mercado laboral colombiano. La pandemia de COVID-19 generó una ruptura estructural sin precedentes: en abril de 2020, la tasa de desempleo nacional alcanzó el 22%, el valor más alto registrado desde que el DANE adoptó la metodología actual. Esta disrupción no solo afectó los niveles de los indicadores, sino que alteró temporalmente los patrones estacionales y la dinámica de autocorrelación de las series, lo que obliga a que cualquier modelo predictivo identifique y trate este episodio de forma explícita para evitar pronósticos sesgados (DANE, 2020; Banco de la República, 2021).</p>
+</div>
 </div>
 <div id="hipótesis." class="section level3 hasAnchor" number="1.0.11">
 <h3><span class="header-section-number">1.0.11</span> Hipótesis.<a href="index.html#hip%C3%B3tesis." class="anchor-section" aria-label="Anchor link to header"></a></h3>
